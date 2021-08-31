@@ -1,0 +1,73 @@
+/*....To_portfolio_slider....*/
+/*//////////////////////////*/
+.offer__slider-wrapper {
+    max-width: 1095px;
+    // overflow: hidden;
+
+    order: 2;
+
+    @media(max-width: 1600px) {
+        max-width: 950px;
+        margin-top: 50px;
+        order: 1;
+    }
+
+    @media(max-width: 1120px) {
+        margin-top: 0;
+        order: 1;
+        width: 100%;
+    }
+}
+
+.offer__slider-inner {
+    overflow: hidden;
+    // width: 400%;
+    display: flex;
+    padding-left: 0;
+    margin: 0;
+
+    list-style-type: none;
+
+    transition: 0.5s all;    
+}
+
+.offer__slide {
+    display: inline-block;
+    max-width: 950px;
+    width: 100%;
+    margin-right: 20px;
+
+    @media(max-width: 1600px) {
+        max-width: 100%;
+        margin-right: 0;
+    }
+}
+
+
+// .slider__img_container {
+//     max-width: 950px;
+//     width: 100%;
+
+//     @media(max-width: 1600px) {
+//         max-width: 100%;
+//     }
+// }
+
+.slider__img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    max-width: 950px;
+    width: 100%;
+
+    @media(max-width: 768px) {
+        max-width: 768px;
+        width: 100%;
+    }
+
+    @media(max-width: 400px) {
+        max-width: 400px;
+        width: 100%;
+    }
+}

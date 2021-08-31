@@ -1,0 +1,187 @@
+/*..........Back_call_modal.........*/
+/*/////////////////////////////////*/
+
+.modal-window {
+    width: 100%;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+
+    z-index: 5000;
+
+}
+
+.modal-background {
+    display: block;
+    width: 100%;
+    height: 100%;
+     
+    overflow: auto;
+
+    backdrop-filter: blur(8px); 
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+}
+
+.modal {
+    display: block;
+    max-width: 900px;
+    width: 100%;
+    min-height: 420px;
+    padding: 50px 0;
+
+    text-align: center;
+
+    background: #FEFEFE;
+    box-shadow: 0 5px 10px rgba($black, 0.25);
+    overflow: hidden;
+
+    position: fixed;
+    z-index: 11; 
+    left: 42%;
+    top: 48%;
+    
+    margin-left: -280px;
+    margin-top: -200px; 
+        
+    animation-name: bounce;
+    animation-duration: 1s;
+
+    position: relative;
+
+    @media(max-width: 1120px) {		
+        left: 35%;
+    }
+
+    @media(max-width: 1000px) {		
+        left: 4%;
+        margin-left: 0;
+    }
+
+    @media(max-width: 900px) {		
+        max-width: 768px;
+        width: 100%;
+        min-height: 390px;
+        margin-left: 0;
+
+        left: 0;
+    }
+
+    @media(max-width: 360px) {		
+        max-width: 360px;
+        width: 100%;
+        min-height: 420px;
+        padding-top: 0;
+        
+        top: 0;
+        margin-top: 0; 
+    }
+}
+
+.modal_mobile_top {
+    @media(max-width: 360px) {	
+        display: flex;	
+        justify-content: space-between;
+        padding: 25px;
+        border-bottom: 1px solid rgba($text_color, 0.15);
+
+        margin-bottom: 25px;
+    }
+}
+
+.modal_logo {
+    display: none;
+
+    @media(max-width: 360px) {		
+        display: block;
+    }
+}
+
+.modal_close {
+    display: block;
+
+    position: absolute;
+    right: 30px;
+    top: 30px;
+
+    @media(max-width: 360px) {		
+        position: static;
+    }
+}
+
+.modal_text {
+    font-size: 24px;
+    margin-top: 10px;
+
+    @media(max-width: 768px) {		
+        font-style: 18px;
+    }
+
+    @media(max-width: 360px) {	
+        max-width: 240px;	
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+
+        font-size: 14px;
+    }
+}
+
+.modal__form {
+    margin-top: 30px;
+
+    @media(max-width: 768px) {		
+        margin-top: 25px;
+    }
+}
+
+.wpcf7-form {
+    @media(max-width: 768px) {		
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+.input_container {
+    display: flex;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media(max-width: 768px) {		
+        flex-direction: column;
+        max-width: 580px;
+        width: 100%;
+    }
+}
+
+.input--width {
+    max-width: 340px;
+    width: 100%;
+
+    @media(max-width: 768px) {		
+        max-width: 276px;
+        width: 100%;
+    }
+}
+
+.name--margin_right {
+    margin-right: 25px;
+    
+    @media(max-width: 768px) {		
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+.form_agriment__text--no_left_marg {
+    margin-left: 0;
+}
+

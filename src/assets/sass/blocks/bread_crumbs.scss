@@ -1,0 +1,48 @@
+/*..........Bread_crumbs.........*/
+/*//////////////////////////////*/
+
+.bread_crumbs {
+    max-width: 1920px;
+    width: 100%;
+    padding-top: 30px;
+    margin-bottom: 30px;
+
+    font-size: 14px;
+
+    @media(max-width: 768px) {
+        font-size: 9px;
+    }
+}
+
+.bread_crumbs__link {
+    font-family: $font_family_text;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #757E8E;
+    text-decoration: none;
+
+    &:hover {
+        color: $blue;    
+    }
+
+    &:active {
+        opacity: $active_opacity;
+    }
+
+    @media(max-width: 768px) {
+        font-size: 9px;
+    }
+}
+
+.current_point {
+    cursor: default;
+
+    &:hover {
+        color: #757E8E;    
+    }
+
+    &:active {
+        opacity: 1;
+    }
+}

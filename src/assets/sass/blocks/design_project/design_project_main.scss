@@ -1,0 +1,82 @@
+/*........Design_project_main.......*/
+/*/////////////////////////////////*/
+
+.design_project_main {
+    margin-top: 50px;
+
+    @media(max-width: 400px) {
+        margin-top: 40px;
+    }
+}
+
+.title--services_tablet {
+    @media(max-width: 768px) {
+        max-width: 400px;
+        width: 100%;
+       
+        text-align: left;
+        line-height: 1.4;
+    }
+
+    @media(max-width: 500px) {
+        text-align: center;
+    }
+}
+
+.design_project__subtitle {
+    margin-top: 25px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 45px;
+    color: #0A1936;
+
+    &--two {
+        font-size: 30px;
+    }
+
+    @media(max-width: 768px) {
+        margin-top: 20px;
+        font-size: 34px;
+    }
+
+    @media(max-width: 400px) {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+}
+
+.design_project_desc {
+    max-width: 1035px;
+    width: 100%;
+    margin-top: 20px;
+    line-height: 1.9;
+
+    @media(max-width: 768px) {
+        margin-bottom: 40px;
+        font-size: 16px;
+    }
+
+    @media(max-width: 400px) {
+        margin-top: 20px;
+        margin-bottom: 0;
+        font-size: 14px;
+    }
+    
+}
+
+.design_project__list {
+    line-height: 1.9;
+}
+
+.design_project__item::before {
+    top: 15px;
+}
+
+.buttons--no_center {
+    @media(max-width: 768px) {
+        margin-top: 10px;
+        padding: 0;
+    }
+}
+

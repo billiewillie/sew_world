@@ -1,0 +1,154 @@
+.footer {
+    padding: 0 0 40px;
+    position: relative;
+    z-index: 0;
+
+    & .container{}
+
+    & .nav {
+
+        & ul {
+            & li {
+                padding: 18px 0;
+                text-align: center;
+                line-height: 1;
+                position: relative;
+                @media (min-width: $tablet) {
+                    font-size: 18px;
+                    padding: 8px 0;
+                }
+
+                @media (min-width: $desktop) {
+                    padding: 0;
+                    font-size: 14px;
+                }
+
+                @media (min-width: $desktopLg) {
+                    font-size: 18px;
+                }
+
+                &:last-child {
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        width: 800px;
+                        height: 1px;
+                        background-color: #454545;
+                        bottom: 0;
+                        left: -400px;
+                        @media (min-width: $tablet) {
+                            display: none;
+                        }
+                    }
+                }
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    width: 800px;
+                    height: 1px;
+                    background-color: #454545;
+                    top: 0;
+                    left: -400px;
+                    @media (min-width: $tablet) {
+                        display: none;
+                    }
+                }
+            }
+
+            @media (min-width: $tablet) {
+                flex-direction: row;
+                justify-content: center;
+                gap: 45px;
+                display: flex;
+            }
+        }
+    }
+
+    & .phone {
+        margin-bottom: 32px;
+        @media (min-width: $tablet) {
+            font-size: 18px;
+            margin-bottom: 14px;
+        }
+        @media (min-width: $desktop) {
+            font-size: 18px;
+        }
+
+        @media (min-width: $desktopLg) {
+            font-size: 24px;
+        }
+    }
+
+    & .mail {
+        margin-bottom: 30px;
+        @media (min-width: $tablet) {
+            margin-bottom: 13px;
+        }
+        @media (min-width: $desktop) {
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+    }
+
+    & .socials{
+        display: flex;
+        gap: 17px;
+        & .socials__link{
+            font-weight: 400;
+            @media (min-width: $desktopLg) {
+                font-size: 18px;
+            }
+        }
+    }
+
+    @media (min-width: $tablet) {
+        padding: 50px 0;
+    }
+
+    @media (min-width: $desktop) {
+        padding: 70px 0 90px;
+    }
+}
+
+.form_subscribe{
+    display: flex;
+    max-width: 538px;
+
+    @media (min-width: $tablet) {
+        width: 538px;
+
+    }
+    @media (min-width: $desktop) {
+        justify-content: flex-end;
+    }
+    & .form_field{
+        width: 50%;
+        & .input{
+            &::placeholder{
+                font-size: 12px;
+                opacity: .5;
+            }
+        }
+
+        &:nth-child(2) {
+            max-width: 165px;
+        }
+    }
+}
+
+.subscribe{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 32px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgba(30, 30, 30, 0.2);
+    @media (min-width: $desktop) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

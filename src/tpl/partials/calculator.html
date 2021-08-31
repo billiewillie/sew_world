@@ -1,0 +1,175 @@
+<article class="calculator">
+    <div class="container">
+        <div class="form__block">
+            <h2 class="title">Рассчитайте стоимость Вашего дизайн&#8209;проекта
+            </h2>
+            <div class='form form__select'>
+                <div class="part">
+                    <div class="inner__part top">
+                        <div class="form__row select__package">
+                            <div class="custom-select select" id='package'>
+                                <select>
+                                    <option>Выберите тариф *</option>
+                                    <option>стандарт</option>
+                                    <option>премиум</option>
+                                </select>
+                            </div>
+                            <i></i>
+                            <div class="tooltiptext">
+                                <div class="info__block">
+                                    <h3 class="title">Тарифный план</h3>
+                                    <p>Нажимая "узнать точную стоимость" Вы
+                                        соглашаетесь на обработку.</p>
+                                </div>
+
+                                <div class="info__block">
+                                    <h3 class="title">Консультация дизайнера
+                                    </h3>
+                                    <p>Нажимая "узнать точную стоимость" Вы
+                                        соглашаетесь на обработку.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form__row">
+                            <div class="area_range__text">
+                                <span class="area">Общая площадь, м2</span>
+                                <div class="square_input">
+                                    <span class="plus square_plus">+</span>
+                                    <span class="minus square_minus">-</span>
+                                    <span class="square_value--mask">62
+                                        м2</span>
+                                    <input type="text"
+                                        class="area_number value__square"
+                                        value="">
+                                </div>
+                            </div>
+                            <div>
+                                <input id="square" class="range_input"
+                                    name="area" type="range" max="500" min="0"
+                                    step="1" data-range_input="" value="62"
+                                    style="background: linear-gradient(90deg, #354895 0%, #354895 12.4%, #EEF2F5 12.4%)">
+                            </div>
+
+                        </div>
+
+                        <div class="form__row style__row">
+                            <div class="custom-select select" id='style'>
+                                <select>
+                                    <option>Стиль дизайна</option>
+                                    <option>модерн</option>
+                                    <option>лофт</option>
+                                    <option>минимализм</option>
+                                    <option>экостиль</option>
+                                    <option>арт-нуво</option>
+                                    <option>классический</option>
+                                    <option>другой</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form__row checkboxes">
+
+                            <label class="checkbox_label" data-checkbox_label=""
+                                id="renovation">
+                                <input class="input_checkbox  hide"
+                                    type="checkbox" name="dismantling">
+                                <span class="checkbox" role="checkbox"
+                                    aria-checked="true"
+                                    aria-labelledby="dismantling"
+                                    id="dismantling" data-checkbox=""></span>
+                                <span class="label__text">Ремонт у нас</span>
+                            </label>
+
+                            <label class="checkbox_label" data-checkbox_label=""
+                                id="consult">
+                                <input class="input_checkbox  hide"
+                                    type="checkbox" name="redevelopment">
+                                <span class="checkbox" role="checkbox"
+                                    aria-checked="false"
+                                    aria-labelledby="redevelopment"
+                                    id="redevelopment" data-checkbox=""></span>
+                                <span class="label__text">Консультация дизайнера
+                                    <span>*</span></span>
+                                <i></i>
+                                <div class="tooltiptext">
+                                    <div class="info__block">
+                                        <p>Нажимая "узнать точную стоимость" Вы
+                                            соглашаетесь на обработку
+                                            персональных данных.</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="form__row additional_info-button">
+
+                            <span>* Дополнительная информация <i></i></span>
+
+                        </div>
+
+                        <div class="form__row additional_info hide">
+                            <div class="info__block">
+                                <h3 class="title">Тарифный план</h3>
+                                <p>Получите расчет точной стоимости ремонта
+                                    заполнив короткую форму, после чего в
+                                    течении 15
+                                    минут наш оператор свяжется с Вами</p>
+                            </div>
+
+                            <div class="info__block">
+                                <h3 class="title">Консультация дизайнера</h3>
+                                <p>Получите расчет точной стоимости ремонта
+                                    заполнив короткую форму, после чего в
+                                    течении 15
+                                    минут наш оператор свяжется с Вами</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inner__part">
+                        <div class="form__row right">
+                            <p>Примерная стоимость:</p>
+                            <p class="calculator__price"><span
+                                    class="sum">0</span> ₽</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="part">
+                    <div class="inner__part top">
+                        <div class="form__row around__price">
+                            <p class="form__title">Узнать точную стоимость</p>
+                            <p>Получите расчет точной стоимости ремонта заполнив
+                                короткую форму, после чего в течении 15
+                                минут наш оператор свяжется с Вами</p>
+                        </div>
+                    </div>
+                    <div class="inner__part">
+                        <div class="form__row">
+                            <input class="input input_data hide" type="text"
+                                placeholder="data">
+                            <input class="input" type="text" placeholder="Имя">
+                        </div>
+                        <div class="form__row calc-tel">
+                            <input class="input" type="text"
+                                placeholder="телефон">
+                        </div>
+
+                        <div class="form__row form__agriment">
+                            <p>*</p>
+                            <p class="form_agriment__text">Нажимая "узнать
+                                точную стоимость" Вы соглашаетесь на <a href="#"
+                                    class="agriment__link">обработку
+                                    персональных данных</a>.</p>
+                        </div>
+                        <div class="form__row form__button">
+                            <button class='submit' type='submit'>Узнать точную
+                                стоимость</button>
+                        </div>
+                    </div>
+
+                </div>
+                </form>
+            </div>
+        </div>
+</article>

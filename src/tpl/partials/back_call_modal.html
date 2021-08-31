@@ -1,0 +1,33 @@
+<div class="modal-window hide" data-back_call_modal>
+    <div class="modal-background"></div>
+    <div class="modal">
+
+        <div class="modal_mobile_top">
+            <a class="header__logo  modal_logo" href="index.php" >
+                <img class="logo_img" src="assets/img/header/header_logo.svg" alt="Логотип компании">
+            </a>
+                
+            
+            <button class="header__button-menu  modal_close" type="button" data-modalClose>
+                <svg class="mobile_icon mobile_icon--close">
+                    <use xlink:href="#mobileClose"></use>
+                </svg>
+            </button>
+        </div>
+
+        <div class="call_back__text_container"  data-call_back_text_box>
+            <h2 class="article_title">Заполните короткую форму</h2>   
+            <p class="modal_text">после чего  в течении 15 минут наш оператор свяжется с Вами</p>
+
+            <form class="modal__form" action="/" method="post" data-form>
+                <input class="input name name--margin_right  input--width" type="text" placeholder="Имя" data-formInput required>
+                <input class="input tel  input--width" type="tel" placeholder="+7 (000) 000 00 00" data-formInput required>
+                <button class="button  button--blue_bg  button--modal_margin" type="submit" data-submit>Отправить заявку</button>
+
+                    
+                <p class="form_agriment__text">Нажимая "узнать точную стоимость"<br> Вы соглашаетесь на <a class="agriment__link" href="#">обработку персональных данных.</a></p>
+                
+            </form>
+        </div>   
+    </div> 
+</div>
