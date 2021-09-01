@@ -1,0 +1,92 @@
+h1,
+h2,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  font-family: $font_black;
+  position: relative;
+}
+
+h1 {
+  font-size: $fz-h1-mobile;
+
+  @media (min-width: $desktop) {
+    font-size: $fz-h1-desktop;
+  }
+}
+
+h2 {
+  font-size: $fz-h2-mobile;
+
+  @media (min-width: $tablet) {
+    font-size: $fz-h2-tablet;
+  }
+}
+
+h3 {
+  font-size: $fz-h3-mobile;
+  font-family: $font_semibold;
+  line-height: 1.6;
+
+  @media (min-width: $tablet) {
+    font-size: $fz-h3-desktop;
+  }
+
+  &.title{
+    font-family: $font_regular;
+    text-transform: uppercase;
+  }
+}
+
+p {
+  line-height: 1.6;
+  @media (min-width: $desktop) {
+    font-size: 16px;
+  }
+}
+
+span{
+  font-size: 12px;
+}
+
+.accent_text {
+  color: $accent_color;
+}
+
+.title {
+  text-transform: uppercase;
+  font-family: $font_black;
+}
+
+.title_passive {
+  opacity: .2;
+}
+
+.text_helper {
+  opacity: .5;
+}
+
+.text_special{
+  display: inline-block;
+  border-bottom: 1px solid $text_color;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.watch-link{
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .5;
+}
+
+.text-link{
+  color: $accent_color;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.text_center{
+  text-align: center;
+}

@@ -1,0 +1,165 @@
+.learning{
+
+  margin-bottom: 80px;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 80px;
+  }
+
+  @media (min-width: $desktop) {
+    margin-bottom: 160px;
+  }
+
+  &__header{
+    margin-bottom: 56px;
+    @media (min-width: $tablet) {
+      margin-bottom: 80px;
+    }
+
+    @media (min-width: $desktop) {
+      margin-bottom: 0;
+    }
+  }
+
+  &_title{
+    margin-bottom: 24px;
+    @media (min-width: $tablet) {
+      text-align: center;
+    }
+
+    @media (min-width: $desktop) {
+      text-align: left;
+    }
+  }
+
+  &__text{
+    line-height: 2;
+    margin-bottom: 32px;
+
+    @media (min-width: $tablet) {
+      text-align: center;
+    }
+
+    @media (min-width: $desktop) {
+      text-align: left;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__categories{
+    display: flex;
+    margin-bottom: 40px;
+    flex-direction: column;
+    gap: 16px;
+
+    @media (min-width: $tablet) {
+      margin-bottom: 56px;
+    }
+
+    @media (min-width: $desktop) {
+      margin-bottom: 64px;
+    }
+  }
+
+  &_link{
+    font-family: $font_semibold;
+    line-height: 1.4;
+  }
+
+  &__buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  & .courses {
+
+    @media (min-width: $tablet) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    &:after {
+      content: 'flickity';
+      font-size: 0;
+      position: absolute;
+      @media (min-width: $tablet) {
+        content: '';
+      }
+    }
+
+    & .course {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 70vw;
+      height: 70vw;
+      margin-right: 6vw;
+      padding: 16px;
+
+      @media (min-width: $tablet) {
+        margin-right: inherit;
+        width: 48%;
+      }
+
+      &_1{
+        background-color: #FCF4F4;
+        margin-bottom: 40px;
+      }
+
+      &_2{
+        background-color: #FAFBFC;
+        margin-bottom: 40px;
+      }
+
+      &_3{
+        background-color: #EDFCF3;
+      }
+
+      &_4{
+        background-color: #EDFAFC;
+      }
+
+      &-header {
+        margin-bottom: 82px;
+        display: flex;
+        gap: 14px;
+
+        & .course-label{
+          font-family: $font_bold;
+        }
+      }
+
+      &-info {
+        background-color: $bg-color;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        font-family: $font_semibold;
+        font-size: 12px;
+      }
+
+      &-date{}
+
+      &-price {
+        display: inline-block;
+
+        &_before {
+          margin-left: 8px;
+          text-decoration: line-through;
+        }
+      }
+    }
+
+    & .flickity-viewport{
+      overflow: visible;
+    }
+
+    & .flickity-prev-next-button{
+      top: 100%;
+    }
+  }
+}

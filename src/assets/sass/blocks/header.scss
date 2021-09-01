@@ -61,20 +61,12 @@
             font-size: 14px;
             padding: 0;
           }
-
-          @media(min-width: $desktopLg) {
-            font-size: 18px;
-          }
         }
       }
 
       @media(min-width: $desktop) {
         display: flex;
         gap: 7px;
-      }
-
-      @media(min-width: $desktopLg) {
-        gap: 25px;
       }
     }
 
@@ -172,10 +164,6 @@
 
     @media (min-width: $desktop) {
       display: flex;
-    }
-
-    @media (min-width: $desktopLg) {
-      gap: 25px;
     }
 
     & .button {
