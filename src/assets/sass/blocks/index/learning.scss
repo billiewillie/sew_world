@@ -10,14 +10,27 @@
     margin-bottom: 160px;
   }
 
+  &_container {
+    display: flex;
+    flex-direction: column;
+  
+    @media (min-width: $desktop) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
   &__header{
     margin-bottom: 56px;
+
     @media (min-width: $tablet) {
       margin-bottom: 80px;
     }
 
     @media (min-width: $desktop) {
       margin-bottom: 0;
+      width: 37%;
     }
   }
 
@@ -70,6 +83,10 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    @media (min-width: $tablet) {
+      flex-direction: row;
+    }
   }
 
   & .courses {
@@ -79,6 +96,10 @@
       flex-direction: row;
       justify-content: space-between;
       flex-wrap: wrap;
+    }
+
+    @media (min-width: $desktop) {
+      width: 57%;
     }
 
     &:after {
@@ -102,16 +123,28 @@
       @media (min-width: $tablet) {
         margin-right: inherit;
         width: 48%;
+        height: 38vw;
+      }
+
+      @media (min-width: $desktop) {
+        height: 21vw;
       }
 
       &_1{
         background-color: #FCF4F4;
         margin-bottom: 40px;
+        @media (min-width: $desktop) {
+          margin-bottom: 0px;
+        }
       }
 
       &_2{
         background-color: #FAFBFC;
         margin-bottom: 40px;
+        @media (min-width: $desktop) {
+          margin-bottom: 0px;
+          margin-top: 40px;
+        }
       }
 
       &_3{
@@ -120,10 +153,12 @@
 
       &_4{
         background-color: #EDFAFC;
+        @media (min-width: $desktop) {
+          margin-top: 40px;
+        }
       }
 
       &-header {
-        margin-bottom: 82px;
         display: flex;
         gap: 14px;
 
@@ -140,12 +175,26 @@
         gap: 4px;
         font-family: $font_semibold;
         font-size: 12px;
+
+        @media (min-width: $tablet) {
+          font-size: 16px;
+        }
+      
+        @media (min-width: $desktop) {}
       }
 
-      &-date{}
+      &-date{
+        @media (min-width: $tablet) {
+          font-size: 12px;
+        }
+      }
 
       &-price {
         display: inline-block;
+
+        @media (min-width: $tablet) {
+          font-size: 12px;
+        }
 
         &_before {
           margin-left: 8px;
