@@ -3,7 +3,7 @@
   "useTabs": false,
   "beautify.language": {
     "html": ["html", "php", "erb"],
-    "css": [],
-    "js": []
+    "css": ["css"],
+    "js": ["js"]
   }
 }
