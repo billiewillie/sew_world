@@ -1,0 +1,10 @@
+.brands{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &-wrapper{
+    background-color: $bg_alt_color;
+    
+  }
+}

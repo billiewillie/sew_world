@@ -182,6 +182,12 @@ article {
   padding: 6px 10px;
 }
 
+.title-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .visible__sm {
   display: none !important;
 
