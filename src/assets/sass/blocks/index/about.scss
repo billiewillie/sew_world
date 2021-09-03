@@ -1,12 +1,15 @@
 .about {
   margin-bottom: 80px;
-  background-image: url("../../assets/img/about/bg-pic.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: 50%;
 
   @media (min-width: $desktop) {
     margin-bottom: 160px;
+  }
+
+  &_container {
+    background-image: url("../../assets/img/about/bg-pic.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
   }
 
   &__title {
@@ -82,7 +85,7 @@
     }
   }
 
-  &__content{
+  &__content {
     display: flex;
     flex-direction: column;
     margin-bottom: 32px;
@@ -92,7 +95,7 @@
       justify-content: space-between;
     }
 
-    &_pics{
+    &_pics {
       display: flex;
       justify-content: flex-end;
       margin-bottom: 40px;
@@ -100,34 +103,36 @@
       @media (min-width: $tablet) {
         margin-bottom: 20px;
       }
-  
+
       @media (min-width: $desktop) {
         margin-bottom: 0;
         width: 51%;
         padding-bottom: 132px;
       }
-      & .pic{
+
+      & .pic {
         width: 67%;
         position: relative;
 
         @media (min-width: $tablet) {
           width: 61%;
         }
-    
+
         @media (min-width: $desktop) {
           width: 100%;
         }
 
-        &_bounded{
+        &_bounded {
           position: absolute;
           top: 16px;
           width: 37%;
           max-width: 160px;
           transform: translateX(-40%);
+
           @media (min-width: $tablet) {
             top: 40px;
           }
-      
+
           @media (min-width: $desktop) {
             top: 56px;
             transform: translateX(-50%);

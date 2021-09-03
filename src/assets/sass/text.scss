@@ -79,6 +79,9 @@ span{
   font-size: 12px;
   line-height: 1.4;
   opacity: .5;
+  @media (min-width: $desktop) {
+    line-height: 1.2;
+  }
 }
 
 .text-link{
