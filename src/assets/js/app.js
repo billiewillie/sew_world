@@ -17,7 +17,11 @@ const ARROW = 'M0 50.3489C0 50.4822 0.0596932 50.5823 0.179077 50.6656L13.0924 6
 window.addEventListener('DOMContentLoaded', () => {
 
   // показать актуальный год в футере
-  showYear(year);
+  try {
+    showYear(year);
+  } catch (e) {
+    console.log(e);
+  }
 
   // slider на главной для раздела Обучение
   try {
