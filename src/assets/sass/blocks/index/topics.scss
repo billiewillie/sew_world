@@ -1,25 +1,78 @@
 .topics {
   margin-bottom: 80px;
-
-  @media (min-width: $tablet) {}
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 
   @media (min-width: $desktop) {
     margin-bottom: 160px;
+  }
+
+  &-list {
+
+    @media (min-width: $tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &:after {
+      content: 'flickity';
+      font-size: 0;
+      position: absolute;
+      @media (min-width: $tablet) {
+        content: '';
+      }
+    }
   }
 
   &-item {
     position: relative;
     width: 70vw;
     height: 70vw;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-right: 24px;
 
-    &_pic {
-      
+    @media (min-width: $tablet) {
+      width: 48%;
+      margin-right: 0;
+      margin-bottom: 24px;
+      height: 39vw;
+    }
+
+    @media (min-width: $desktop) {
+      width: 31.4%;
+      margin-bottom: 0;
+      height: 300px;
+    }
+
+    &:nth-child(3n) {
+      @media (min-width: $tablet) {
+        width: 100%;
+      }
+
+      @media (min-width: $desktop) {
+        width: 30%;
+      }
     }
   }
 
-  & .pic {
+  & .topics_label {
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    font-family: $font_semibold;
+    text-transform: uppercase;
+  }
+
+  & .topics-item_pic {
     position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
   }

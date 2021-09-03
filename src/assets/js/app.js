@@ -44,16 +44,17 @@ window.addEventListener('DOMContentLoaded', () => {
     console.log(e);
   }
 
-    // slider на главной для раздела Бренды
-    // try {
-    //   const flky = new Flickity('.brands-carousel', {
-    //     pageDots: false,
-    //     freeScroll: true,
-    //     arrowShape: ARROW,
-    //     cellAlign: 'left'
-    //   });
-    // } catch (e) {
-    //   console.log(e);
-    // }
+    // slider на главной для раздела Тематические подборки
+    try {
+      const flky = new Flickity('.topics-list', {
+        pageDots: false,
+        freeScroll: true,
+        watchCSS: true,
+        arrowShape: ARROW,
+        cellAlign: 'left'
+      });
+    } catch (e) {
+      console.log(e);
+    }
 
 });
