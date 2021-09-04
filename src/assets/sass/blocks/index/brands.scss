@@ -13,21 +13,21 @@
     flex-direction: column;
     gap: 24px;
 
-    @media (min-width: $tablet) {
-      padding: 0 0 0 48px;
-    }
-
     @media (min-width: $desktop) {
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 80px;
+      padding: 0 0 0 48px;
     }
   }
 
   & .title-box_brands{
     padding: 0 24px;
     @media (min-width: $tablet) {
+      padding: 0 48px;
+    }
+    @media (min-width: $desktop) {
       padding: 0;
     }
   }
@@ -37,7 +37,7 @@
     padding: 48px 0 75px;
 
     @media (min-width: $tablet) {
-      padding: 59px 0 59px;
+      padding: 59px 0 59px 48px;
       background: rgb(255, 255, 255);
       background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 19%, rgba(244, 248, 252, 1) 19%, rgba(244, 248, 252, 1) 100%);
     }
@@ -45,6 +45,7 @@
     @media (min-width: $desktop) {
       flex: auto;
       background: none;
+      padding: 59px 0 59px;
     }
 
     &__container{

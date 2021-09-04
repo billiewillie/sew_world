@@ -4,9 +4,12 @@ let path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: './src/assets/js/app.js',
+  entry: {
+    main: './src/assets/js/app.js',
+    vendor: './src/assets/js/vendor.js'
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: __dirname + '/dist/assets/js'
   },
   watch: true,

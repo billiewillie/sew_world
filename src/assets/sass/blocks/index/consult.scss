@@ -1,11 +1,47 @@
 .consult {
   margin-bottom: 65px;
+  background-color: $bg_alt_color;
+  padding: 72px 0;
 
   @media (min-width: $tablet) {
     margin-bottom: 80px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 19%, rgba(244, 248, 252, 1) 19%, rgba(244, 248, 252, 1) 100%);
   }
 
   @media (min-width: $desktop) {
     margin-bottom: 160px;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 19%, rgba(244, 248, 252, 1) 19%, rgba(244, 248, 252, 1) 88%, rgba(255, 255, 255, 1) 88%, rgba(255, 255, 255, 1) 100%);
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    @media (min-width: $desktop) {
+      padding: 0 250px 0 170px;
+    }
+  }
+
+  &-header {
+    margin-bottom: 40px;
+    @media (min-width: $tablet) {
+      margin-bottom: 0;
+      width: 49%;
+    }
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $tablet) {
+      width: 42%;
+    }
   }
 }
