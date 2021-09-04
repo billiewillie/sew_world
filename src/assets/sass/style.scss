@@ -4,12 +4,15 @@
 @import 'text';
 @import 'main';
 
+// common blocks
+@import 'blocks/footer';
+@import 'blocks/instagram';
+
+// index page
 @import 'blocks/index/topics';
 @import 'blocks/index/learning';
 @import 'blocks/index/brands';
 @import 'blocks/index/about';
-@import 'blocks/index/instagram';
-@import 'blocks/footer';
 
 /* Vendor libs */
 @import 'blocks/flickity.scss';

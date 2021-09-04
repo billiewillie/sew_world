@@ -13,11 +13,12 @@
 
     @media (min-width: $tablet) {
         width: 538px;
-
     }
+    
     @media (min-width: $desktop) {
         justify-content: flex-end;
     }
+
     & .form_field{
         width: 50%;
         & .input{
