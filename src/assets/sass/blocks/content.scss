@@ -9,24 +9,72 @@
   @media (min-width: $desktop) {
     padding: 160px 0 80px;
   }
+}
 
-  &__container {
-    display: flex;
-    flex-direction: column;
+.content__container {
+  display: flex;
+  flex-direction: column;
 
-    @media (min-width: $desktop) {
-      flex-direction: row;
-      justify-content: space-between;
-    }
+  @media (min-width: $desktop) {
+    flex-direction: row;
+    justify-content: space-between;
   }
+}
 
-  &-youtube {
-    margin-bottom: 80px;
+.title-box__content{
+  margin-bottom: 24px;
+  margin-bottom: 40px;
+}
+
+.title-box__content_articles {
+  @media (min-width: $desktop) {
+    margin-bottom: 50px;
+  }
+}
+
+.content-youtube {
+  margin-bottom: 80px;
+  @media (min-width: $tablet) {
+    margin-bottom: 120px;
+  }
+  @media (min-width: $desktop) {
+    margin-bottom: 0;
+  }
+}
+
+.content-youtube__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.youtube-item{
+  min-height: 100px;
+  border: 1px solid #000;
+  &:nth-child(1) {
+    margin-bottom: 24px;
+
     @media (min-width: $tablet) {
-      margin-bottom: 120px;
+      margin-bottom: 32px;
     }
     @media (min-width: $desktop) {
-      margin-bottom: 0;
+      margin-bottom: 40px;
     }
   }
+}
+
+.articles-list {
+
+  &:after {
+    content: 'flickity';
+    font-size: 0;
+    position: absolute;
+    @media (min-width: $desktop) {
+      content: '';
+    }
+  }
+}
+
+.article-item {
+  margin-bottom: 24px;
+  min-height: 100px;
 }

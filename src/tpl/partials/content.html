@@ -1,17 +1,58 @@
 <article class="content">
   <div class="container content__container">
     <div class="content-youtube">
-      <div class="title-box">
+      <div class="title-box title-box__content">
         <h2 class="title">youtube</h2>
         <a class="watch-link" href="">посмотреть<br>все</a>
       </div>
+      <div class="content-youtube__list">
+        <div class="youtube-item"></div>
+        <div class="youtube-item"></div>
+      </div>
     </div>
     <div class="content-articles">
-      <div class="title-box">
+      <div class="title-box title-box__content title-box__content_articles">
         <h2 class="title">статьи</h2>
         <a class="watch-link" href="">посмотреть<br>все</a>
       </div>
-      
+      <div class="articles-list" data-flickity='{ 
+          "pageDots": false, 
+          "freeScroll": true,
+          "watchCSS": true,
+          "cellAlign": "left",
+          "prevNextButtons": false}'>
+        <div class="article-item">
+          <div class="pic article-item__pic">
+            <picture>
+              <source srcset="assets/img/about/device-1-mobile.webp" type="image/webp">
+              <img class="lazyload" src="assets/img/about/device-1-mobile.jpg" alt="device" loading="lazy" width="100%"
+                height="100%">
+            </picture>
+          </div>
+          <div class="article-item__title">Иглы и лапки для шитья трикотажа</div>
+        </div>
+        <div class="article-item">
+          <div class="pic article-item__pic">
+            <picture>
+              <source srcset="assets/img/about/device-1-mobile.webp" type="image/webp">
+              <img class="lazyload" src="assets/img/about/device-1-mobile.jpg" alt="device" loading="lazy" width="100%"
+                height="100%">
+            </picture>
+          </div>
+          <div class="article-item__title">Иглы и лапки для шитья трикотажа</div>
+        </div>
+        <div class="article-item">
+          <div class="pic article-item__pic">
+            <picture>
+              <source srcset="assets/img/about/device-1-mobile.webp" type="image/webp">
+              <img class="lazyload" src="assets/img/about/device-1-mobile.jpg" alt="device" loading="lazy" width="100%"
+                height="100%">
+            </picture>
+          </div>
+          <div class="article-item__title">Иглы и лапки для шитья трикотажа</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </article>
