@@ -146,18 +146,19 @@ article {
 .media {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 6px;
   margin-bottom: 30px;
 
   & .media__link {
     border-radius: 50%;
-    width: 23px;
-    height: 23px;
+    width: 28px;
+    height: 28px;
     background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 3px;
+    overflow: hidden;
 
     &:last-child {
       padding: 5px;
@@ -167,10 +168,6 @@ article {
       width: 30px;
       height: 30px;
     }
-  }
-
-  @media (min-width: $tablet) {
-    gap: 25px;
   }
 }
 
