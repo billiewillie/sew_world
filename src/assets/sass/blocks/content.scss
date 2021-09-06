@@ -64,9 +64,19 @@
   overflow: hidden;
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 8px;
+
+  @media (min-width: $tablet) {
+    padding: 16px;
+  }
 
   @media (min-width: $desktop) {
     height: 460px;
+    padding: 24px;
   }
 
   &:nth-child(1) {
@@ -84,10 +94,54 @@
 .youtube-item__pic {
   position: absolute;
   top: 0;
-  bottom: 0;
-  z-index: 0;
+  left: 0;
+  z-index: -1;
   width: 100%;
   height: 100%;
+}
+
+.youtube-logo {
+  background-color: #fff;
+  padding: 8px;
+  margin-bottom: 2px;
+
+  & svg {
+    width: 74px;
+  }
+}
+
+.youtube-item__footer {
+  display: flex;
+}
+
+.youtube-item__title {
+  margin-right: 2px;
+  padding: 16px;
+  background-color: #fff;
+  width: 236px;
+
+  @media (min-width: $tablet) {
+    font-size: 24px;
+    width: auto;
+    padding: 24px;
+  }
+}
+
+.youtube-item__play {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+
+  @media (min-width: $tablet) {
+    width: 86px;
+  }
+  
+  & svg {
+    height: 33px;
+    width: 38px;
+  }
 }
 
 .content-articles {

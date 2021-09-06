@@ -19,11 +19,6 @@
 
 .form__subscribe{
     display: flex;
-    max-width: 538px;
-
-    @media (min-width: $tablet) {
-        width: 538px;
-    }
     
     @media (min-width: $desktop) {
         justify-content: flex-end;
@@ -31,6 +26,11 @@
 
     & .form_field{
         width: 50%;
+
+        @media (min-width: $tablet) {
+            width: 373px;
+        }
+
         & .input{
             &::placeholder{
                 font-size: 12px;
@@ -47,7 +47,7 @@
 .subscribe{
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 26px;
     padding-bottom: 32px;
     margin-bottom: 32px;
     border-bottom: 1px solid rgba(30, 30, 30, 0.2);
@@ -56,6 +56,18 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        padding-bottom: 39px;
+        margin-bottom: 39px;
+
+    }
+}
+
+.subscribe__text {
+    font-size: 16px;
+    font-family: $font_semibold;
+
+    @media (min-width: $desktop) {
+        font-size: 24px;
     }
 }
 
@@ -65,7 +77,7 @@
     align-items: flex-start;
     flex-direction: column;
     border-bottom: 1px solid rgba(30, 30, 30, 0.2);
-    padding-bottom: 32px;
+    padding-bottom: 25px;
 
     @media (min-width: $tablet) {
         border-bottom: none;
@@ -73,46 +85,47 @@
 
     @media (min-width: $desktop) {
         margin-bottom: 0;
-        width: 25%;
+        width: 37%;
+        padding-bottom: 0;
     }
 }
 
 .footer-catalog {
 
     @media (min-width: $tablet) {
-        width: 33.333%;
+        width: 35%;
     }
 
     @media (min-width: $desktop) {
-        width: 25%;
+        width: 24%;
     }
 }
 
 .footer-about {
 
     @media (min-width: $tablet) {
-        width: 33.33%;
+        width: 35%;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
     }
 
     @media (min-width: $desktop) {
-        width: 25%;
+        width: 24%;
     }
 }
 
 .footer-buy {
 
     @media (min-width: $tablet) {
-        width: 33.33%;
+        width: 30%;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
     }
 
     @media (min-width: $desktop) {
-        width: 25%;
+        width: 15%;
     }
 }
 
@@ -123,9 +136,6 @@
 
     @media (min-width: $tablet) {
         border-bottom: none;
-    }
-
-    @media (min-width: $desktop) {
         padding: 0;
     }
 
@@ -146,7 +156,7 @@
 
     &:nth-child(2) {
         @media (min-width: $tablet) {
-            margin-top: 60px;
+            margin-top: 47px;
         }
     }
 }
@@ -160,20 +170,22 @@
     @media (min-width: $tablet) {
         opacity: 1;
         transform: translate(0, 0);
-        margin-top: 24px;
+        margin-top: 15px;
         max-height: initial;
     }
 }
 
 .footer-title {
     font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: -1.5px;
 }
 
 .footer-item {
     margin-bottom: 20px;
 
-    @media (min-width: $desktop) {
-        margin-bottom: 5px;
+    @media (min-width: $tablet) {
+        margin-bottom: 6px;
     }
 
     &:last-child {
@@ -220,9 +232,32 @@
 }
 
 .footer-contacts__link {
-    margin-bottom: 16px;
+    margin-bottom: 9px;
+    font-size: 12px;
 }
 
 .footer-contacts__year {
-    margin-bottom: 32px;
+    margin-bottom: 30px;
+    font-size: 12px;
+}
+
+.payments-list {
+    display: flex;
+    margin-top: 10px;
+
+    @media (min-width: $tablet) {
+        min-height: 58px;
+    }
+
+    @media (min-width: $desktop) {
+        min-height: 47px;
+    }
+}
+
+.payment-item{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    margin-right: 16px;
 }

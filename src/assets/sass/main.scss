@@ -50,7 +50,7 @@ input {
 .button {
   border: 1px solid #333333;
   text-transform: uppercase;
-  padding: 18px 30px;
+  padding: 18px 24px;
   background-color: #fff;
   cursor: pointer;
 
@@ -132,9 +132,9 @@ article {
   height: 20px;
   display: inline-block;
 
-  & path {
-    fill: #ccc;
-  }
+  // & path {
+  //   fill: #ccc;
+  // }
 
   &_media {
     border-radius: 50%;
@@ -146,8 +146,8 @@ article {
 .media {
   display: flex;
   justify-content: center;
-  gap: 6px;
-  margin-bottom: 30px;
+  gap: 4px;
+  margin-bottom: 25px;
 
   & .media__link {
     border-radius: 50%;

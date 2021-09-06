@@ -13,35 +13,135 @@
     background: rgb(255, 255, 255);
     background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 19%, rgba(244, 248, 252, 1) 19%, rgba(244, 248, 252, 1) 88%, rgba(255, 255, 255, 1) 88%, rgba(255, 255, 255, 1) 100%);
   }
+}
 
-  &__container {
-    display: flex;
-    flex-direction: column;
+.consult__container {
+  display: flex;
+  flex-direction: column;
 
-    @media (min-width: $tablet) {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-    @media (min-width: $desktop) {
-      padding: 0 250px 0 170px;
-    }
+  @media (min-width: $tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
   }
-
-  &-header {
-    margin-bottom: 40px;
-    @media (min-width: $tablet) {
-      margin-bottom: 0;
-      width: 49%;
-    }
+  @media (min-width: $desktop) {
+    padding: 0 250px 0 170px;
   }
+}
 
-  &-form {
-    display: flex;
-    flex-direction: column;
-
-    @media (min-width: $tablet) {
-      width: 42%;
-    }
+.consult-header {
+  margin-bottom: 40px;
+  @media (min-width: $tablet) {
+    margin-bottom: 0;
+    width: 49%;
   }
+}
+
+.consult__title {
+  margin-bottom: 16px;
+}
+
+.consult-form {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $tablet) {
+    width: 42%;
+  }
+}
+
+.input-wrapper {
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.checkbox-wrapper {
+  position: relative;
+}
+
+.consult__input {
+  &::placeholder {
+    text-transform: uppercase;
+    font-family: $font_semibold;
+  }
+}
+
+.consult__checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.custom-checkbox {
+  display: flex;
+}
+
+.custom-checkbox>input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+}
+
+/* для элемента label, связанного с .custom-checkbox */
+.custom-checkbox span {
+  display: block;
+  user-select: none;
+  margin-bottom: 32px;
+  padding-left: 32px;
+}
+
+.custom-checkbox a {
+  display: block;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* создание в label псевдоэлемента before со следующими стилями */
+.custom-checkbox>span::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid $text_color;
+  margin-right: 8px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  background-color: #fff;
+}
+
+/* стили при наведении курсора на checkbox */
+.custom-checkbox>input:not(:disabled):not(:checked)+span:hover::before {
+  border-color: $text_color;
+}
+
+/* стили для активного чекбокса (при нажатии на него) */
+.custom-checkbox>input:not(:disabled):active+span::before {
+  background-color: $text_color;
+}
+
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.custom-checkbox>input:focus:not(:checked)+span::before {
+  border-color: #80bdff;
+}
+
+/* стили для чекбокса, находящегося в состоянии checked */
+.custom-checkbox>input:checked+span::before {
+  background-color: $text_color;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.consult_button {
+  width: auto;
 }
