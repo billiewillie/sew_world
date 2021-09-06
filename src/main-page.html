@@ -5,6 +5,47 @@ title: Главная
 
 <main class="main">
 
+    <div class="container">
+
+        <div class="block">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-labels">
+                        <div class="label">подарок</div>
+                        <div class="label">хит</div>
+                    </div>
+                    <div class="card-icons">
+                        <span class="card-icons__match"></span>
+                        <span class="card-icons__like"></span>
+                    </div>
+                </div>
+                <div class="card-pic">
+                    <a href="">
+                        <div class="pic">
+                            <picture>
+                                <source srcset="assets/img/goods/item-1.webp" type="image/webp">
+                                <img class="lazyload" src="assets/img/goods/item-1.jpg" alt="item"
+                                    loading="lazy" width="100%" height="100%">
+                            </picture>
+                        </div>
+                    </a>
+                </div>
+                <div class="card-availability"><span>в наличии</span></div>
+                <div class="card-title">
+                    <a href="">Швейная машина Bernina 325</a>
+                </div>
+                <div class="card-price">
+                    <span class="card-price__current">90 000 ₽</span>
+                    <span class="card-price__old">98 890 ₽</span>
+                </div>
+                <div class="card-button">
+                    <a href="" class="button">в корзину</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     {{> categories }}
 
     {{> topics }}
