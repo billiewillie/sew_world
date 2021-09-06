@@ -45,6 +45,16 @@
       }
     }
 
+    &:nth-child(5), 
+    &:nth-child(6),
+    &:nth-child(7), 
+    &:nth-child(8) {
+
+      @media (min-width: $desktop) {
+        margin-bottom: 0;
+      }
+    }
+
     &_text {
       display: flex;
       flex-direction: column;
