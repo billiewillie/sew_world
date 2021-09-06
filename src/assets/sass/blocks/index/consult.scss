@@ -119,6 +119,7 @@
   background-position: center center;
   background-size: 50% 50%;
   background-color: #fff;
+  cursor: pointer;
 }
 
 /* стили при наведении курсора на checkbox */
@@ -133,7 +134,7 @@
 
 /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
 .custom-checkbox>input:focus:not(:checked)+span::before {
-  border-color: #80bdff;
+  border-color: $text_color;
 }
 
 /* стили для чекбокса, находящегося в состоянии checked */
