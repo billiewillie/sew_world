@@ -5,12 +5,15 @@
 @import 'main';
 
 // common blocks
+@import 'blocks/header';
 @import 'blocks/footer';
 @import 'blocks/card';
 @import 'blocks/instagram';
 @import 'blocks/content';
+@import 'blocks/burger';
 
 // index page
+@import 'blocks/index/first-screen';
 @import 'blocks/index/categories';
 @import 'blocks/index/topics';
 @import 'blocks/index/learning';
