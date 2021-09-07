@@ -51,9 +51,10 @@ input {
 .button {
   border: 1px solid #333333;
   text-transform: uppercase;
-  padding: 18px 24px;
+  padding: 15px 23px;
   background-color: #fff;
   cursor: pointer;
+  font-family: $font_regular;
 
   &.button_inverse {
     background-color: #333;

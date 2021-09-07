@@ -3,10 +3,170 @@
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: calc(100vh - 118px);
+  max-height: 688px;
   display: flex;
-  flex-direction: column; 
-  padding: 0 20px;
-  margin-bottom: 50px;
+  flex-direction: column;
+  margin-bottom: 70px;
 
+  &__container {
+    padding: 0;
+    max-width: 1440px;
+    margin: auto;
+  }
+}
+
+.promos {
+  padding: 43px 0 0;
+
+  @media (min-width: $desktop) {
+    padding: 43px 0 0;
+    height: 100vh;
+    max-height: 620px;
+  }
+
+  & .flickity-page-dots {
+    bottom: 0;
+
+    & .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 0;
+      opacity: 1;
+      background: transparent;
+      border: 1px solid $accent_color;
+
+      &.is-selected {
+        background-color: $accent_color;
+      }
+    }
+  }
+
+  & .flickity-viewport {
+    overflow: hidden;
+  }
+}
+
+.promo {
+  width: 100%;
+  padding: 0 24px;
+  color: $accent_color;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100vh;
+  max-height: 480px;
+
+  @media (min-width: $tablet) {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0 48px;
+    justify-content: space-between;
+  }
+
+  @media (min-width: $desktop) {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: $tablet) {
+      width: 48%;
+    }
+
+    @media (min-width: $desktop) {
+      width: 75%;
+      margin-bottom: 0;
+    }
+  }
+
+  &-logo {
+    width: 100px;
+    margin-bottom: 21px;
+
+    @media (min-width: $desktop) {
+      margin: 0 auto 23px;
+    }
+
+    & img {
+      object-fit: contain;
+    }
+  }
+
+  &-dates {
+    margin-bottom: 12px;
+  }
+
+  &-title {
+    margin-bottom: 12px;
+    font-size: 26px;
+
+    @media (min-width: $desktop) {
+      font-size: 56px;
+    }
+  }
+
+  &-descr {
+    margin-bottom: 31px;
+
+    @media (min-width: $desktop) {
+      max-width: 440px;
+      margin: 0 auto 31px;
+      font-size: 16px;
+    }
+  }
+
+  &-button {
+    display: flex;
+
+    @media (min-width: $desktop) {
+      justify-content: center;
+    }
+
+    & .button {
+      border: 1px solid $accent_color;
+      color: $accent_color;
+    }
+  }
+
+  &-pics {
+    display: flex;
+    justify-content: space-around;
+
+    @media (min-width: $tablet) {
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 48%;
+    }
+
+    @media (min-width: $desktop) {
+      flex-direction: row;
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      justify-content: space-between;
+      width: calc(100% - 112px);
+    }
+  }
+
+  &-pic {
+    
+    & img {
+      object-fit: contain;
+      max-height: 200px;
+
+      @media (min-width: $desktop) {
+        object-fit: none;
+        max-height: inherit;
+      }
+    }
+  }
 }
