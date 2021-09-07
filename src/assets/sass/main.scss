@@ -31,6 +31,7 @@ img {
 a {
   text-decoration: none;
   font-family: $font_regular;
+  color: $text_color;
 }
 
 input {
@@ -132,15 +133,36 @@ article {
   height: 20px;
   display: inline-block;
 
-  // & path {
-  //   fill: #ccc;
-  // }
-
   &_media {
     border-radius: 50%;
     width: 28px;
     height: 28px;
   }
+}
+
+.icon_loupe {
+  width: 15px;
+  height: 15px;
+}
+
+.icon_chart {
+  width: 18px;
+  height: 14px;
+}
+
+.icon_heart {
+  width: 18px;
+  height: 17px;
+}
+
+.icon_user {
+  width: 14px;
+  height: 18px;
+}
+
+.icon_bucket {
+  width: 19px;
+  height: 18px;
 }
 
 .media {
