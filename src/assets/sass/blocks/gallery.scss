@@ -1,0 +1,129 @@
+.gallery {
+
+  margin-bottom: 80px;
+
+  @media (min-width: $desktop) {
+    margin-bottom: 128px;
+  }
+
+  &-section {
+    margin-bottom: 80px;
+    padding-bottom: 50px;
+
+    @media (min-width: $tablet) {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &__active {
+      @media (min-width: $tablet) {
+        display: block;
+        height: 100%;
+        padding-bottom: 60px;
+      }
+
+      @media (min-width: $desktop) {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &-title {
+    margin-bottom: 8px;
+  }
+
+  &-subtitle {
+    margin-bottom: 24px;
+    display: inline-block;
+  }
+
+  &-item {
+    width: 100%;
+    height: 463px;
+    margin-right: 24px;
+
+    @media (min-width: $tablet) {
+      width: 48%;
+      margin-right: 4%;
+    }
+
+    @media (min-width: $desktop) {
+      margin-right: 0;
+      width: 31.4%;
+    }
+
+    &:nth-child(3n+2) {
+      @media (min-width: $desktop) {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &-list {
+    @media (min-width: $desktop) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    &:after {
+      content: 'flickity';
+      font-size: 0;
+      position: absolute;
+      @media (min-width: $desktop) {
+        content: '';
+      }
+    }
+  }
+
+  &-card {
+    height: 463px;
+  }
+
+  &-tabs {
+    display: none;
+    @media (min-width: $tablet) {
+      display: block;
+      margin-bottom: 40px;
+    }
+  }
+
+  &-tab {
+    position: relative;
+    min-height: 45px;
+    text-align: center;
+
+    &__title {
+      opacity: .2;
+    }
+
+    &__link {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: 12px;
+      height: 17px;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      display: none;
+    }
+
+    &__active {
+      & .gallery-tab__title {
+        opacity: 1;
+      }
+
+      & .gallery-tab__link {
+        display: block;
+      }
+    }
+  }
+}
