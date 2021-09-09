@@ -1,13 +1,12 @@
 'use strict';
 
-//imports
+// imports
 import toggleBurgers from './modules/toggleBurger';
 import getGallery from './modules/getGallery';
 
-//varibles
+// varibles
 const burgers = document.querySelectorAll('.burger');
 const galleryTabs = document.querySelectorAll('.gallery-tab');
-const gallerySection = document.querySelectorAll('.gallery-section');
 
 window.addEventListener('DOMContentLoaded', () => {
 

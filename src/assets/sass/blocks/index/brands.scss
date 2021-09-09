@@ -68,6 +68,10 @@
     width: 144px;
     height: 60px;
     margin-right: 56px;
+
+    & img {
+      object-fit: contain;
+    }
   }
 
   & .flickity-prev-next-button {

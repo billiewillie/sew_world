@@ -148,12 +148,12 @@
 
       &:nth-last-child(1),
       &:nth-last-child(2) {
-        margin-bottom: 0px;
-      }
+        margin-bottom: 40px;
 
-      &:nth-child(even){
-        @media (min-width: $desktop) {
+        @media (min-width: $tablet) {
           margin-bottom: 0px;
+        }
+        @media (min-width: $desktop) {
           margin-top: 40px;
         }
       }
@@ -207,21 +207,14 @@
       &_pic{
         position: absolute;
         z-index: 0;
-        transform: rotate(-30deg);
-        right: -30%;
-        top: -15%;
-        width: 80%;
+        right: 0;
+        top: 0;
+        width: 40%;
+        height: 100%;
 
-        @media (min-width: $tablet) {
-          right: -38%;
-          top: -15%;
-          width: 67%;
-        }
-
-        @media (min-width: $desktop) {
-          right: -38%;
-          top: -15%;
-          width: 67%;
+        & img {
+          object-position: right top;
+          object-fit: contain;
         }
       }
     }

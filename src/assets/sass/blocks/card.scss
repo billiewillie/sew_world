@@ -38,6 +38,30 @@
   }
 }
 
+.card-icons {
+  display: flex;
+  align-items: center;
+}
+
+.card-icons__match {
+  display: flex;
+  overflow: hidden;
+  width: 18px;
+  height: 14px;
+  opacity: .2;
+  cursor: pointer;
+}
+
+.card-icons__like {
+  display: flex;
+  overflow: hidden;
+  width: 18px;
+  height: 16px;
+  margin-left: 10px;
+  opacity: .2;
+  cursor: pointer;
+}
+
 .card-pic {
   margin-bottom: 16px;
 
@@ -68,13 +92,19 @@
 }
 
 .card-title {
-  margin-bottom: 8px;
+  margin: 0 auto 8px;
   text-align: center;
-  font-family: $font_semibold;
+
   min-height: 52px;
+  max-width: 72%;
 
   @media (min-width: $desktop) {
     margin-bottom: 16px; 
+  }
+
+  & a {
+    font-family: $font_semibold;
+    font-size: 16px;
   }
 }
 
@@ -89,13 +119,13 @@
 }
 
 .card-price__current {
-  margin-right: 16px;
   font-size: 16px;
   font-family: $font_semibold;
 }
 
 .card-price__old {
   text-decoration: line-through;
+  margin-left: 16px;
   font-size: 16px;
 }
 
@@ -106,7 +136,7 @@
     display: none;
   }
 
-  & a {
+  & button {
     display: inline-block;
     background-color: transparent;
   }
