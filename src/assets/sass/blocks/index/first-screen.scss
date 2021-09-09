@@ -132,6 +132,11 @@
     & .button {
       border: 1px solid $accent_color;
       color: $accent_color;
+
+      &:hover {
+        background-color: $accent_color;
+        color: #fff;
+      }
     }
   }
 

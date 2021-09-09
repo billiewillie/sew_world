@@ -1,5 +1,6 @@
 html {
   height: -webkit-fill-available;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -55,11 +56,25 @@ input {
   background-color: #fff;
   cursor: pointer;
   font-family: $font_regular;
+  position: relative;
+  overflow: hidden;
+  transition: .2s;
 
   &.button_inverse {
-    background-color: #333;
+    background-color: $text_color;
+    color: #fff;
+
+    &:hover {
+      background-color: transparent;
+      color: $text_color;
+    }
+  }
+
+  &:hover {
+    background-color: $text_color;
     color: #fff;
   }
+
 }
 
 .block {

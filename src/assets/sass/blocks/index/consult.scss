@@ -96,9 +96,17 @@
   user-select: none;
   margin-bottom: 32px;
   padding-left: 32px;
+  font-size: 12px;
 
   @media (min-width: $tablet) {
     display: flex;
+  }
+}
+
+.custom-checkbox span {
+
+  @media (min-width: $desktop) {
+    margin-right: 3px;
   }
 }
 
