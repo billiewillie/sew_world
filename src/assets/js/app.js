@@ -13,6 +13,14 @@ gsap.registerPlugin(ScrollTrigger);
 const burgers = document.querySelectorAll('.burger');
 const galleryTabs = document.querySelectorAll('.gallery-tab');
 
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+} else {
+  window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+  }
+}
+
 window.addEventListener('DOMContentLoaded', () => {
 
   toggleBurgers(burgers);
@@ -20,11 +28,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   ScrollTrigger.matchMedia({
     "(min-width: 1280px)": function() {
-
-      gsap.from('.wrapper', {
-        alpha: 0,
-        duration: 4
-      })
 
       let tlGallery = gsap.timeline({
         scrollTrigger: {
