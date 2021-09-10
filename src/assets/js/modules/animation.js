@@ -31,6 +31,14 @@ const animate = () => {
         }
       })
 
+      let tlArticles = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.content',
+          scrub: true,
+          toggleActions: "play none none none"
+        }
+      })
+
       tlGallery.fromTo(".gallery-item__middle", {
         y: 80
       }, {
@@ -46,6 +54,23 @@ const animate = () => {
       tlPicture.to(".pic_bounded", {
         y: 100
       })
+
+      tlArticles.fromTo(".articles-list", {
+        y: 20
+      }, {
+        y: -20
+      })
+
+      // gsap.to('.promo-pic_left-side', {
+      //   x: -100,
+      //   alpha: 0
+      // })
+
+      // gsap.from('.promo-pic_left-side', {
+      //   x: -100,
+      //   alpha: 0,
+      //   duration: 3,
+      // })
     }
   })
 }
