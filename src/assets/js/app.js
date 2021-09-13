@@ -15,6 +15,9 @@ const galleryTabs = document.querySelectorAll(".gallery-tab");
 const header = document.querySelector(".header");
 const body = document.querySelector("body");
 
+let lastScroll = 0;
+let currentIndex = 0;
+
 if (history.scrollRestoration) {
   history.scrollRestoration = "manual";
 } else {
@@ -124,31 +127,46 @@ window.addEventListener("DOMContentLoaded", () => {
       tlAboutPic.from(".about__pic", {
         alpha: 0.3,
       });
-
-      // gsap.to('.promo-pic_left-side', {
-      //   x: -100,
-      //   alpha: 0
-      // })
     },
   });
 
-  // const flkty = new Flickity('.promos');
-  // flkty.on('change', function(index) {
-  //   gsap.to('.promo-pic_left-side', {
-  //     x: -100,
-  //     alpha: 0,
-  //     duration: 1,
-  //   })
-  //   gsap.from('.is-selected .promo-pic_left-side', {
-  //     x: -100,
-  //     alpha: 0,
-  //     duration: 2,
-  //     stagger: 1
-  //   })
-  // });
-});
+  const flkty = new Flickity(".promos", {
+    prevNextButtons: false,
+    fade: true,
+    imagesLoaded: true,
+    wrapAround: true,
+  });
 
-let lastScroll = 0;
+  flkty.on("change", function (index) {
+    if (index > currentIndex) {
+      gsap.from(".is-selected .promo-content", {
+        y: 50,
+        alpha: 0,
+        duration: 0.5,
+      });
+    } else {
+      gsap.from(".is-selected .promo-content", {
+        y: -50,
+        alpha: 0,
+        duration: 0.5,
+      });
+    }
+
+    gsap.from(".is-selected .promo-pic_left-side", {
+      x: -50,
+      alpha: 0,
+      duration: 1,
+    });
+
+    gsap.from(".is-selected .promo-pic_right-side", {
+      x: 50,
+      alpha: 0,
+      duration: 1,
+    });
+
+    currentIndex = index;
+  });
+});
 
 window.addEventListener("scroll", () => {
   const currentScroll = window.pageYOffset;
