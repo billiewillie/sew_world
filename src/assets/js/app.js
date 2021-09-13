@@ -13,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 const burgers = document.querySelectorAll(".burger");
 const galleryTabs = document.querySelectorAll(".gallery-tab");
 const header = document.querySelector(".header");
+const body = document.querySelector("body");
 
 if (history.scrollRestoration) {
   history.scrollRestoration = "manual";
@@ -147,16 +148,31 @@ window.addEventListener("DOMContentLoaded", () => {
   // });
 });
 
-// $(window).scroll(function () {
-//   const scroll = window.offsetTop;
-
-//   // if (scroll >= 100) header.addClass("fixed");
-//   // else header.removeClass("fixed");
-// });
+let lastScroll = 0;
 
 window.addEventListener("scroll", () => {
-  const scroll = window.pageYOffset;
-  console.log(scroll);
-  if (scroll >= 120) header.classList.add("fixed");
-  else header.classList.remove("fixed");
+  const currentScroll = window.pageYOffset;
+  const scrollUp = "scroll-up";
+  const scrollDown = "scroll-down";
+
+  if (currentScroll <= 0) {
+    body.classList.remove(scrollUp);
+    return;
+  }
+
+  if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
+    // down
+    body.classList.remove(scrollUp);
+    body.classList.add(scrollDown);
+    header.classList.add(scrollDown);
+  } else if (
+    currentScroll < lastScroll &&
+    body.classList.contains(scrollDown)
+  ) {
+    // up
+    body.classList.remove(scrollDown);
+    body.classList.add(scrollUp);
+    header.classList.remove(scrollDown);
+  }
+  lastScroll = currentScroll;
 });

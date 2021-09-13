@@ -58,7 +58,7 @@ input {
   font-family: $font_regular;
   position: relative;
   overflow: hidden;
-  transition: .2s;
+  transition: 0.2s;
 
   &.button_inverse {
     background-color: $text_color;
@@ -74,7 +74,6 @@ input {
     background-color: $text_color;
     color: #fff;
   }
-
 }
 
 .block {
@@ -91,6 +90,7 @@ input {
   display: flex;
   width: 100%;
   min-height: 100vh;
+  padding-top: 100px;
   overflow: hidden;
   flex-direction: column;
   justify-content: space-between;
