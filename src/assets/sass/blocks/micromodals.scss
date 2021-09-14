@@ -46,8 +46,9 @@ iframe {
 
 .modal__header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .modal__title {
@@ -63,10 +64,14 @@ iframe {
 .modal__close {
   background: transparent;
   border: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
 .modal__header .modal__close:before {
   content: "\2715";
+  color: #fff;
+  font-size: 20px;
 }
 
 .modal__btn {

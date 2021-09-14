@@ -89,6 +89,14 @@ window.addEventListener("DOMContentLoaded", () => {
         },
       });
 
+      let tlCoverAbout = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".about .cover",
+          start: "top 96%",
+          toggleActions: "play none none none",
+        },
+      });
+
       tlGallery.fromTo(
         ".gallery-item__middle",
         {
@@ -135,6 +143,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
       tlAboutPic.from(".about__pic", {
         alpha: 0.3,
+      });
+
+      tlCoverAbout.to(".about .cover", {
+        height: 0,
+        duration: 1.5,
       });
     },
   });
