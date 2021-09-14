@@ -2,7 +2,7 @@
   background-color: $bg_alt_color;
   padding: 16px 16px 24px;
   border: 8px solid $bg_alt_color;
-  transition: .2s;
+  transition: 0.2s;
 
   @media (min-width: $desktop) {
     padding: 16px 16px 32px;
@@ -18,7 +18,7 @@
       }
     }
 
-    & .card-button{
+    & .card-button {
       @media (min-width: $desktop) {
         display: flex;
         justify-content: center;
@@ -48,7 +48,7 @@
   overflow: hidden;
   width: 18px;
   height: 14px;
-  opacity: .2;
+  opacity: 0.2;
   cursor: pointer;
 }
 
@@ -58,7 +58,7 @@
   width: 18px;
   height: 16px;
   margin-left: 10px;
-  opacity: .2;
+  opacity: 0.2;
   cursor: pointer;
 }
 
@@ -94,12 +94,12 @@
 .card-title {
   margin: 0 auto 8px;
   text-align: center;
-
   min-height: 52px;
-  max-width: 72%;
+  max-width: 100%;
 
   @media (min-width: $desktop) {
-    margin-bottom: 16px; 
+    margin-bottom: 16px;
+    max-width: 72%;
   }
 
   & a {

@@ -32,13 +32,16 @@
     }
 
     & .cover {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      display: block;
-      background-color: #fff;
-      bottom: 0;
-      right: 0;
+      display: none;
+      @media (min-width: $desktop) {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: #fff;
+        bottom: 0;
+        right: 0;
+      }
     }
   }
 

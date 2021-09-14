@@ -10,7 +10,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(23, 1fr);
-  grid-gap: 24px;
+  grid-gap: 16px;
 
   @media (min-width: $desktop) {
     grid-template-columns: repeat(9, 1fr);
@@ -25,7 +25,8 @@
   right: 0;
   z-index: 0;
   text-align: right;
-  transition: width .2s;
+  transform: scale(1);
+  transition: transform 0.2s;
 
   @media (min-width: $tablet) {
     width: 60%;
@@ -39,6 +40,8 @@
 .categories__pic_cover {
   width: 100%;
   height: 100%;
+  transform: scale(1);
+  transition: transform 0.2s;
 }
 
 .categories__label {
@@ -74,13 +77,13 @@
 
   &:hover .categories__pic {
     @media (min-width: $desktop) {
-      width: 85%;
+      transform: scale(1.05);
     }
   }
 
   &:hover .categories__pic_cover {
     @media (min-width: $desktop) {
-      width: 105%;
+      transform: scale(1.05);
     }
   }
 }
