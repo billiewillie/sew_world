@@ -28,7 +28,7 @@
   }
 }
 
-.title-box__content{
+.title-box__content {
   margin-bottom: 24px;
   margin-bottom: 40px;
 }
@@ -54,7 +54,7 @@
   flex-direction: column;
 }
 
-.youtube-item{ 
+.youtube-item {
   height: 47vw;
   overflow: hidden;
   position: relative;
@@ -64,6 +64,7 @@
   justify-content: flex-end;
   align-items: flex-start;
   padding: 8px;
+  cursor: pointer;
 
   @media (min-width: $tablet) {
     padding: 16px;
@@ -132,7 +133,7 @@
   @media (min-width: $tablet) {
     width: 86px;
   }
-  
+
   & svg {
     height: 33px;
     width: 38px;
@@ -146,17 +147,16 @@
 }
 
 .articles-list {
-
   @media (min-width: $desktop) {
     padding-left: 40px;
   }
 
   &:after {
-    content: 'flickity';
+    content: "flickity";
     font-size: 0;
     position: absolute;
     @media (min-width: $desktop) {
-      content: '';
+      content: "";
     }
   }
 }

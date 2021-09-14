@@ -4,7 +4,13 @@
   @media (min-width: $desktop) {
     margin-bottom: 160px;
     flex-direction: row;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 39%, rgba(244, 248, 252, 1) 39%, rgba(244, 248, 252, 1) 100%);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 39%,
+      rgba(244, 248, 252, 1) 39%,
+      rgba(244, 248, 252, 1) 100%
+    );
   }
 
   &_container {
@@ -22,7 +28,7 @@
     }
   }
 
-  & .title-box_brands{
+  & .title-box_brands {
     padding: 0 24px;
     @media (min-width: $tablet) {
       padding: 0 48px;
@@ -39,7 +45,13 @@
     @media (min-width: $tablet) {
       padding: 59px 0 59px 48px;
       background: rgb(255, 255, 255);
-      background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 19%, rgba(244, 248, 252, 1) 19%, rgba(244, 248, 252, 1) 100%);
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 19%,
+        rgba(244, 248, 252, 1) 19%,
+        rgba(244, 248, 252, 1) 100%
+      );
     }
 
     @media (min-width: $desktop) {
@@ -48,7 +60,7 @@
       padding: 59px 0 59px;
     }
 
-    &__container{
+    &__container {
       @media (min-width: $tablet) {
         padding: 0;
       }
@@ -68,6 +80,12 @@
     width: 144px;
     height: 60px;
     margin-right: 56px;
+    filter: grayscale(1);
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: grayscale(0);
+    }
 
     & img {
       object-fit: contain;
@@ -98,7 +116,7 @@
     }
   }
 
-  & .flickity-viewport{
+  & .flickity-viewport {
     @media (min-width: $desktop) {
       overflow: visible;
       clip-path: inset(-100vw -100vw -100vw 0);

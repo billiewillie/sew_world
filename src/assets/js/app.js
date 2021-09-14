@@ -6,6 +6,7 @@ import getGallery from "./modules/getGallery";
 import Flickity from "flickity";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import MicroModal from "micromodal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,6 +15,7 @@ const burgers = document.querySelectorAll(".burger");
 const galleryTabs = document.querySelectorAll(".gallery-tab");
 const header = document.querySelector(".header");
 const body = document.querySelector("body");
+const youTubeItems = document.querySelectorAll(".youtube-item");
 
 let lastScroll = 0;
 let currentIndex = 0;
@@ -29,6 +31,13 @@ if (history.scrollRestoration) {
 window.addEventListener("DOMContentLoaded", () => {
   toggleBurgers(burgers);
   getGallery(galleryTabs);
+
+  MicroModal.init({
+    onClose: (modal) => {
+      const iframe = modal.querySelector("iframe");
+      if (iframe) iframe.remove();
+    },
+  });
 
   ScrollTrigger.matchMedia({
     "(min-width: 1280px)": function () {
@@ -193,4 +202,19 @@ window.addEventListener("scroll", () => {
     header.classList.remove(scrollDown);
   }
   lastScroll = currentScroll;
+});
+
+youTubeItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    const url = item.dataset.video;
+    const iframe = `<iframe
+                  src="https://www.youtube.com/embed/${url}"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>`;
+    const modalContent = document.querySelector("#modal-1-content");
+    modalContent.insertAdjacentHTML("beforeend", iframe);
+  });
 });
