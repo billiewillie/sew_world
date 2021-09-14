@@ -5,7 +5,7 @@
   transition: 0.2s;
 
   @media (min-width: $desktop) {
-    padding: 16px 16px 32px;
+    padding: 8px 8px 32px;
   }
 
   &:hover {
@@ -67,6 +67,10 @@
 
   & .pic {
     height: 164px;
+
+    @media (min-width: $desktop) {
+      height: 220px;
+    }
   }
 
   & img {

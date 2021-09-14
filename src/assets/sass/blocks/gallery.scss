@@ -1,5 +1,4 @@
 .gallery {
-
   margin-bottom: 80px;
 
   @media (min-width: $desktop) {
@@ -65,10 +64,11 @@
       margin-right: 0;
       width: 31.4%;
       margin-bottom: 48px;
+      height: 512px;
     }
 
-    &:nth-child(7), 
-    &:nth-child(8), 
+    &:nth-child(7),
+    &:nth-child(8),
     &:nth-child(9) {
       margin-bottom: 0;
     }
@@ -82,17 +82,17 @@
       justify-content: space-between;
     }
     &:after {
-      content: 'flickity';
+      content: "flickity";
       font-size: 0;
       position: absolute;
       @media (min-width: $desktop) {
-        content: '';
+        content: "";
       }
     }
   }
 
   &-card {
-    height: 463px;
+    height: 100%;
   }
 
   &-tabs {
@@ -111,8 +111,9 @@
     text-align: center;
 
     &__title {
-      opacity: .2;
+      opacity: 0.2;
       cursor: pointer;
+      text-transform: uppercase;
     }
 
     &__link {
@@ -125,6 +126,7 @@
       height: 23px;
       min-width: 140px;
       text-decoration: underline;
+      text-transform: uppercase;
       text-underline-offset: 2px;
       display: none;
       cursor: pointer;
@@ -137,9 +139,7 @@
 
       & .gallery-tab__link {
         display: block;
-
       }
     }
   }
-
 }
