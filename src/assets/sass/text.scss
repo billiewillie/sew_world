@@ -33,7 +33,7 @@ h3 {
     font-size: $fz-h3-desktop;
   }
 
-  &.title{
+  &.title {
     font-family: $font_regular;
     text-transform: uppercase;
   }
@@ -46,7 +46,7 @@ p {
   }
 }
 
-span{
+span {
   font-size: 12px;
 }
 
@@ -60,36 +60,41 @@ span{
 }
 
 .title_passive {
-  opacity: .2;
+  opacity: 0.2;
 }
 
 .text_helper {
-  opacity: .5;
+  opacity: 0.5;
 }
 
-.text_special{
+.text_special {
   display: inline-block;
   border-bottom: 1px solid $text_color;
   font-size: 12px;
   line-height: 1.4;
 }
 
-.watch-link{
+.watch-link {
   text-transform: uppercase;
   font-size: 12px;
   line-height: 1.4;
-  opacity: .5;
+  opacity: 0.5;
+  transition: opacity 0.32s ease-in-out;
   @media (min-width: $desktop) {
     line-height: 1.2;
   }
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
-.text-link{
+.text-link {
   color: $accent_color;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
-.text_center{
+.text_center {
   text-align: center;
 }

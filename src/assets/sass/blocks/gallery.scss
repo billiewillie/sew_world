@@ -127,9 +127,15 @@
       min-width: 140px;
       text-decoration: underline;
       text-transform: uppercase;
+      opacity: 1;
+      transition: opacity 0.32s ease-in-out;
       text-underline-offset: 2px;
       display: none;
       cursor: pointer;
+
+      &:hover {
+        opacity: 0.5;
+      }
     }
 
     &__active {

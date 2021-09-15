@@ -98,6 +98,7 @@
 
 .input-wrapper {
   margin-bottom: 15px;
+  position: relative;
 
   &:last-child {
     margin-bottom: 0;
@@ -158,6 +159,11 @@
 .custom-checkbox a {
   text-decoration: underline;
   text-underline-offset: 2px;
+  transition: opacity 0.32s ease-in-out;
+
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 .custom-checkbox > p::before {
@@ -204,4 +210,27 @@
 
 .consult_button {
   width: auto;
+}
+
+.custom__label {
+  position: absolute;
+  left: 16px;
+  top: 15px;
+  font-size: 14px;
+  color: $text_color;
+  pointer-events: none;
+  -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  -moz-transition: transform 0.3s ease, opacity 0.3s ease,
+    -moz-transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease,
+    -webkit-transform 0.3s ease, -moz-transform 0.3s ease;
+}
+
+.input:focus + .custom__label,
+.input:not(:placeholder-shown) + .custom__label {
+  opacity: 0.5;
+  font-size: 12px;
+  transform: translateY(-80%);
 }

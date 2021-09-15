@@ -10,21 +10,31 @@
     <div class="consult-form">
       <form action="" class="form">
         <div class="input-wrapper">
-          <input type="text" class="input consult__input" placeholder="имя" />
+          <input
+            type="text"
+            class="input consult__input"
+            name="name"
+            placeholder=" "
+          />
+          <label class="custom__label" for="name">имя</label>
+        </div>
+        <div class="input-wrapper">
+          <input
+            type="tel"
+            name="phone"
+            class="input consult__input"
+            placeholder=" "
+          />
+          <label class="custom__label" for="phone">Телефон</label>
         </div>
         <div class="input-wrapper">
           <input
             type="text"
+            name="message"
             class="input consult__input"
-            placeholder="Телефон"
+            placeholder=" "
           />
-        </div>
-        <div class="input-wrapper">
-          <input
-            type="text"
-            class="input consult__input"
-            placeholder="Ваше сообщение"
-          />
+          <label class="custom__label" for="message">Ваше сообщение</label>
         </div>
         <div class="checkbox-wrapper">
           <label class="custom-checkbox">
