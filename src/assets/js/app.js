@@ -20,13 +20,13 @@ const youTubeItems = document.querySelectorAll(".youtube-item");
 let lastScroll = 0;
 let currentIndex = 0;
 
-if (history.scrollRestoration) {
-  history.scrollRestoration = "manual";
-} else {
-  window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-  };
-}
+// if (history.scrollRestoration) {
+//   history.scrollRestoration = "manual";
+// } else {
+//   window.onbeforeunload = function () {
+//     window.scrollTo(0, 0);
+//   };
+// }
 
 window.addEventListener("DOMContentLoaded", () => {
   toggleBurgers(burgers);

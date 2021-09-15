@@ -8,8 +8,8 @@
     background: linear-gradient(
       90deg,
       rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 1) 19%,
-      rgba(244, 248, 252, 1) 19%,
+      rgba(255, 255, 255, 1) 25%,
+      rgba(244, 248, 252, 1) 25%,
       rgba(244, 248, 252, 1) 100%
     );
   }
@@ -17,15 +17,30 @@
   @media (min-width: $desktop) {
     margin-bottom: 160px;
     background: rgb(255, 255, 255);
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 1) 19%,
-      rgba(244, 248, 252, 1) 19%,
-      rgba(244, 248, 252, 1) 88%,
-      rgba(255, 255, 255, 1) 88%,
-      rgba(255, 255, 255, 1) 100%
-    );
+  }
+
+  &::before {
+    display: none;
+
+    @media (min-width: $desktop) {
+      position: absolute;
+      display: block;
+      content: " ";
+      height: 100%;
+      width: 1100px;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      z-index: -1;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 11%,
+        rgba(244, 248, 252, 1) 11%,
+        rgba(244, 248, 252, 1) 100%
+      );
+    }
   }
 }
 
@@ -49,10 +64,23 @@
     margin-bottom: 0;
     width: 49%;
   }
+  @media (min-width: $desktop) {
+    width: 409px;
+  }
 }
 
 .consult__title {
   margin-bottom: 16px;
+
+  @media (min-width: $desktop) {
+    font-size: 40px;
+  }
+}
+
+.consult_subtitle {
+  @media (min-width: $desktop) {
+    font-size: 14px;
+  }
 }
 
 .consult-form {
@@ -61,6 +89,10 @@
 
   @media (min-width: $tablet) {
     width: 42%;
+  }
+
+  @media (min-width: $desktop) {
+    width: 400px;
   }
 }
 
@@ -92,15 +124,15 @@
 
 .custom-checkbox {
   display: flex;
-}
 
-.custom-checkbox > input {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-  width: 24px;
-  height: 24px;
-  padding: 0;
+  & > input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+  }
 }
 
 .custom-checkbox p {

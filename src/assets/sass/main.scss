@@ -58,7 +58,7 @@ input {
   font-family: $font_regular;
   position: relative;
   overflow: hidden;
-  transition: 0.2s;
+  transition: 0.32s ease-in-out;
 
   &.button_inverse {
     background-color: $text_color;
