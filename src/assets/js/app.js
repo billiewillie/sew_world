@@ -44,6 +44,7 @@ window.addEventListener("DOMContentLoaded", () => {
       let tlGallery = gsap.timeline({
         scrollTrigger: {
           trigger: ".gallery",
+          start: "top 50%",
           scrub: true,
           toggleActions: "play none none none",
         },
@@ -68,6 +69,7 @@ window.addEventListener("DOMContentLoaded", () => {
       let tlArticles = gsap.timeline({
         scrollTrigger: {
           trigger: ".content",
+          start: "top 0%",
           scrub: true,
           toggleActions: "play none none none",
         },
@@ -120,22 +122,16 @@ window.addEventListener("DOMContentLoaded", () => {
       tlPicture.fromTo(
         ".pic_bounded",
         {
-          y: -80,
+          y: -70,
         },
         {
           y: 80,
         }
       );
 
-      tlArticles.fromTo(
-        ".articles-list",
-        {
-          y: 20,
-        },
-        {
-          y: -60,
-        }
-      );
+      tlArticles.to(".articles-list", {
+        y: -60,
+      });
 
       tlAboutText.from(".about__title", {
         y: 100,

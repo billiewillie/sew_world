@@ -77,13 +77,13 @@
 
   &:hover .categories__pic {
     @media (min-width: $desktop) {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
   }
 
   &:hover .categories__pic_cover {
     @media (min-width: $desktop) {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
   }
 }
