@@ -158,7 +158,6 @@
 
 .header-city {
   align-items: center;
-  transition: opacity 0.32s ease-in-out;
   cursor: pointer;
 
   @media (min-width: $desktop) {
@@ -166,7 +165,7 @@
   }
 
   &:hover {
-    opacity: 0.5;
+    opacity: 0.5 !important;
   }
 }
 
@@ -192,7 +191,7 @@
   cursor: pointer;
 
   &:hover {
-    opacity: 0.5;
+    opacity: 0.5 !important;
   }
   @media (min-width: $desktop) {
     order: 2;
@@ -205,11 +204,11 @@
   text-underline-offset: 2px;
   cursor: pointer;
   transition: opacity 0.32s ease-in-out;
-  cursor: pointer;
 
   &:hover {
     opacity: 0.5;
   }
+
   @media (min-width: $desktop) {
     order: 3;
     margin-left: 30px;

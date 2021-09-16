@@ -3,6 +3,7 @@
   padding: 16px 16px 24px;
   border: 8px solid $bg_alt_color;
   transition: 0.32s ease-in-out;
+  position: relative;
 
   @media (min-width: $desktop) {
     padding: 8px 8px 32px;
@@ -12,9 +13,17 @@
     border: 8px solid #fff;
     background-color: $card_hover_color;
 
-    & .card-price {
+    & .card-price__current {
       @media (min-width: $desktop) {
-        display: none;
+        transform: translateX(-10px);
+        opacity: 0;
+      }
+    }
+
+    & .card-price__old {
+      @media (min-width: $desktop) {
+        transform: translateX(10px);
+        opacity: 0;
       }
     }
 
@@ -22,6 +31,9 @@
       @media (min-width: $desktop) {
         display: flex;
         justify-content: center;
+        transform: translateY(-35px);
+        z-index: 0;
+        opacity: 1;
       }
     }
   }
@@ -114,6 +126,8 @@
 
 .card-price {
   text-align: center;
+  display: flex;
+  justify-content: center;
   margin-bottom: 16px;
 
   @media (min-width: $desktop) {
@@ -124,20 +138,33 @@
 
 .card-price__current {
   font-size: 16px;
+  transform: translateX(0);
+  opacity: 1;
   font-family: $font_semibold;
+  transition: opacity 0.32s ease-in-out, transform 0.32s ease-in-out;
 }
 
 .card-price__old {
   text-decoration: line-through;
+  transform: translateX(0);
+  opacity: 1;
   margin-left: 16px;
   font-size: 16px;
+  transition: opacity 0.32s ease-in-out, transform 0.32s ease-in-out;
 }
 
 .card-button {
   text-align: center;
 
   @media (min-width: $desktop) {
-    display: none;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    margin: auto;
+    transform: translateY(0);
+    transition: opacity 0.32s ease-in-out, transform 0.32s ease-in-out;
   }
 
   & button {

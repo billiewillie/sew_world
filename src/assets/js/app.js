@@ -157,15 +157,15 @@ window.addEventListener("DOMContentLoaded", () => {
       gsap.from(".categories-item", {
         y: 80,
         alpha: 0,
-        delay: 0.5,
-        stagger: 0.3,
+        delay: 0.8,
+        stagger: 0.1,
       });
 
       gsap.from(".promo-content > *", {
         y: 50,
         alpha: 0,
         duration: 1,
-        stagger: 0.2,
+        stagger: 0.1,
       });
 
       gsap.from(".promo-pic_left-side", {

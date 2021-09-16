@@ -29,6 +29,7 @@ body {
       opacity: 1;
       animation-fill-mode: inherit;
       transform: translate(0, 0);
+      transition: opacity 0.32s ease-in-out;
     }
   }
 }
