@@ -3,6 +3,7 @@
 // imports
 import toggleBurgers from "./modules/toggleBurger";
 import getGallery from "./modules/getGallery";
+
 import Flickity from "flickity";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -158,6 +159,25 @@ window.addEventListener("DOMContentLoaded", () => {
         alpha: 0,
         delay: 0.5,
         stagger: 0.3,
+      });
+
+      gsap.from(".promo-content > *", {
+        y: 50,
+        alpha: 0,
+        duration: 1,
+        stagger: 0.2,
+      });
+
+      gsap.from(".promo-pic_left-side", {
+        x: -50,
+        alpha: 0,
+        duration: 1,
+      });
+
+      gsap.from(".promo-pic_right-side", {
+        x: 50,
+        alpha: 0,
+        duration: 1,
       });
     },
   });
