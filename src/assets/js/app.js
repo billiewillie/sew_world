@@ -18,6 +18,7 @@ const header = document.querySelector(".header");
 const body = document.querySelector("body");
 const youTubeItems = document.querySelectorAll(".youtube-item");
 const headerTopAnimated = document.querySelectorAll(".header__top_animated");
+const galleryCard = document.querySelectorAll(".gallery-card");
 
 let lastScroll = 0;
 let currentIndex = 0;
@@ -33,6 +34,17 @@ let currentIndex = 0;
 window.addEventListener("DOMContentLoaded", () => {
   toggleBurgers(burgers);
   getGallery(galleryTabs);
+
+  galleryCard.forEach((item) => {
+    const button = item.querySelector("button");
+    const buttonText1 = "в корзину";
+    const buttonText2 = "товар в корзине";
+    button.addEventListener("click", () => {
+      item.classList.toggle("card_in-bucket");
+      button.textContent =
+        button.textContent === buttonText1 ? buttonText2 : buttonText1;
+    });
+  });
 
   headerTopAnimated.forEach((item) => {
     setTimeout(() => {

@@ -37,6 +37,16 @@
       }
     }
   }
+
+  &.card_in-bucket {
+    padding: 23px 23px 31px;
+    border: 1px solid $accent_color;
+    background-color: $card_hover_color;
+
+    @media (min-width: $desktop) {
+      padding: 15px 15px 39px;
+    }
+  }
 }
 
 .card-header {
@@ -171,4 +181,9 @@
     display: inline-block;
     background-color: transparent;
   }
+}
+
+.card-labels {
+  display: flex;
+  gap: 8px;
 }
