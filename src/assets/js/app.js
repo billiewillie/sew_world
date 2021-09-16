@@ -16,6 +16,7 @@ const galleryTabs = document.querySelectorAll(".gallery-tab");
 const header = document.querySelector(".header");
 const body = document.querySelector("body");
 const youTubeItems = document.querySelectorAll(".youtube-item");
+const headerTopAnimated = document.querySelectorAll(".header__top_animated");
 
 let lastScroll = 0;
 let currentIndex = 0;
@@ -31,6 +32,12 @@ let currentIndex = 0;
 window.addEventListener("DOMContentLoaded", () => {
   toggleBurgers(burgers);
   getGallery(galleryTabs);
+
+  headerTopAnimated.forEach((item) => {
+    setTimeout(() => {
+      item.classList.add("stop-animation");
+    }, 2000);
+  });
 
   MicroModal.init({
     onClose: (modal) => {
@@ -99,13 +106,6 @@ window.addEventListener("DOMContentLoaded", () => {
         },
       });
 
-      gsap.to(".body_index", {
-        alpha: 1,
-        duration: 1,
-        delay: 0.2,
-        ease: "none",
-      });
-
       tlGallery.fromTo(
         ".gallery-item__middle",
         {
@@ -151,6 +151,13 @@ window.addEventListener("DOMContentLoaded", () => {
       tlCoverAbout.to(".about .cover", {
         height: 0,
         duration: 1.5,
+      });
+
+      gsap.from(".categories-item", {
+        y: 80,
+        alpha: 0,
+        delay: 0.5,
+        stagger: 0.3,
       });
     },
   });
