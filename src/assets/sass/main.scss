@@ -16,6 +16,25 @@ body {
     height: 100%;
     overflow: hidden;
   }
+
+  &.body_index {
+    @media (min-width: $desktop) {
+      opacity: 0;
+      animation-name: fadeIn;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: opacity(0);
+  }
+
+  to {
+    transform: opacity(1);
+  }
 }
 
 ul {

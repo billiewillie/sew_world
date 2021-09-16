@@ -99,6 +99,13 @@ window.addEventListener("DOMContentLoaded", () => {
         },
       });
 
+      gsap.to(".body_index", {
+        alpha: 1,
+        duration: 1,
+        delay: 0.2,
+        ease: "none",
+      });
+
       tlGallery.fromTo(
         ".gallery-item__middle",
         {

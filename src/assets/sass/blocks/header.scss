@@ -12,6 +12,109 @@
   }
 }
 
+@media (min-width: $desktop) {
+  .body_index .header__bottom_animated,
+  .body_index .header__top_animated {
+    animation-name: slideIn;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    transform: translate(5px, 20px);
+    transition: transform 0.2s ease-in-out;
+    opacity: 0;
+  }
+
+  .body_index .header-burger .header__bottom_animated {
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  .body_index .header-menu__item .header__bottom_animated,
+  .body_index .header__top_animated .header-phone__number {
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.1s;
+  }
+
+  .body_index .header-menu__item:nth-child(2) .header__bottom_animated {
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s;
+  }
+
+  .body_index .header-menu__item:nth-child(3) .header__bottom_animated {
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.3s;
+  }
+
+  .body_index .header-menu__item:nth-child(4) .header__bottom_animated {
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.4s;
+  }
+
+  .body_index .header-menu__item:nth-child(5) .header__bottom_animated {
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+  }
+
+  .body_index .header-icons__item .header__bottom_animated {
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.6s;
+  }
+
+  .body_index .header-icons__item:nth-child(2) .header__bottom_animated,
+  .body_index .header__top_animated.header-callback {
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.7s;
+  }
+
+  .body_index .header-icons__item:nth-child(3) .header__bottom_animated {
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.8s;
+  }
+
+  .body_index .header-icons__item:nth-child(4) .header__bottom_animated,
+  .body_index .header__top_animated.header-consult {
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.9s;
+  }
+
+  .body_index .header-icons__item:nth-child(5) .header__bottom_animated {
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translate(5px, 20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
 .scroll-up .header {
   transform: none;
 }
