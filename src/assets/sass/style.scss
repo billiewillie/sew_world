@@ -1,3 +1,4 @@
+// common styles
 @import "vars";
 @import "reset";
 @import "fonts";
@@ -6,6 +7,7 @@
 
 // common blocks
 @import "blocks/header";
+@import "blocks/header-catalog";
 @import "blocks/footer";
 @import "blocks/card";
 @import "blocks/gallery";
