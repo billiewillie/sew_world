@@ -19,6 +19,10 @@ const body = document.querySelector("body");
 const youTubeItems = document.querySelectorAll(".youtube-item");
 const headerTopAnimated = document.querySelectorAll(".header__top_animated");
 const galleryCard = document.querySelectorAll(".gallery-card");
+const headerCatalogSubcategoriesItem = document.querySelector(
+  ".header-catalog__subcategories-item_active"
+);
+const headerCatalogWrapper = document.querySelector(".header-catalog__wrapper");
 
 let currentIndex = 0;
 
@@ -44,6 +48,30 @@ window.addEventListener("DOMContentLoaded", () => {
         button.textContent === buttonText1 ? buttonText2 : buttonText1;
     });
   });
+
+  (() => {
+    const banner = headerCatalogSubcategoriesItem.querySelector(
+      ".header-subcategories__banner"
+    );
+    const column = headerCatalogSubcategoriesItem.querySelectorAll(
+      ".header-subcategories__column"
+    );
+    if (column.length === 4) {
+      headerCatalogSubcategoriesItem.style.paddingRight = "0px";
+      headerCatalogWrapper.style.background = "#fff";
+    }
+    if (banner) {
+      const subcategories = Array.from(
+        headerCatalogSubcategoriesItem.querySelectorAll(
+          ".header-subcategories__column"
+        )
+      );
+      const elWidth = subcategories.reduce((acc, category) => {
+        return acc + category.getBoundingClientRect().width;
+      }, 0);
+      banner.style.width = `${elWidth}px`;
+    }
+  })();
 
   headerTopAnimated.forEach((item) => {
     setTimeout(() => {
