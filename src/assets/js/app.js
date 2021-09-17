@@ -20,7 +20,6 @@ const youTubeItems = document.querySelectorAll(".youtube-item");
 const headerTopAnimated = document.querySelectorAll(".header__top_animated");
 const galleryCard = document.querySelectorAll(".gallery-card");
 
-let lastScroll = 0;
 let currentIndex = 0;
 
 // if (history.scrollRestoration) {
@@ -233,6 +232,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener("scroll", () => {
+  let lastScroll = 100;
   const currentScroll = window.pageYOffset;
   const scrollUp = "scroll-up";
   const scrollDown = "scroll-down";
