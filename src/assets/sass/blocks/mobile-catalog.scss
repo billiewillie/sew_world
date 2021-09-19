@@ -1,0 +1,23 @@
+.mobile-catalog {
+  padding: 0 24px 24px;
+  background-color: $bg_alt_color;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 110px;
+  left: 0;
+  width: 100%;
+  min-height: calc(100vh - 110px);
+  z-index: 1;
+
+  &__list {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__footer {
+    display: flex;
+  }
+}

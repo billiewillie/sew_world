@@ -19,10 +19,14 @@ const body = document.querySelector("body");
 const youTubeItems = document.querySelectorAll(".youtube-item");
 const headerTopAnimated = document.querySelectorAll(".header__top_animated");
 const galleryCard = document.querySelectorAll(".gallery-card");
+const headerCatalog = document.querySelector(".header-catalog");
 const headerCatalogSubcategoriesItem = document.querySelector(
   ".header-catalog__subcategories-item_active"
 );
 const headerCatalogWrapper = document.querySelector(".header-catalog__wrapper");
+const headerCatalogCategories = document.querySelectorAll(
+  ".header-catalog__category"
+);
 
 let currentIndex = 0;
 
@@ -35,19 +39,8 @@ let currentIndex = 0;
 // }
 
 window.addEventListener("DOMContentLoaded", () => {
-  toggleBurgers(burgers);
+  toggleBurgers(burgers, headerCatalog);
   getGallery(galleryTabs);
-
-  galleryCard.forEach((item) => {
-    const button = item.querySelector("button");
-    const buttonText1 = "в корзину";
-    const buttonText2 = "товар в корзине";
-    button.addEventListener("click", () => {
-      item.classList.toggle("card_in-bucket");
-      button.textContent =
-        button.textContent === buttonText1 ? buttonText2 : buttonText1;
-    });
-  });
 
   (() => {
     const banner = headerCatalogSubcategoriesItem.querySelector(
@@ -287,6 +280,22 @@ window.addEventListener("scroll", () => {
   lastScroll = currentScroll;
 });
 
+headerCatalogCategories.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    if (!item.getAttribute("href")) {
+      e.preventDefault();
+      const category = item.dataset.target;
+      const target = document.getElementById(category);
+      const targetClass = "header-catalog__subcategories-item_active";
+      const currentActive = document.querySelector(`.${targetClass}`);
+      if (!target.classList.contains(targetClass)) {
+        currentActive.classList.remove(targetClass);
+        target.classList.add(targetClass);
+      }
+    }
+  });
+});
+
 youTubeItems.forEach((item) => {
   item.addEventListener("click", () => {
     const url = item.dataset.video;
@@ -299,5 +308,16 @@ youTubeItems.forEach((item) => {
                 ></iframe>`;
     const modalContent = document.querySelector("#modal-1-content");
     modalContent.insertAdjacentHTML("beforeend", iframe);
+  });
+});
+
+galleryCard.forEach((item) => {
+  const button = item.querySelector("button");
+  const buttonText1 = "в корзину";
+  const buttonText2 = "товар в корзине";
+  button.addEventListener("click", () => {
+    item.classList.toggle("card_in-bucket");
+    button.textContent =
+      button.textContent === buttonText1 ? buttonText2 : buttonText1;
   });
 });

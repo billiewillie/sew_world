@@ -1,10 +1,18 @@
 .header-catalog {
   position: fixed;
   z-index: 99;
-  bottom: 0;
-  top: 112px;
   left: 0;
+  top: 0;
   width: 100%;
+  display: none;
+  opacity: 0;
+  transition: transform 0.32s ease-in-out;
+
+  &.show {
+    transform: translateY(112px);
+    display: block;
+    opacity: 1;
+  }
 
   &__overlay {
     position: fixed;
@@ -13,6 +21,8 @@
     left: 0;
     bottom: 0;
     right: 0;
+    height: 110vh;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.6);
   }
 
@@ -107,6 +117,11 @@
 
   &__subcategories-item {
     padding-right: 56px;
+    display: none;
+
+    &_active {
+      display: block;
+    }
     @-moz-document url-prefix() {
       padding-bottom: 28px;
     }
