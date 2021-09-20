@@ -116,7 +116,7 @@ input {
   display: flex;
   width: 100%;
   min-height: 100vh;
-  padding-top: 100px;
+  padding-top: 110px;
   overflow: hidden;
   flex-direction: column;
   justify-content: space-between;
@@ -143,6 +143,10 @@ main.main {
 
   &.blur {
     filter: blur(20px);
+  }
+
+  &.hidden-by-mobile-catalog {
+    display: none;
   }
 }
 
@@ -174,6 +178,7 @@ article {
   width: 20px;
   height: 20px;
   display: inline-block;
+  overflow: hidden;
 
   &_media {
     border-radius: 50%;

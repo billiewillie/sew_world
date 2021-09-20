@@ -13,6 +13,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 // varibles
 const burgers = document.querySelectorAll(".burger");
+const main = document.querySelector(".main");
+const footer = document.querySelector(".footer");
 const galleryTabs = document.querySelectorAll(".gallery-tab");
 const header = document.querySelector(".header");
 const body = document.querySelector("body");
@@ -20,6 +22,7 @@ const youTubeItems = document.querySelectorAll(".youtube-item");
 const headerTopAnimated = document.querySelectorAll(".header__top_animated");
 const galleryCard = document.querySelectorAll(".gallery-card");
 const headerCatalog = document.querySelector(".header-catalog");
+const mobileCatalog = document.querySelector(".mobile-catalog");
 const headerCatalogSubcategoriesItem = document.querySelector(
   ".header-catalog__subcategories-item_active"
 );
@@ -27,19 +30,27 @@ const headerCatalogWrapper = document.querySelector(".header-catalog__wrapper");
 const headerCatalogCategories = document.querySelectorAll(
   ".header-catalog__category"
 );
+const mobileCatalogList = document.querySelector(".mobile-catalog__list");
+const backBtn = document.querySelectorAll(
+  ".mobile-catalog__accordion-inner-item-back"
+);
+const accordionContent = document.querySelector(
+  ".mobile-catalog__accordion-content"
+);
+const accordionTrigger = document.querySelector(
+  ".mobile-catalog__item_accordion .mobile-catalog__item-link"
+);
+const innerListOpener = document.querySelectorAll(
+  ".mobile-catalog__accordion-item > a"
+);
 
 let currentIndex = 0;
-
-// if (history.scrollRestoration) {
-//   history.scrollRestoration = "manual";
-// } else {
-//   window.onbeforeunload = function () {
-//     window.scrollTo(0, 0);
-//   };
-// }
+let initialMenuHeight = mobileCatalogList.getBoundingClientRect().height;
+let menuHeight = 0;
+let newMenuHeight = 0;
 
 window.addEventListener("DOMContentLoaded", () => {
-  toggleBurgers(burgers, headerCatalog);
+  toggleBurgers(burgers, headerCatalog, mobileCatalog, main, footer);
   getGallery(galleryTabs);
 
   (() => {
@@ -284,6 +295,10 @@ headerCatalogCategories.forEach((item) => {
   item.addEventListener("click", (e) => {
     if (!item.getAttribute("href")) {
       e.preventDefault();
+      headerCatalogCategories.forEach((item) => {
+        item.classList.remove("header-catalog__category_active");
+      });
+      item.classList.add("header-catalog__category_active");
       const category = item.dataset.target;
       const target = document.getElementById(category);
       const targetClass = "header-catalog__subcategories-item_active";
@@ -321,3 +336,53 @@ galleryCard.forEach((item) => {
       button.textContent === buttonText1 ? buttonText2 : buttonText1;
   });
 });
+
+accordionTrigger.addEventListener("click", (e) => {
+  e.preventDefault();
+  const count = accordionContent.childElementCount;
+  const height = count * 48;
+  accordionContent.classList.toggle("open");
+  if (accordionContent.classList.contains("open")) {
+    accordionContent.style.height = `${height}px`;
+  } else {
+    accordionContent.style.height = 0;
+  }
+});
+
+innerListOpener.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    e.preventDefault();
+    const openMenuHeight = mobileCatalogList.getBoundingClientRect().height;
+    menuHeight = openMenuHeight;
+    const listTitle = item.dataset.list;
+    const list = document.getElementById(listTitle);
+    let listHeight = list.getBoundingClientRect().height;
+    if (listHeight < initialMenuHeight)
+      list.style.height = `${initialMenuHeight + 200}px`;
+    setTimeout(() => {
+      if (listHeight > initialMenuHeight)
+        mobileCatalogList.style.maxHeight = `${listHeight}px`;
+      else {
+        mobileCatalogList.style.maxHeight = `${initialMenuHeight + 200}px`;
+      }
+    }, 500);
+
+    list.classList.add("show");
+  });
+});
+
+backBtn.forEach((item) => {
+  const list = item.closest(".mobile-catalog__accordion-inner-list");
+  item.addEventListener("click", (e) => {
+    mobileCatalogList.style.maxHeight = "inherit";
+    list.classList.remove("show");
+  });
+});
+
+// if (history.scrollRestoration) {
+//   history.scrollRestoration = "manual";
+// } else {
+//   window.onbeforeunload = function () {
+//     window.scrollTo(0, 0);
+//   };
+// }
