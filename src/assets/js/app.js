@@ -43,6 +43,12 @@ const accordionTrigger = document.querySelector(
 const innerListOpener = document.querySelectorAll(
   ".mobile-catalog__accordion-item > a"
 );
+const banner = headerCatalogSubcategoriesItem.querySelector(
+  ".header-subcategories__banner"
+);
+const column = headerCatalogSubcategoriesItem.querySelectorAll(
+  ".header-subcategories__column"
+);
 
 let currentIndex = 0;
 let initialMenuHeight = mobileCatalogList.getBoundingClientRect().height;
@@ -54,12 +60,6 @@ window.addEventListener("DOMContentLoaded", () => {
   getGallery(galleryTabs);
 
   (() => {
-    const banner = headerCatalogSubcategoriesItem.querySelector(
-      ".header-subcategories__banner"
-    );
-    const column = headerCatalogSubcategoriesItem.querySelectorAll(
-      ".header-subcategories__column"
-    );
     if (column.length === 4) {
       headerCatalogSubcategoriesItem.style.paddingRight = "0px";
       headerCatalogWrapper.style.background = "#fff";
@@ -306,6 +306,11 @@ headerCatalogCategories.forEach((item) => {
       if (!target.classList.contains(targetClass)) {
         currentActive.classList.remove(targetClass);
         target.classList.add(targetClass);
+      }
+      if (category === "header-subcategory-3") {
+        headerCatalogWrapper.classList.add("full");
+      } else {
+        headerCatalogWrapper.classList.remove("full");
       }
     }
   });
