@@ -14,7 +14,7 @@
 
     & + .header-catalog {
       @media (min-width: $desktop) {
-        transform: translateY(56px);
+        transform: translateY(55px);
       }
     }
 
@@ -58,6 +58,7 @@
     animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-delay: 0.1s;
+    transition: opacity 0.32s ease-in-out;
   }
 
   .body_index .header-menu__item:nth-child(2) .header__bottom_animated {
@@ -187,6 +188,13 @@
   }
 }
 
+.header-phone__number {
+  &:hover {
+    opacity: 0.5 !important;
+    transition: opacity 0.32 ease-in-out;
+  }
+}
+
 .header-city__text {
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -205,12 +213,14 @@
   font-family: $font_semibold;
   text-underline-offset: 2px;
   cursor: pointer;
-  transition: opacity 0.32s ease-in-out;
+  transition: opacity 0.32s ease-in-out !important;
   cursor: pointer;
 
   &:hover {
+    transition: opacity 0.32s ease-in-out !important;
     opacity: 0.5 !important;
   }
+
   @media (min-width: $desktop) {
     order: 2;
   }
@@ -224,7 +234,8 @@
   transition: opacity 0.32s ease-in-out;
 
   &:hover {
-    opacity: 0.5;
+    opacity: 0.5 !important;
+    transition: opacity 0.32s ease-in-out;
   }
 
   @media (min-width: $desktop) {
@@ -336,6 +347,7 @@
   border-left: 1px solid rgba(30, 30, 30, 0.2);
   overflow: hidden;
   position: relative;
+  cursor: pointer;
 
   &:hover:before {
     @media (min-width: $desktop) {

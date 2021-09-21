@@ -17,3 +17,10 @@
     column-count: 3;
   }
 }
+
+.additional-city-search-block a {
+  transition: opacity 0.32s;
+  &:hover {
+    opacity: 0.5;
+  }
+}

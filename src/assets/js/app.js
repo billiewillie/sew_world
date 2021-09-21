@@ -13,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // varibles
 const burgers = document.querySelectorAll(".burger");
+const dummyCover = document.querySelector(".dummy-cover");
 const main = document.querySelector(".main");
 const footer = document.querySelector(".footer");
 const galleryTabs = document.querySelectorAll(".gallery-tab");
@@ -26,6 +27,10 @@ const mobileCatalog = document.querySelector(".mobile-catalog");
 const headerCatalogSubcategoriesItem = document.querySelector(
   ".header-catalog__subcategories-item_active"
 );
+const closeModal = document.querySelector(".close-modal");
+const asideModal = document.querySelector(".aside-modal");
+
+const headerCatalogOverlay = document.querySelector(".header-catalog__overlay");
 const headerCatalogWrapper = document.querySelector(".header-catalog__wrapper");
 const headerCatalogCategories = document.querySelectorAll(
   ".header-catalog__category"
@@ -49,6 +54,10 @@ const banner = headerCatalogSubcategoriesItem.querySelector(
 const column = headerCatalogSubcategoriesItem.querySelectorAll(
   ".header-subcategories__column"
 );
+const headerConsult = document.querySelector(".header-consult");
+const headerPhoneNumber = document.querySelector(".header-phone__number");
+const headerCallback = document.querySelector(".header-callback");
+const modalRequest = document.querySelectorAll(".modal-request");
 
 let currentIndex = 0;
 let initialMenuHeight = mobileCatalogList.getBoundingClientRect().height;
@@ -95,7 +104,7 @@ window.addEventListener("DOMContentLoaded", () => {
       let tlGallery = gsap.timeline({
         scrollTrigger: {
           trigger: ".gallery",
-          start: "top 50%",
+          start: "top 30%",
           scrub: true,
           toggleActions: "play none none none",
         },
@@ -261,6 +270,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
     currentIndex = index;
   });
+
+  setTimeout(() => {
+    headerPhoneNumber.style.animationFillMode = "inherit";
+    headerConsult.style.animationFillMode = "inherit";
+    headerCallback.style.animationFillMode = "inherit";
+  }, 2000);
 });
 
 window.addEventListener("scroll", () => {
@@ -292,27 +307,37 @@ window.addEventListener("scroll", () => {
 });
 
 headerCatalogCategories.forEach((item) => {
-  item.addEventListener("click", (e) => {
-    if (!item.getAttribute("href")) {
-      e.preventDefault();
-      headerCatalogCategories.forEach((item) => {
-        item.classList.remove("header-catalog__category_active");
-      });
-      item.classList.add("header-catalog__category_active");
-      const category = item.dataset.target;
-      const target = document.getElementById(category);
-      const targetClass = "header-catalog__subcategories-item_active";
-      const currentActive = document.querySelector(`.${targetClass}`);
-      if (!target.classList.contains(targetClass)) {
-        currentActive.classList.remove(targetClass);
-        target.classList.add(targetClass);
-      }
-      if (category === "header-subcategory-3") {
-        headerCatalogWrapper.classList.add("full");
-      } else {
-        headerCatalogWrapper.classList.remove("full");
-      }
+  item.addEventListener("mouseenter", (e) => {
+    if (item.getAttribute("href") === null) {
+      setTimeout(() => {
+        e.preventDefault();
+        headerCatalogCategories.forEach((item) => {
+          item.classList.remove("header-catalog__category_active");
+        });
+        item.classList.add("header-catalog__category_active");
+        const category = item.dataset.target;
+        const target = document.getElementById(category);
+        const targetClass = "header-catalog__subcategories-item_active";
+        const currentActive = document.querySelector(`.${targetClass}`);
+        if (!target.classList.contains(targetClass)) {
+          currentActive.classList.remove(targetClass);
+          target.classList.add(targetClass);
+        }
+        if (category === "header-subcategory-3") {
+          headerCatalogWrapper.classList.add("full");
+        } else {
+          headerCatalogWrapper.classList.remove("full");
+        }
+      }, 100);
     }
+  });
+});
+
+modalRequest.forEach((item) => {
+  item.addEventListener("click", (event) => {
+    event.preventDefault();
+    dummyCover.classList.add("show");
+    asideModal.classList.add("show");
   });
 });
 
@@ -382,6 +407,21 @@ backBtn.forEach((item) => {
     mobileCatalogList.style.maxHeight = "inherit";
     list.classList.remove("show");
   });
+});
+
+headerCatalogOverlay.addEventListener("click", () => {
+  headerCatalog.classList.toggle("show");
+  burgers.forEach((item) => item.classList.remove("toggled"));
+});
+
+closeModal.addEventListener("click", () => {
+  asideModal.classList.remove("show");
+  dummyCover.classList.remove("show");
+});
+
+dummyCover.addEventListener("click", () => {
+  asideModal.classList.remove("show");
+  dummyCover.classList.remove("show");
 });
 
 // if (history.scrollRestoration) {

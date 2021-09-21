@@ -91,6 +91,11 @@
         color: $accent_color;
         text-decoration: underline;
         text-underline-offset: 2px;
+        transition: opacity 0.32s ease-in-out;
+
+        &:hover {
+          opacity: 0.5;
+        }
 
         @media (min-width: $tablet) {
           text-underline-offset: 3px;

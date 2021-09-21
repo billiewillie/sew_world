@@ -2,16 +2,16 @@
   position: fixed;
   z-index: 99;
   left: 0;
-  top: 0;
+  top: -100%;
   width: 100%;
   opacity: 0;
   transform: translateY(0px);
   overflow: hidden;
-  height: 0;
-  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out,
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out,
     height 0.2s ease-in-out;
 
   &.show {
+    top: 0;
     transform: translateY(110px);
     opacity: 1;
     z-index: 99;
@@ -56,10 +56,11 @@
   &__container {
     display: flex;
     max-height: 80vh;
+    height: 80vh;
   }
 
   &__categories {
-    padding: 32px 0 56px;
+    padding: 32px 20px 56px 0;
     width: 27%;
     display: flex;
     flex-direction: column;
@@ -97,6 +98,10 @@
     margin-bottom: 16px;
     cursor: pointer;
     opacity: 0.7;
+    position: relative;
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    background-size: 7px 14px;
 
     &:last-child {
       margin-bottom: 0;
@@ -135,7 +140,9 @@
     display: none;
 
     &_active {
-      display: block;
+      display: flex;
+      min-height: 100%;
+      flex-direction: column;
     }
     @-moz-document url-prefix() {
       padding-bottom: 28px;
@@ -171,6 +178,7 @@
   &__list {
     display: flex;
     margin-bottom: 32px;
+    flex: auto;
   }
 
   &__banner {

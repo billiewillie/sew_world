@@ -82,6 +82,11 @@
   &_link {
     font-family: $font_semibold;
     line-height: 1.4;
+    transition: opacity 0.32s ease-in-out;
+
+    &:hover {
+      opacity: 0.5;
+    }
   }
 
   &__buttons {

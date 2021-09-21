@@ -13,6 +13,15 @@
   &.hidden-by-mobile-catalog {
     display: none;
   }
+
+  &__button {
+    font-size: 14px;
+  }
+
+  & &__label {
+    text-transform: capitalize;
+    opacity: 0.5;
+  }
 }
 
 .footer__container {
@@ -183,7 +192,6 @@
 .footer-title {
   font-size: 16px;
   text-transform: uppercase;
-  letter-spacing: -1.5px;
 }
 
 .footer-item {
@@ -213,6 +221,19 @@
 .footer-link {
   font-size: 12px;
   color: #333;
+  transition: opacity 0.32s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.footer-city {
+  padding-right: 20px;
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  background-size: 14px 7px;
 }
 
 @keyframes flipdown {
@@ -247,6 +268,11 @@
 .footer-contacts__link {
   margin-bottom: 9px;
   font-size: 12px;
+  transition: opacity 0.32s ease-in-out;
+
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 .footer-contacts__year {

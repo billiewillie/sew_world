@@ -118,7 +118,7 @@
 
     &__link {
       position: absolute;
-      left: 100%;
+      left: calc(100% + 16px);
       top: 0;
       bottom: 0;
       margin: auto;
@@ -144,7 +144,7 @@
       }
 
       & .gallery-tab__link {
-        display: block;
+        display: flex;
       }
     }
   }

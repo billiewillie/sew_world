@@ -6,7 +6,8 @@
 
   <body class="body body_index">
     <div class="wrapper">
-      {{> header }} {{> header-catalog }} {{> mobile-catalog }}
+      {{> header }} {{> header-catalog }} {{> mobile-catalog }} {{> aside-modal
+      }}
 
       <!-- Content -->
       <main class="main">{{> body }}</main>
@@ -38,7 +39,7 @@
         </div>
       </div>
       {{> city-select }}
-      </div>
+      <div class="dummy-cover"></div>
       <script src="assets/js/vendor.bundle.js"></script>
       <script src="assets/js/main.bundle.js"></script>
     </div>
