@@ -226,16 +226,11 @@ article {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3px;
     overflow: hidden;
     transition: transform 0.32s ease-in-out;
 
     &:hover {
       transform: translateY(-2px);
-    }
-
-    &:last-child {
-      padding: 5px;
     }
 
     @media (min-width: $tablet) {
