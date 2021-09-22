@@ -24,6 +24,7 @@ const headerTopAnimated = document.querySelectorAll(".header__top_animated");
 const galleryCard = document.querySelectorAll(".gallery-card");
 const headerCatalog = document.querySelector(".header-catalog");
 const mobileCatalog = document.querySelector(".mobile-catalog");
+const modalInnerWrap = document.querySelectorAll(".modal-inner-wrap");
 const headerCatalogSubcategoriesItem = document.querySelector(
   ".header-catalog__subcategories-item_active"
 );
@@ -334,10 +335,13 @@ headerCatalogCategories.forEach((item) => {
 });
 
 modalRequest.forEach((item) => {
+  const modalRequest = item.dataset.modal;
+  const modal = document.getElementById(modalRequest);
   item.addEventListener("click", (event) => {
     event.preventDefault();
     dummyCover.classList.add("show");
     asideModal.classList.add("show");
+    modal.classList.add("show");
   });
 });
 
@@ -433,11 +437,21 @@ headerCatalogOverlay.addEventListener("click", () => {
 closeModal.addEventListener("click", () => {
   asideModal.classList.remove("show");
   dummyCover.classList.remove("show");
+  setTimeout(() => {
+    modalInnerWrap.forEach((el) => {
+      el.classList.remove("show");
+    });
+  }, 300);
 });
 
 dummyCover.addEventListener("click", () => {
   asideModal.classList.remove("show");
   dummyCover.classList.remove("show");
+  setTimeout(() => {
+    modalInnerWrap.forEach((el) => {
+      el.classList.remove("show");
+    });
+  }, 300);
 });
 
 // if (history.scrollRestoration) {

@@ -61,7 +61,8 @@ a {
   color: $text_color;
 }
 
-input {
+input,
+textarea {
   font-family: $font_regular;
   padding: 16px;
   border: 1px solid $text_color;

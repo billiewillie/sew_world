@@ -1,10 +1,7 @@
 <header class="header">
   <div class="header__top">
     <div class="container header__container">
-      <span
-        class="header-city visible__sm header__top_animated"
-        data-micromodal-trigger="modal-2"
-      >
+      <span class="header-city visible__sm header__top_animated modal-request">
         <span class="header-city__icon">
           <svg>
             <use xlink:href="#location"></use>
@@ -19,7 +16,7 @@
       </div>
       <a
         type="tel"
-        href="+78126556727"
+        href="tel:+78126556727"
         class="header-phone header__top_animated"
       >
         <span class="icon header-phone__icon hidden__sm">
@@ -29,10 +26,14 @@
         </span>
         <span class="header-phone__number visible__sm">+7 (812) 655-67-27</span>
       </a>
-      <span class="header-callback visible__md header__top_animated"
+      <span
+        class="header-callback visible__md header__top_animated"
+        data-modal="modal-phone"
         >Обратный звонок</span
       >
-      <span class="header-consult visible__md header__top_animated"
+      <span
+        class="header-consult visible__md header__top_animated modal-request"
+        data-modal="modal-question"
         >Нужна консультация</span
       >
       <div class="header-burger hidden__sm">
@@ -84,27 +85,30 @@
           </span>
         </a>
         <a href="" class="header-icons__item">
-          <span class="icon icon_chart header__bottom_animated">
+          <span
+            class="icon icon_chart header__bottom_animated"
+            data-modal="modal-login"
+          >
             <svg>
               <use xlink:href="#chart"></use>
             </svg>
           </span>
         </a>
-        <a class="header-icons__item modal-request">
+        <a class="header-icons__item modal-request" data-modal="modal-login">
           <span class="icon icon_heart header__bottom_animated">
             <svg>
               <use xlink:href="#heart"></use>
             </svg>
           </span>
         </a>
-        <a class="header-icons__item modal-request">
+        <a class="header-icons__item modal-request" data-modal="modal-login">
           <span class="icon icon_user header__bottom_animated">
             <svg>
               <use xlink:href="#user"></use>
             </svg>
           </span>
         </a>
-        <a class="header-icons__item modal-request">
+        <a class="header-icons__item modal-request" data-modal="modal-login">
           <span class="icon icon_bucket header__bottom_animated">
             <svg>
               <use xlink:href="#bucket"></use>

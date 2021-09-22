@@ -43,6 +43,7 @@
 
     @media (min-width: $tablet) {
       font-size: 24px;
+      max-width: 300px;
     }
   }
 
@@ -58,6 +59,7 @@
   overflow-y: auto;
   transition: opacity 0.5s;
   display: none;
+  overflow: hidden;
 
   &.show {
     display: flex;
