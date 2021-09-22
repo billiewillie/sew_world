@@ -113,7 +113,7 @@
     }
 
     @media (min-width: $desktop) {
-      width: 57%;
+      width: 56%;
     }
 
     &:after {
@@ -172,7 +172,7 @@
 
       &-header {
         display: flex;
-        gap: 14px;
+        gap: 11px;
         position: relative;
         z-index: 1;
 
@@ -195,6 +195,17 @@
         @media (min-width: $tablet) {
           font-size: 16px;
         }
+
+        @media (min-width: $desktop) {
+          gap: 0;
+          padding: 16px 18px;
+        }
+      }
+
+      &-title {
+        text-transform: uppercase;
+        line-height: 1.7;
+        margin-bottom: 4px;
       }
 
       &-date {
@@ -221,7 +232,7 @@
         z-index: 0;
         right: 0;
         top: 0;
-        width: 40%;
+        width: 49%;
         height: 100%;
 
         & img {

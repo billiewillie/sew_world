@@ -358,12 +358,28 @@ youTubeItems.forEach((item) => {
 
 galleryCard.forEach((item) => {
   const button = item.querySelector("button");
+  const like = item.querySelector(".card-icons__like");
+  const match = item.querySelector(".card-icons__match");
   const buttonText1 = "в корзину";
   const buttonText2 = "товар в корзине";
   button.addEventListener("click", () => {
     item.classList.toggle("card_in-bucket");
     button.textContent =
       button.textContent === buttonText1 ? buttonText2 : buttonText1;
+  });
+
+  like.addEventListener("click", () => {
+    like.classList.toggle("card-icons_clicked");
+    const isLiked = item.dataset.liked;
+    const dataLike = isLiked === "true" ? "false" : "true";
+    item.setAttribute("data-liked", dataLike);
+  });
+
+  match.addEventListener("click", () => {
+    match.classList.toggle("card-icons_clicked");
+    const isMatched = item.dataset.match;
+    const dataLike = isMatched === "true" ? "false" : "true";
+    item.setAttribute("data-match", dataLike);
   });
 });
 

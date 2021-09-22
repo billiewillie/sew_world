@@ -1,5 +1,5 @@
-<aside class="aside-modal">
-  <div class="modal-inner-wrap">
+<aside class="aside-modal show">
+  <div class="modal-inner-wrap modal-login" id="modal-login">
     <header class="modal-header">
       <a class="close-modal"
         ><img src="assets/img/icons/close-cross.svg" alt="Close"
@@ -8,9 +8,7 @@
     <div class="vertical-content__content">
       <div class="vertical-content__body">
         <header class="aside-modal__header">
-          <h3 class="heading-3-modal vertical-content__title">
-            Войти или зарегистрироваться
-          </h3>
+          <h3 class="aside-modal__title">Войти или зарегистрироваться</h3>
         </header>
 
         <form action="" class="form aside-modal__form">
@@ -28,6 +26,63 @@
           <div class="button-wrapper aside-modal__buton-wrapper">
             <button class="button button_inverse button_aside" type="submit">
               Получить код в смс
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal-inner-wrap modal-city show" id="modal-question">
+    <header class="modal-header">
+      <a class="close-modal"
+        ><img src="assets/img/icons/close-cross.svg" alt="Close"
+      /></a>
+    </header>
+    <div class="vertical-content__content">
+      <div class="vertical-content__body">
+        <header class="aside-modal__header">
+          <h3 class="aside-modal__title">У вас есть вопросы?</h3>
+          <p class="aside-modal__subtitle">
+            Оставьте номер телефона, мы перезвоним вам в ближайшее время
+          </p>
+        </header>
+
+        <form action="" class="form aside-modal__form">
+          <div class="input-wrapper">
+            <input
+              type="tel"
+              maxlength="16"
+              class="input"
+              name="name"
+              placeholder=" "
+            />
+            <label class="custom__label" for="name">имя</label>
+          </div>
+
+          <div class="input-wrapper">
+            <input
+              type="tel"
+              maxlength="16"
+              class="input"
+              name="name"
+              placeholder=" "
+            />
+            <label class="custom__label" for="name">телефон*</label>
+          </div>
+
+          <div class="checkbox-wrapper">
+            <label class="custom-checkbox">
+              <input type="checkbox" name="color-1" value="indigo" />
+              <p>
+                <span>Согласен на обработку</span>
+                <a href="">персональных&#160;данных</a>
+              </p>
+            </label>
+          </div>
+
+          <div class="button-wrapper aside-modal__buton-wrapper">
+            <button class="button button_inverse button_aside" type="submit">
+              жду звонка
             </button>
           </div>
         </form>

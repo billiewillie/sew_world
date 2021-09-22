@@ -72,6 +72,14 @@
   height: 14px;
   opacity: 0.2;
   cursor: pointer;
+  position: relative;
+  transition: opacity 0.32s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
+  & img {
+    display: none;
+  }
 }
 
 .card-icons__like {
@@ -82,6 +90,23 @@
   margin-left: 10px;
   opacity: 0.2;
   cursor: pointer;
+  position: relative;
+  transition: opacity 0.32s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
+  & img {
+    display: none;
+  }
+}
+
+.card-icons_clicked {
+  opacity: 1;
+
+  & img {
+    position: absolute;
+    display: flex;
+  }
 }
 
 .card-pic {
@@ -185,5 +210,5 @@
 
 .card-labels {
   display: flex;
-  gap: 8px;
+  gap: 5px;
 }

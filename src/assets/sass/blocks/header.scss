@@ -240,7 +240,7 @@
 
   @media (min-width: $desktop) {
     order: 3;
-    margin-left: 30px;
+    margin-left: 28px;
   }
 }
 
@@ -257,6 +257,9 @@
 
   &:hover {
     opacity: 0.5;
+  }
+  @media (min-width: $desktop) {
+    padding-right: 16px;
   }
 }
 

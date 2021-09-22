@@ -6,7 +6,7 @@
   max-height: 688px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 70px;
+  margin-bottom: 65px;
 
   &__container {
     padding: 0;
@@ -24,7 +24,7 @@
   }
 
   & .flickity-page-dots {
-    bottom: 0;
+    bottom: 5px;
 
     & .dot {
       width: 8px;
@@ -179,13 +179,12 @@
   }
 
   &-pic {
-
     width: 45%;
 
     @media (min-width: $desktop) {
       width: auto;
     }
-    
+
     & img {
       object-fit: contain;
       max-height: 200px;
@@ -194,6 +193,16 @@
         object-fit: none;
         max-height: inherit;
       }
+    }
+
+    &_left-side {
+      padding-bottom: 45px;
+      margin-left: -20px;
+    }
+
+    &_right-side {
+      padding-right: 10px;
+      margin-bottom: -8px;
     }
   }
 }

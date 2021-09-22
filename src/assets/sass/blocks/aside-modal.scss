@@ -35,6 +35,20 @@
   &__buton-wrapper {
     margin-top: 40px;
   }
+
+  &__title {
+    font-size: 18px;
+    font-family: $font_bold;
+    margin-bottom: 16px;
+
+    @media (min-width: $tablet) {
+      font-size: 24px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 14px;
+  }
 }
 
 .modal-inner-wrap {
@@ -43,6 +57,11 @@
   height: 100%;
   overflow-y: auto;
   transition: opacity 0.5s;
+  display: none;
+
+  &.show {
+    display: flex;
+  }
 }
 
 .modal-header {
@@ -56,19 +75,10 @@
   height: 18px;
   transition: transform 0.32s ease-in-out;
   display: flex;
+  cursor: pointer;
 
   &:hover {
     transform: rotate(90deg);
-  }
-}
-
-.heading-3-modal {
-  font-size: 18px;
-  font-family: $font_bold;
-  margin-bottom: 16px;
-
-  @media (min-width: $tablet) {
-    font-size: 24px;
   }
 }
 
