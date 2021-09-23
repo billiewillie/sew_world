@@ -70,12 +70,13 @@
     }
 
     & img {
+      will-change: transform;
       transition: transform 0.32s ease-in-out;
     }
 
     &:hover {
       & img {
-        transform: scale(1.03) rotate(0.02deg);
+        transform: scale(1.03);
       }
     }
   }

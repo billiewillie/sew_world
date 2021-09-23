@@ -61,7 +61,7 @@
 
   &__categories {
     padding: 32px 20px 56px 0;
-    width: 27%;
+    min-width: 330px;
     display: flex;
     flex-direction: column;
     border-right: 1px solid rgba(30, 30, 30, 0.1);
@@ -82,9 +82,10 @@
   &__subcategories {
     padding: 32px 0 56px 54px;
     background-color: #fff;
-    overflow-y: auto;
-    scrollbar-color: auto;
-    scrollbar-width: thin;
+    overflow: hidden;
+    // overflow-y: auto;
+    // scrollbar-color: auto;
+    // scrollbar-width: thin;
   }
 
   &__popular-categories,
@@ -177,7 +178,6 @@
 
   &__list {
     display: flex;
-    margin-bottom: 32px;
     flex: auto;
   }
 

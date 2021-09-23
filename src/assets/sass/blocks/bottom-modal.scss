@@ -1,0 +1,87 @@
+.bottom-modal {
+  position: fixed;
+  z-index: 999;
+  // visibility: hidden;
+  transition-property: opacity, visibility, transform;
+  transition-duration: 0.32s;
+  background-color: $bg_alt_color;
+  will-change: transform;
+  bottom: 0;
+  right: 0;
+  max-width: none;
+  width: 100%;
+  min-height: 370px;
+  padding: 14px 24px;
+  transform: translateY(100%);
+
+  &.show {
+    transform: translateY(0%);
+  }
+
+  @media (min-width: $desktop) {
+    display: none;
+  }
+
+  &__header {
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-family: $font_black;
+
+    @media (min-width: $tablet) {
+      font-size: 24px;
+      max-width: 300px;
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+  }
+
+  &__chosen {
+    font-size: 12px;
+    margin-bottom: 24px;
+  }
+
+  &__cities {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    width: calc(100% - 48px);
+    height: 200px;
+    overflow-y: scroll;
+  }
+
+  &__form {
+    margin-bottom: 24px;
+  }
+
+  &__city {
+    margin-bottom: 16px;
+    font-size: 14px;
+
+    &_popular {
+      font-family: $font_bold;
+    }
+  }
+
+  .custom__label_bottom-modal {
+    left: 15px;
+    top: 18px;
+    text-transform: capitalize;
+  }
+
+  .custom__input_bottom-modal {
+    padding: 19px 15px;
+
+    &:focus {
+      background-color: #fff;
+    }
+  }
+}

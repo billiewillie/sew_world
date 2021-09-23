@@ -41,9 +41,10 @@
 .categories__pic_cover {
   width: 100%;
   height: 100%;
-  transform: scale(1);
-  will-change: transform;
-  transition: transform 0.32s ease-in-out;
+  & img {
+    will-change: transform;
+    transition: transform 0.32s ease-in-out;
+  }
 }
 
 .categories__label {
@@ -84,7 +85,7 @@
     }
   }
 
-  &:hover .categories__pic_cover {
+  &:hover .categories__pic_cover img {
     @media (min-width: $desktop) {
       transform: scale(1.03);
     }

@@ -106,7 +106,7 @@ function css() {
 }
 
 function images() {
-  return src(path.src.images).pipe(imagemin()).pipe(dest(path.build.images));
+  return src(path.src.images).pipe(dest(path.build.images));
 }
 
 function favicon() {

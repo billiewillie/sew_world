@@ -3,7 +3,6 @@
 // imports
 import toggleBurgers from "./modules/toggleBurger";
 import getGallery from "./modules/getGallery";
-
 import Flickity from "flickity";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -29,8 +28,9 @@ const headerCatalogSubcategoriesItem = document.querySelector(
   ".header-catalog__subcategories-item_active"
 );
 const closeModal = document.querySelector(".close-modal");
+// const bottomCloseModal = document.querySelector(".bottom-modal__close");
 const asideModal = document.querySelector(".aside-modal");
-
+// const bottomModal = document.querySelector(".bottom-modal");
 const headerCatalogOverlay = document.querySelector(".header-catalog__overlay");
 const headerCatalogWrapper = document.querySelector(".header-catalog__wrapper");
 const headerCatalogCategories = document.querySelectorAll(
@@ -290,6 +290,11 @@ window.addEventListener("scroll", () => {
     return;
   }
 
+  if (currentScroll <= 0) {
+    body.classList.remove(scrollUp);
+    return;
+  }
+
   if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
     // down
     body.classList.remove(scrollUp);
@@ -307,8 +312,12 @@ window.addEventListener("scroll", () => {
   lastScroll = currentScroll;
 });
 
+window.addEventListener("mousedown", (e) => {
+  e.preventDefault();
+});
+
 headerCatalogCategories.forEach((item) => {
-  item.addEventListener("mouseenter", (e) => {
+  item.addEventListener("click", (e) => {
     if (item.getAttribute("href") === null) {
       setTimeout(() => {
         e.preventDefault();
@@ -334,14 +343,36 @@ headerCatalogCategories.forEach((item) => {
   });
 });
 
+// modalRequest.forEach((item) => {
+//   const modalRequest = item.dataset.modal;
+//   let modal;
+
+//   item.addEventListener("click", (event) => {
+//     event.preventDefault();
+//     if (window.innerWidth < 1280 && modalRequest === "modal-city") {
+//       modal = document.getElementById(`${modalRequest}_mobile`);
+//       bottomModal.classList.add("show");
+//       mobileCatalog.classList.remove("show");
+//       modal.classList.add("show");
+//     } else {
+//       modal = document.getElementById(modalRequest);
+//       console.log(document.getElementById("modal-city"));
+//       asideModal.classList.add("show");
+//       modal.classList.add("show");
+//     }
+//     dummyCover.classList.add("show");
+//   });
+// });
+
 modalRequest.forEach((item) => {
   const modalRequest = item.dataset.modal;
   const modal = document.getElementById(modalRequest);
+
   item.addEventListener("click", (event) => {
     event.preventDefault();
-    dummyCover.classList.add("show");
     asideModal.classList.add("show");
     modal.classList.add("show");
+    dummyCover.classList.add("show");
   });
 });
 
@@ -443,6 +474,11 @@ closeModal.addEventListener("click", () => {
     });
   }, 300);
 });
+
+// bottomCloseModal.addEventListener("click", () => {
+//   bottomModal.classList.remove("show");
+//   dummyCover.classList.remove("show");
+// });
 
 dummyCover.addEventListener("click", () => {
   asideModal.classList.remove("show");
