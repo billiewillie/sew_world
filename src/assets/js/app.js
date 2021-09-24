@@ -12,6 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // varibles
 const burgers = document.querySelectorAll(".burger");
+const inputs = document.querySelectorAll(".input");
 const dummyCover = document.querySelector(".dummy-cover");
 const main = document.querySelector(".main");
 const footer = document.querySelector(".footer");
@@ -28,9 +29,7 @@ const headerCatalogSubcategoriesItem = document.querySelector(
   ".header-catalog__subcategories-item_active"
 );
 const closeModal = document.querySelector(".close-modal");
-// const bottomCloseModal = document.querySelector(".bottom-modal__close");
 const asideModal = document.querySelector(".aside-modal");
-// const bottomModal = document.querySelector(".bottom-modal");
 const headerCatalogOverlay = document.querySelector(".header-catalog__overlay");
 const headerCatalogWrapper = document.querySelector(".header-catalog__wrapper");
 const headerCatalogCategories = document.querySelectorAll(
@@ -62,8 +61,6 @@ const modalRequest = document.querySelectorAll(".modal-request");
 
 let currentIndex = 0;
 let initialMenuHeight = mobileCatalogList.getBoundingClientRect().height;
-let menuHeight = 0;
-let newMenuHeight = 0;
 
 window.addEventListener("DOMContentLoaded", () => {
   toggleBurgers(burgers, headerCatalog, mobileCatalog, main, footer);
@@ -312,9 +309,9 @@ window.addEventListener("scroll", () => {
   lastScroll = currentScroll;
 });
 
-window.addEventListener("mousedown", (e) => {
-  e.preventDefault();
-});
+// window.addEventListener("mousedown", (e) => {
+//   e.preventDefault();
+// });
 
 headerCatalogCategories.forEach((item) => {
   item.addEventListener("click", (e) => {
@@ -343,33 +340,14 @@ headerCatalogCategories.forEach((item) => {
   });
 });
 
-// modalRequest.forEach((item) => {
-//   const modalRequest = item.dataset.modal;
-//   let modal;
-
-//   item.addEventListener("click", (event) => {
-//     event.preventDefault();
-//     if (window.innerWidth < 1280 && modalRequest === "modal-city") {
-//       modal = document.getElementById(`${modalRequest}_mobile`);
-//       bottomModal.classList.add("show");
-//       mobileCatalog.classList.remove("show");
-//       modal.classList.add("show");
-//     } else {
-//       modal = document.getElementById(modalRequest);
-//       console.log(document.getElementById("modal-city"));
-//       asideModal.classList.add("show");
-//       modal.classList.add("show");
-//     }
-//     dummyCover.classList.add("show");
-//   });
-// });
-
 modalRequest.forEach((item) => {
   const modalRequest = item.dataset.modal;
   const modal = document.getElementById(modalRequest);
 
   item.addEventListener("click", (event) => {
     event.preventDefault();
+    headerCatalog.classList.toggle("show");
+    burgers.forEach((item) => item.classList.remove("toggled"));
     asideModal.classList.add("show");
     modal.classList.add("show");
     dummyCover.classList.add("show");
@@ -474,11 +452,6 @@ closeModal.addEventListener("click", () => {
     });
   }, 300);
 });
-
-// bottomCloseModal.addEventListener("click", () => {
-//   bottomModal.classList.remove("show");
-//   dummyCover.classList.remove("show");
-// });
 
 dummyCover.addEventListener("click", () => {
   asideModal.classList.remove("show");

@@ -50,6 +50,14 @@
   &__subtitle {
     font-size: 14px;
   }
+
+  &__form_city {
+    margin-bottom: 32px;
+  }
+
+  & .custom__label_modal {
+    top: 18px;
+  }
 }
 
 .modal-inner-wrap {
@@ -86,4 +94,38 @@
 
 .button_aside {
   width: 100%;
+}
+
+.modal-city {
+  &__list {
+    overflow-y: scroll;
+    height: calc(100vh - 250px);
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (min-width: $desktop) {
+      column-count: 2;
+      justify-content: space-between;
+      height: auto;
+    }
+  }
+
+  &__full-title {
+    display: none;
+  }
+
+  &__subtitle_city {
+    opacity: 0.5;
+  }
+
+  &__item {
+    width: 34%;
+    margin-bottom: 8px;
+
+    &_important {
+      &.modal-city__short-title {
+        font-family: $font_bold;
+      }
+    }
+  }
 }

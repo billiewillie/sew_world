@@ -17,10 +17,12 @@
               type="tel"
               maxlength="16"
               class="input"
-              name="name"
+              name="login-phone"
               placeholder=" "
             />
-            <label class="custom__label" for="name">ТЕЛЕФОН*</label>
+            <label class="custom__label custom__label_modal" for="login-phone"
+              >ТЕЛЕФОН*</label
+            >
           </div>
 
           <div class="button-wrapper aside-modal__buton-wrapper">
@@ -51,7 +53,9 @@
               name="name"
               placeholder=" "
             />
-            <label class="custom__label" for="name">имя</label>
+            <label class="custom__label custom__label_modal" for="name"
+              >имя</label
+            >
           </div>
 
           <div class="input-wrapper">
@@ -62,7 +66,9 @@
               name="name"
               placeholder=" "
             />
-            <label class="custom__label" for="name">телефон*</label>
+            <label class="custom__label custom__label_modal" for="name"
+              >телефон*</label
+            >
           </div>
 
           <div class="input-wrapper">
@@ -74,7 +80,11 @@
               rows="10"
               placeholder=" "
             ></textarea>
-            <label class="custom__label" for="modal-textarea">ваш вопрос</label>
+            <label
+              class="custom__label custom__label_modal"
+              for="modal-textarea"
+              >ваш вопрос</label
+            >
           </div>
 
           <div class="checkbox-wrapper">
@@ -115,7 +125,9 @@
               name="name"
               placeholder=" "
             />
-            <label class="custom__label" for="name">имя</label>
+            <label class="custom__label custom__label_modal" for="name"
+              >имя</label
+            >
           </div>
 
           <div class="input-wrapper">
@@ -126,7 +138,9 @@
               name="name"
               placeholder=" "
             />
-            <label class="custom__label" for="name">телефон*</label>
+            <label class="custom__label custom__label_modal" for="name"
+              >телефон*</label
+            >
           </div>
 
           <div class="checkbox-wrapper">
@@ -148,18 +162,20 @@
       </div>
     </div>
   </div>
-  <div class="modal-inner-wrap modal-city" id="modal-city">
+  <!-- <div class="modal-inner-wrap modal-city" id="modal-city">
     <div class="vertical-content__content">
       <div class="vertical-content__body">
         <header class="aside-modal__header">
           <h3 class="aside-modal__title">Выберите город</h3>
-          <p class="aside-modal__subtitle">Петрозаводск, Республика Карелия</p>
+          <p class="aside-modal__subtitle aside-modal__subtitle_city">
+            Санкт-Петербург, Россия
+          </p>
         </header>
 
-        <form action="" class="form aside-modal__form">
+        <form action="" class="form aside-modal__form aside-modal__form_city">
           <div class="input-wrapper">
             <input
-              type="tel"
+              type="text"
               maxlength="16"
               class="input"
               name="name"
@@ -168,7 +184,136 @@
             <label class="custom__label" for="name">имя</label>
           </div>
         </form>
+
+        <ul class="modal-city__list">
+          <li class="modal-city__item modal-city__item_important">
+            <a href="" class="modal-city__short-title">Санкт-Петербург</a>
+            <a href="" class="modal-city__full-title"
+              >Санкт-Петербург, Россия</a
+            >
+          </li>
+          <li class="modal-city__item modal-city__item_important">
+            <a href="" class="modal-city__short-title">Москва</a>
+            <a href="" class="modal-city__full-title">Москва, Россия</a>
+          </li>
+          <li class="modal-city__item modal-city__item_important">
+            <a href="" class="modal-city__short-title">Великий Новгород</a>
+            <a href="" class="modal-city__full-title"
+              >Великий Новгород, Россия</a
+            >
+          </li>
+          <li class="modal-city__item modal-city__item_important">
+            <a href="" class="modal-city__short-title">Тюмень</a>
+            <a href="" class="modal-city__full-title">Тюмень, Россия</a>
+          </li>
+          <li class="modal-city__item modal-city__item_important">
+            <a href="" class="modal-city__short-title">Петрозаводск</a>
+            <a href="" class="modal-city__full-title">Петрозаводск, Россия</a>
+          </li>
+          <li class="modal-city__item modal-city__item_important">
+            <a href="" class="modal-city__short-title">Волгоград</a>
+            <a href="" class="modal-city__full-title">Волгоград, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Благовещенск</a>
+            <a href="" class="modal-city__full-title">Благовещенск, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Брянск</a>
+            <a href="" class="modal-city__full-title">Брянск, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Владивосток</a>
+            <a href="" class="modal-city__full-title">Владивосток, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Волгоград</a>
+            <a href="" class="modal-city__full-title">Волгоград, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Вологда</a>
+            <a href="" class="modal-city__full-title">Вологда, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Казань</a>
+            <a href="" class="modal-city__full-title">Казань, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Калуга</a>
+            <a href="" class="modal-city__full-title">Калуга, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Курск</a>
+            <a href="" class="modal-city__full-title">Курск, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Липецк</a>
+            <a href="" class="modal-city__full-title">Липецк, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Махачкала</a>
+            <a href="" class="modal-city__full-title">Махачкала, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Нальчик</a>
+            <a href="" class="modal-city__full-title">Нальчик, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Нижний Новгород</a>
+            <a href="" class="modal-city__full-title"
+              >Нижний Новгород, Россия</a
+            >
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Новосибирск</a>
+            <a href="" class="modal-city__full-title">Новосибирск, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Псков</a>
+            <a href="" class="modal-city__full-title">Псков, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Ростов-на-Дону</a>
+            <a href="" class="modal-city__full-title">Ростов-на-Дону, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Рязань</a>
+            <a href="" class="modal-city__full-title">Рязань, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Самара</a>
+            <a href="" class="modal-city__full-title">Самара, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Саратов</a>
+            <a href="" class="modal-city__full-title">Саратов, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Северодвинск</a>
+            <a href="" class="modal-city__full-title">Северодвинск, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Смоленск</a>
+            <a href="" class="modal-city__full-title">Смоленск, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Ставрополь</a>
+            <a href="" class="modal-city__full-title">Ставрополь, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Сыктывкар</a>
+            <a href="" class="modal-city__full-title">Сыктывкар, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Хабаровск</a>
+            <a href="" class="modal-city__full-title">Хабаровск, Россия</a>
+          </li>
+          <li class="modal-city__item">
+            <a href="" class="modal-city__short-title">Чебоксары</a>
+            <a href="" class="modal-city__full-title">Чебоксары, Россия</a>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
+  </div> -->
 </aside>
