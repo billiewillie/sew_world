@@ -309,9 +309,9 @@ window.addEventListener("scroll", () => {
   lastScroll = currentScroll;
 });
 
-// window.addEventListener("mousedown", (e) => {
-//   e.preventDefault();
-// });
+window.addEventListener("mousedown", (e) => {
+  if (e.which === 2) e.preventDefault();
+});
 
 headerCatalogCategories.forEach((item) => {
   item.addEventListener("click", (e) => {
@@ -346,7 +346,7 @@ modalRequest.forEach((item) => {
 
   item.addEventListener("click", (event) => {
     event.preventDefault();
-    headerCatalog.classList.toggle("show");
+    headerCatalog.classList.remove("show");
     burgers.forEach((item) => item.classList.remove("toggled"));
     asideModal.classList.add("show");
     modal.classList.add("show");
@@ -470,3 +470,15 @@ dummyCover.addEventListener("click", () => {
 //     window.scrollTo(0, 0);
 //   };
 // }
+
+function killCopy(e) {
+  return false;
+}
+function reEnable() {
+  return true;
+}
+document.onselectstart = new Function("return false");
+if (window.sidebar) {
+  document.onmousedown = killCopy;
+  document.onclick = reEnable;
+}
