@@ -12,7 +12,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 // varibles
 const burgers = document.querySelectorAll(".burger");
-const inputs = document.querySelectorAll(".input");
 const dummyCover = document.querySelector(".dummy-cover");
 const main = document.querySelector(".main");
 const footer = document.querySelector(".footer");
@@ -30,8 +29,6 @@ const headerCatalogSubcategoriesItem = document.querySelector(
 );
 const closeModal = document.querySelector(".close-modal");
 const asideModal = document.querySelector(".aside-modal");
-const headerCatalogOverlay = document.querySelector(".header-catalog__overlay");
-const headerCatalogWrapper = document.querySelector(".header-catalog__wrapper");
 const headerCatalogCategories = document.querySelectorAll(
   ".header-catalog__category"
 );
@@ -51,9 +48,6 @@ const innerListOpener = document.querySelectorAll(
 const banner = headerCatalogSubcategoriesItem.querySelector(
   ".header-subcategories__banner"
 );
-const column = headerCatalogSubcategoriesItem.querySelectorAll(
-  ".header-subcategories__column"
-);
 const headerConsult = document.querySelector(".header-consult");
 const headerPhoneNumber = document.querySelector(".header-phone__number");
 const headerCallback = document.querySelector(".header-callback");
@@ -63,14 +57,17 @@ let currentIndex = 0;
 let initialMenuHeight = mobileCatalogList.getBoundingClientRect().height;
 
 window.addEventListener("DOMContentLoaded", () => {
-  toggleBurgers(burgers, headerCatalog, mobileCatalog, main, footer);
+  toggleBurgers(
+    burgers,
+    headerCatalog,
+    mobileCatalog,
+    main,
+    footer,
+    dummyCover
+  );
   getGallery(galleryTabs);
 
   (() => {
-    if (column.length === 4) {
-      headerCatalogSubcategoriesItem.style.paddingRight = "0px";
-      headerCatalogWrapper.style.background = "#fff";
-    }
     if (banner) {
       const subcategories = Array.from(
         headerCatalogSubcategoriesItem.querySelectorAll(
@@ -330,11 +327,6 @@ headerCatalogCategories.forEach((item) => {
           currentActive.classList.remove(targetClass);
           target.classList.add(targetClass);
         }
-        if (category === "header-subcategory-3") {
-          headerCatalogWrapper.classList.add("full");
-        } else {
-          headerCatalogWrapper.classList.remove("full");
-        }
       }, 100);
     }
   });
@@ -347,6 +339,7 @@ modalRequest.forEach((item) => {
   item.addEventListener("click", (event) => {
     event.preventDefault();
     headerCatalog.classList.remove("show");
+    mobileCatalog.classList.remove("show");
     burgers.forEach((item) => item.classList.remove("toggled"));
     asideModal.classList.add("show");
     modal.classList.add("show");
@@ -438,14 +431,13 @@ backBtn.forEach((item) => {
   });
 });
 
-headerCatalogOverlay.addEventListener("click", () => {
-  headerCatalog.classList.toggle("show");
-  burgers.forEach((item) => item.classList.remove("toggled"));
-});
-
 closeModal.addEventListener("click", () => {
   asideModal.classList.remove("show");
   dummyCover.classList.remove("show");
+  main.classList.remove("hidden-by-mobile-catalog");
+  footer.classList.remove("hidden-by-mobile-catalog");
+  dummyCover.classList.remove("show");
+  dummyCover.classList.remove("show-for-catalog");
   setTimeout(() => {
     modalInnerWrap.forEach((el) => {
       el.classList.remove("show");
@@ -456,6 +448,10 @@ closeModal.addEventListener("click", () => {
 dummyCover.addEventListener("click", () => {
   asideModal.classList.remove("show");
   dummyCover.classList.remove("show");
+  headerCatalog.classList.remove("show");
+  dummyCover.classList.remove("show");
+  dummyCover.classList.remove("show-for-catalog");
+  burgers.forEach((burger) => burger.classList.remove("toggled"));
   setTimeout(() => {
     modalInnerWrap.forEach((el) => {
       el.classList.remove("show");
@@ -474,9 +470,11 @@ dummyCover.addEventListener("click", () => {
 function killCopy(e) {
   return false;
 }
+
 function reEnable() {
   return true;
 }
+
 document.onselectstart = new Function("return false");
 if (window.sidebar) {
   document.onmousedown = killCopy;

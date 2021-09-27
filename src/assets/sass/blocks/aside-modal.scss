@@ -103,10 +103,11 @@
     display: flex;
     flex-wrap: wrap;
 
-    @media (min-width: $desktop) {
-      column-count: 2;
-      justify-content: space-between;
+    @media (min-width: $tablet) {
       height: auto;
+      overflow-y: auto;
+      display: block;
+      column-count: 2;
     }
   }
 
@@ -119,11 +120,11 @@
   }
 
   &__item {
-    width: 34%;
+    width: 100%;
     margin-bottom: 8px;
 
     &_important {
-      &.modal-city__short-title {
+      & .modal-city__short-title {
         font-family: $font_bold;
       }
     }

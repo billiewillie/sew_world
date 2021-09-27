@@ -41,6 +41,7 @@
 
   &-title {
     margin-bottom: 8px;
+    text-transform: uppercase;
   }
 
   &-subtitle {
@@ -48,6 +49,7 @@
     display: inline-block;
     text-decoration: underline;
     text-underline-offset: 2px;
+    text-transform: uppercase;
   }
 
   &-item {
