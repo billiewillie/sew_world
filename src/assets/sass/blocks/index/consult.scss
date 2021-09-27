@@ -256,9 +256,9 @@
   opacity: 1;
 }
 
-.input-wrapper:first-child .input:not(:placeholder-shown) {
-  border: 1px solid $red;
-}
+// .input-wrapper:first-child .input:not(:placeholder-shown) {
+//   border: 1px solid $red;
+// }
 
 .input__required {
   opacity: 0;

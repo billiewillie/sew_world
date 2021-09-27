@@ -103,6 +103,10 @@
     display: flex;
     flex-wrap: wrap;
 
+    &.search-mode {
+      column-count: 1;
+    }
+
     @media (min-width: $tablet) {
       height: auto;
       overflow-y: auto;
@@ -111,8 +115,17 @@
     }
   }
 
+  &__short-title {
+    &.hidden {
+      display: none;
+    }
+  }
+
   &__full-title {
     display: none;
+    &.show {
+      display: block;
+    }
   }
 
   &__subtitle_city {
@@ -122,6 +135,10 @@
   &__item {
     width: 100%;
     margin-bottom: 8px;
+
+    &.hidden {
+      display: none;
+    }
 
     &_important {
       & .modal-city__short-title {

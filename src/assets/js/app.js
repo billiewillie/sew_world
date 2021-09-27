@@ -2,6 +2,7 @@
 
 // imports
 import toggleBurgers from "./modules/toggleBurger";
+import citiesFilter from "./modules/citiesFilter";
 import getGallery from "./modules/getGallery";
 import Flickity from "flickity";
 import gsap from "gsap";
@@ -52,6 +53,15 @@ const headerConsult = document.querySelector(".header-consult");
 const headerPhoneNumber = document.querySelector(".header-phone__number");
 const headerCallback = document.querySelector(".header-callback");
 const modalRequest = document.querySelectorAll(".modal-request");
+const inputCities = document.querySelector("#cities-filter");
+const itemsCitiesList = document.querySelector(".modal-city__list");
+const itemsCities = document
+  .querySelector(".modal-city__list")
+  .getElementsByTagName("li");
+
+inputCities.addEventListener("keyup", (e) =>
+  citiesFilter(e, itemsCities, itemsCitiesList)
+);
 
 let currentIndex = 0;
 let initialMenuHeight = mobileCatalogList.getBoundingClientRect().height;
