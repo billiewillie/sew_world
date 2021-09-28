@@ -14,6 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 // varibles
 const burgers = document.querySelectorAll(".burger");
 const dummyCover = document.querySelector(".dummy-cover");
+const wrapper = document.querySelector(".wrapper");
 const main = document.querySelector(".main");
 const footer = document.querySelector(".footer");
 const galleryTabs = document.querySelectorAll(".gallery-tab");
@@ -73,7 +74,8 @@ window.addEventListener("DOMContentLoaded", () => {
     mobileCatalog,
     main,
     footer,
-    dummyCover
+    dummyCover,
+    wrapper
   );
   getGallery(galleryTabs);
 
@@ -448,6 +450,7 @@ closeModal.addEventListener("click", () => {
   footer.classList.remove("hidden-by-mobile-catalog");
   dummyCover.classList.remove("show");
   dummyCover.classList.remove("show-for-catalog");
+  wrapper.classList.remove("opened-mobile-menu");
   setTimeout(() => {
     modalInnerWrap.forEach((el) => {
       el.classList.remove("show");
@@ -468,14 +471,6 @@ dummyCover.addEventListener("click", () => {
     });
   }, 300);
 });
-
-// if (history.scrollRestoration) {
-//   history.scrollRestoration = "manual";
-// } else {
-//   window.onbeforeunload = function () {
-//     window.scrollTo(0, 0);
-//   };
-// }
 
 function killCopy(e) {
   return false;

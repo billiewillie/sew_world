@@ -4,7 +4,8 @@ const toggleBurgers = (
   mobileMenu,
   main,
   footer,
-  cover
+  cover,
+  wrapper
 ) => {
   burgers.forEach((burger) => {
     burger.addEventListener("click", () => {
@@ -16,6 +17,7 @@ const toggleBurgers = (
         main.classList.toggle("hidden-by-mobile-catalog");
         footer.classList.toggle("hidden-by-mobile-catalog");
         mobileMenu.classList.toggle("show");
+        wrapper.classList.toggle("opened-mobile-menu");
       } else {
         mobileMenu.classList.toggle("show");
       }

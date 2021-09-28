@@ -10,7 +10,6 @@ body {
   line-height: 1.6;
   background-color: #fff;
   position: relative;
-  min-height: -webkit-fill-available;
 
   &.stop-scrolling {
     height: 100%;
@@ -122,6 +121,13 @@ textarea {
   overflow: hidden;
   flex-direction: column;
   justify-content: space-between;
+
+  &.opened-mobile-menu {
+    padding-top: 56px;
+    @media (min-width: $tablet) {
+      padding-top: 110px;
+    }
+  }
 }
 
 .container {
