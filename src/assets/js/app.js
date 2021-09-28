@@ -417,7 +417,6 @@ innerListOpener.forEach((item) => {
   item.addEventListener("click", (e) => {
     e.preventDefault();
     const openMenuHeight = mobileCatalogList.getBoundingClientRect().height;
-    menuHeight = openMenuHeight;
     const listTitle = item.dataset.list;
     const list = document.getElementById(listTitle);
     let listHeight = list.getBoundingClientRect().height;
