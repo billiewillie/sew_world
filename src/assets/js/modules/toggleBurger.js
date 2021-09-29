@@ -5,12 +5,14 @@ const toggleBurgers = (
   main,
   footer,
   cover,
-  wrapper
+  wrapper,
+  header
 ) => {
   burgers.forEach((burger) => {
     burger.addEventListener("click", () => {
       burger.classList.toggle("toggled");
       cover.classList.toggle("show-for-catalog");
+      header.classList.remove("scroll-down");
       if (window.innerWidth >= 1280) {
         desktopMenu.classList.toggle("show");
       } else if (window.innerWidth < 768) {

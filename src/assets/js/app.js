@@ -29,11 +29,9 @@ const youTubeItems = document.querySelectorAll(".youtube-item");
 const headerTopAnimated = document.querySelectorAll(".header__top_animated");
 const galleryCard = document.querySelectorAll(".gallery-card");
 const headerCatalog = document.querySelector(".header-catalog");
-
 const headerBucket = document.querySelector("[data-bucket]");
 const headerLiked = document.querySelector("[data-liked]");
 const headerMatched = document.querySelector("[data-match]");
-
 const mobileCatalog = document.querySelector(".mobile-catalog");
 const modalInnerWrap = document.querySelectorAll(".modal-inner-wrap");
 const headerCatalogSubcategoriesItem = document.querySelector(
@@ -102,7 +100,8 @@ window.addEventListener("DOMContentLoaded", () => {
     main,
     footer,
     dummyCover,
-    wrapper
+    wrapper,
+    header
   );
   getGallery(galleryTabs);
 
