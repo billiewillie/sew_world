@@ -439,7 +439,7 @@ galleryCard.forEach((item) => {
 accordionTrigger.addEventListener("click", (e) => {
   e.preventDefault();
   const count = accordionContent.childElementCount;
-  const height = count * 48;
+  const height = count * 46;
   accordionContent.classList.toggle("open");
   if (accordionContent.classList.contains("open")) {
     accordionContent.style.height = `${height}px`;
@@ -457,13 +457,11 @@ innerListOpener.forEach((item) => {
     let listHeight = list.getBoundingClientRect().height;
     if (listHeight < initialMenuHeight)
       list.style.height = `${initialMenuHeight + 200}px`;
-    setTimeout(() => {
-      if (listHeight > initialMenuHeight)
-        mobileCatalogList.style.maxHeight = `${listHeight}px`;
-      else {
-        mobileCatalogList.style.maxHeight = `${initialMenuHeight + 200}px`;
-      }
-    }, 500);
+    if (listHeight > initialMenuHeight)
+      mobileCatalogList.style.maxHeight = `${listHeight}px`;
+    else {
+      mobileCatalogList.style.maxHeight = `${initialMenuHeight + 200}px`;
+    }
 
     list.classList.add("show");
   });

@@ -3,7 +3,6 @@
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 688px;
   display: flex;
   flex-direction: column;
   margin-bottom: 65px;
@@ -46,6 +45,7 @@
 
   & .flickity-viewport {
     overflow: visible;
+    min-height: 550px;
 
     @media (min-width: $desktop) {
       overflow: hidden;
