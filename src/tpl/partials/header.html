@@ -105,7 +105,7 @@
         </li>
       </ul>
       <div class="header-icons">
-        <a href="" class="header-icons__item">
+        <a class="header-icons__item header-icons__item_search">
           <span class="icon icon_loupe header__bottom_animated">
             <svg>
               <use xlink:href="#loupe"></use>
@@ -143,15 +143,24 @@
             </svg>
           </span>
         </a>
-        <!-- <form action="" class="search-form">
+        <form action="" class="search-form">
           <input
             type="search"
             placeholder="Например, швейная машина..."
             autocomplete="off"
             class="search-form__input"
           />
-          <button type="reset" class="search-form__button"></button>
-        </form> -->
+          <button type="reset" class="search-form__button">
+            <svg>
+              <use xlink:href="#search-cancel"></use>
+            </svg>
+          </button>
+          <div class="search-form__results">
+            <a href="" class="search-form__results-item">швейная машина 1</a>
+            <a href="" class="search-form__results-item">швейная машина 2</a>
+            <a href="" class="search-form__results-item">швейная машина 3</a>
+          </div>
+        </form>
       </div>
     </div>
   </div>

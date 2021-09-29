@@ -13,6 +13,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 // varibles
 const burgers = document.querySelectorAll(".burger");
+const iconSearch = document.querySelector(".header-icons__item_search");
+const inputSearch = document.querySelector(".search-form__input");
+const searchResults = document.querySelector(".search-form__results");
+const searchButtonReset = document.querySelector(".search-form__button");
+const searchForm = document.querySelector(".search-form");
 const dummyCover = document.querySelector(".dummy-cover");
 const wrapper = document.querySelector(".wrapper");
 const main = document.querySelector(".main");
@@ -63,6 +68,19 @@ const itemsCities = document
 inputCities.addEventListener("keyup", (e) =>
   citiesFilter(e, itemsCities, itemsCitiesList)
 );
+
+inputSearch.addEventListener("keyup", (e) => {
+  const text = e.target.value;
+  setTimeout(() => {
+    searchResults.classList.add("show");
+  }, 500);
+
+  if (text.length === 0) {
+    setTimeout(() => {
+      searchResults.classList.remove("show");
+    }, 500);
+  }
+});
 
 let currentIndex = 0;
 let initialMenuHeight = mobileCatalogList.getBoundingClientRect().height;
@@ -285,6 +303,19 @@ window.addEventListener("DOMContentLoaded", () => {
   }, 2000);
 });
 
+document.addEventListener("click", (e) => {
+  if (searchForm.classList.contains("show")) {
+    if (
+      e.target.closest(".search-form") === null &&
+      e.target.closest(".header-icons__item_search") === null
+    ) {
+      searchForm.classList.remove("show");
+      searchResults.classList.remove("show");
+      inputSearch.value = "";
+    }
+  }
+});
+
 window.addEventListener("scroll", () => {
   let lastScroll = 100;
   const currentScroll = window.pageYOffset;
@@ -316,6 +347,10 @@ window.addEventListener("scroll", () => {
     header.classList.remove(scrollDown);
   }
   lastScroll = currentScroll;
+
+  searchForm.classList.remove("show");
+  searchResults.classList.remove("show");
+  inputSearch.value = "";
 });
 
 window.addEventListener("mousedown", (e) => {
@@ -471,6 +506,14 @@ dummyCover.addEventListener("click", () => {
   }, 300);
 });
 
+iconSearch.addEventListener("click", () => {
+  searchForm.classList.add("show");
+});
+
+searchButtonReset.addEventListener("click", () => {
+  searchForm.classList.remove("show");
+});
+
 function killCopy(e) {
   return false;
 }
@@ -480,6 +523,7 @@ function reEnable() {
 }
 
 document.onselectstart = new Function("return false");
+
 if (window.sidebar) {
   document.onmousedown = killCopy;
   document.onclick = reEnable;

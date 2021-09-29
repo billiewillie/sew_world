@@ -3,10 +3,14 @@
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  max-height: 688px;
+  height: 688px;
   display: flex;
   flex-direction: column;
   margin-bottom: 65px;
+
+  @media (min-width: $tablet) {
+    height: auto;
+  }
 
   &__container {
     padding: 0;
