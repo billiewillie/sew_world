@@ -29,6 +29,11 @@ const youTubeItems = document.querySelectorAll(".youtube-item");
 const headerTopAnimated = document.querySelectorAll(".header__top_animated");
 const galleryCard = document.querySelectorAll(".gallery-card");
 const headerCatalog = document.querySelector(".header-catalog");
+
+const headerBucket = document.querySelector("[data-bucket]");
+const headerLiked = document.querySelector("[data-liked]");
+const headerMatched = document.querySelector("[data-match]");
+
 const mobileCatalog = document.querySelector(".mobile-catalog");
 const modalInnerWrap = document.querySelectorAll(".modal-inner-wrap");
 const headerCatalogSubcategoriesItem = document.querySelector(
@@ -84,6 +89,10 @@ inputSearch.addEventListener("keyup", (e) => {
 
 let currentIndex = 0;
 let initialMenuHeight = mobileCatalogList.getBoundingClientRect().height;
+
+let goodsToMatch = [];
+let likedGoods = [];
+let goodsInBucket = [];
 
 window.addEventListener("DOMContentLoaded", () => {
   toggleBurgers(
@@ -410,29 +419,79 @@ youTubeItems.forEach((item) => {
 });
 
 galleryCard.forEach((item) => {
+  const id = +item.dataset.id;
   const button = item.querySelector("button");
   const like = item.querySelector(".card-icons__like");
   const match = item.querySelector(".card-icons__match");
   const buttonText1 = "в корзину";
   const buttonText2 = "товар в корзине";
   button.addEventListener("click", () => {
-    item.classList.toggle("card_in-bucket");
-    button.textContent =
-      button.textContent === buttonText1 ? buttonText2 : buttonText1;
+    if (!goodsInBucket.includes(id)) {
+      goodsInBucket.push(id);
+      item.classList.add("card_in-bucket");
+      button.textContent = buttonText2;
+    } else {
+      goodsInBucket = goodsInBucket.filter((el) => el !== id);
+      item.classList.remove("card_in-bucket");
+      button.textContent = buttonText1;
+    }
+
+    const length = goodsInBucket.length;
+    const amount = headerBucket.querySelector(".header-icons__amount");
+    headerBucket.dataset.bucket = length;
+
+    if (length > 0) {
+      headerBucket.classList.add("header-icons__item_highlighted");
+    } else {
+      headerBucket.classList.remove("header-icons__item_highlighted");
+    }
+    amount.textContent = length;
   });
 
   like.addEventListener("click", () => {
-    like.classList.toggle("card-icons_clicked");
-    const isLiked = item.dataset.liked;
-    const dataLike = isLiked === "true" ? "false" : "true";
-    item.setAttribute("data-liked", dataLike);
+    if (!likedGoods.includes(id)) {
+      likedGoods.push(id);
+      like.classList.add("card-icons_clicked");
+      item.setAttribute("data-liked", "true");
+    } else {
+      likedGoods = likedGoods.filter((el) => el !== id);
+      like.classList.remove("card-icons_clicked");
+      item.setAttribute("data-liked", "false");
+    }
+
+    const length = likedGoods.length;
+    const amount = headerLiked.querySelector(".header-icons__amount");
+    headerLiked.dataset.liked = length;
+
+    if (length > 0) {
+      headerLiked.classList.add("header-icons__item_highlighted");
+    } else {
+      headerLiked.classList.remove("header-icons__item_highlighted");
+    }
+    amount.textContent = length;
   });
 
   match.addEventListener("click", () => {
-    match.classList.toggle("card-icons_clicked");
-    const isMatched = item.dataset.match;
-    const dataLike = isMatched === "true" ? "false" : "true";
-    item.setAttribute("data-match", dataLike);
+    if (!goodsToMatch.includes(id)) {
+      goodsToMatch.push(id);
+      match.classList.add("card-icons_clicked");
+      item.setAttribute("data-match", "true");
+    } else {
+      goodsToMatch = goodsToMatch.filter((el) => el !== id);
+      match.classList.remove("card-icons_clicked");
+      item.setAttribute("data-match", "false");
+    }
+
+    const length = goodsToMatch.length;
+    const amount = headerMatched.querySelector(".header-icons__amount");
+    headerMatched.dataset.match = length;
+
+    if (length > 0) {
+      headerMatched.classList.add("header-icons__item_highlighted");
+    } else {
+      headerMatched.classList.remove("header-icons__item_highlighted");
+    }
+    amount.textContent = length;
   });
 });
 
@@ -510,6 +569,8 @@ iconSearch.addEventListener("click", () => {
 
 searchButtonReset.addEventListener("click", () => {
   searchForm.classList.remove("show");
+  searchResults.classList.remove("show");
+  inputSearch.value = "";
 });
 
 function killCopy(e) {

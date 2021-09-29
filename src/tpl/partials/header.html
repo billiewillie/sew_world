@@ -106,42 +106,65 @@
       </ul>
       <div class="header-icons">
         <a class="header-icons__item header-icons__item_search">
-          <span class="icon icon_loupe header__bottom_animated">
-            <svg>
+          <span class="icon header__bottom_animated">
+            <svg class="header-icon__original">
+              <use xlink:href="#loupe"></use>
+            </svg>
+            <svg class="header-icon__filled">
               <use xlink:href="#loupe"></use>
             </svg>
           </span>
         </a>
-        <a href="" class="header-icons__item">
-          <span
-            class="icon icon_chart header__bottom_animated"
-            data-modal="modal-login"
-          >
-            <svg>
+        <a href="" class="header-icons__item" data-match="0">
+          <span class="icon header__bottom_animated" data-modal="modal-login">
+            <svg class="header-icon__original">
               <use xlink:href="#chart"></use>
             </svg>
+            <svg class="header-icon__filled">
+              <use xlink:href="#chart-filled"></use>
+            </svg>
           </span>
+          <span class="header-icons__amount">0</span>
         </a>
-        <a class="header-icons__item">
-          <span class="icon icon_heart header__bottom_animated">
-            <svg>
+        <a href="" class="header-icons__item" data-liked="0">
+          <span class="icon header__bottom_animated">
+            <svg class="header-icon__original">
               <use xlink:href="#heart"></use>
             </svg>
+            <svg class="header-icon__filled">
+              <use xlink:href="#heart-filled"></use>
+            </svg>
           </span>
+          <span class="header-icons__amount">0</span>
         </a>
-        <a class="header-icons__item modal-request" data-modal="modal-login">
-          <span class="icon icon_user header__bottom_animated">
-            <svg>
+        <a
+          class="header-icons__item modal-request"
+          data-modal="modal-login"
+          data-logged="false"
+        >
+          <span class="icon header__bottom_animated">
+            <svg class="header-icon__original">
               <use xlink:href="#user"></use>
             </svg>
-          </span>
-        </a>
-        <a class="header-icons__item">
-          <span class="icon icon_bucket header__bottom_animated">
-            <svg>
-              <use xlink:href="#bucket"></use>
+            <svg class="header-icon__filled">
+              <use xlink:href="#user-filled"></use>
             </svg>
           </span>
+        </a>
+        <a
+          class="header-icons__item modal-request"
+          data-bucket="0"
+          data-modal="modal-login"
+        >
+          <span class="icon header__bottom_animated">
+            <svg class="header-icon__original">
+              <use xlink:href="#bucket"></use>
+            </svg>
+            <svg class="header-icon__filled">
+              <use xlink:href="#bucket-filled"></use>
+            </svg>
+          </span>
+          <span class="header-icons__amount">0</span>
         </a>
         <form action="" class="search-form">
           <input
