@@ -251,20 +251,20 @@
   transform: translateY(-70%) scale(0.6);
 }
 
-.input-wrapper:first-child .input:not(:placeholder-shown) ~ .input__required {
-  transition: opacity 0.32s ease-in-out;
+.input-wrapper .alert {
   opacity: 1;
-}
-
-// .input-wrapper:first-child .input:not(:placeholder-shown) {
-//   border: 1px solid $red;
-// }
-
-.input__required {
-  opacity: 0;
   position: absolute;
   top: 101%;
   left: 16px;
+  font-size: 10px;
+  color: $red;
+}
+
+.checkbox-wrapper .alert {
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 0;
   font-size: 10px;
   color: $red;
 }

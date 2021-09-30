@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "@yaireo/validator": "^3.4.0",
     "flickity": "^2.2.2",
     "gsap": "^3.7.1",
     "inputmask": "^5.0.6",

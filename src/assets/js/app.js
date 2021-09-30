@@ -8,6 +8,7 @@ import Flickity from "flickity";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import MicroModal from "micromodal";
+import FormValidator from "@yaireo/validator"; // https://github.com/yairEO/validator
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,6 +19,7 @@ const inputSearch = document.querySelector(".search-form__input");
 const searchResults = document.querySelector(".search-form__results");
 const searchButtonReset = document.querySelector(".search-form__button");
 const searchForm = document.querySelector(".search-form");
+const consultForm = document.querySelector("#consult-form");
 const dummyCover = document.querySelector(".dummy-cover");
 const wrapper = document.querySelector(".wrapper");
 const main = document.querySelector(".main");
@@ -586,3 +588,32 @@ if (window.sidebar) {
   document.onmousedown = killCopy;
   document.onclick = reEnable;
 }
+
+// formValidation(consultForm);
+const validator = new FormValidator(
+  {
+    events: ["blur", "paste", "change"],
+    texts: {
+      empty: "необходимо ввести значение",
+      invalid: "неправильное значение",
+      short: "слишком короткое значение",
+      long: "слишком длинное значение",
+      email: "email введен неправильно",
+      number_min: "номер короткий",
+      number_max: "номер слишком длинный",
+      checked: "нужно ваше согласие",
+    },
+  },
+  consultForm
+);
+
+consultForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const submit = true;
+  const validatorResult = validator.checkAll(consultForm);
+  if (validatorResult.valid) {
+    MicroModal.show("modal-success-form");
+    consultForm.reset();
+  }
+  return !!validatorResult.valid;
+});

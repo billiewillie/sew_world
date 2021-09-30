@@ -8,48 +8,63 @@
       </p>
     </div>
     <div class="consult-form">
-      <form action="" class="form">
-        <div class="input-wrapper">
-          <input
-            type="text"
-            maxlength="20"
-            class="input consult__input"
-            name="name"
-            placeholder=" "
-          />
-          <label class="custom__label" for="name">Имя</label>
-          <span class="input__required">Обязательное поле</span>
-        </div>
-        <div class="input-wrapper">
-          <input
-            type="tel"
-            name="phone"
-            maxlength="16"
-            class="input consult__input"
-            placeholder=" "
-          />
-          <label class="custom__label" for="phone">Телефон</label>
-        </div>
-        <div class="input-wrapper">
-          <input
-            type="text"
-            name="message"
-            class="input consult__input"
-            placeholder=" "
-          />
-          <label class="custom__label" for="message">Ваше сообщение</label>
-        </div>
-        <div class="checkbox-wrapper">
-          <label class="custom-checkbox">
-            <input type="checkbox" name="color-1" value="indigo" />
-            <p>
-              <span>Согласен на обработку</span>
-              <a href="">персональных&#160;данных</a>
-            </p>
-          </label>
-        </div>
+      <form action="" class="form" id="consult-form" novalidate>
+        <fieldset>
+          <div class="input-wrapper field">
+            <input
+              type="text"
+              maxlength="20"
+              data-validate-length-range="2,20"
+              class="input consult__input"
+              required="required"
+              name="name"
+              placeholder=" "
+            />
+            <label class="custom__label" for="name">Имя</label>
+          </div>
 
-        <div class="input-wrapper">
+          <div class="input-wrapper field">
+            <input
+              type="tel"
+              name="phone"
+              maxlength="16"
+              class="input consult__input tel"
+              placeholder=" "
+              required="required"
+              data-validate-length-range="8,16"
+            />
+            <label class="custom__label" for="phone">Телефон</label>
+          </div>
+
+          <div class="input-wrapper field">
+            <input
+              type="text"
+              name="message"
+              class="input consult__input"
+              placeholder=" "
+              required="required"
+              data-validate-length-range="2"
+            />
+            <label class="custom__label" for="message">Ваше сообщение</label>
+          </div>
+
+          <div class="checkbox-wrapper field">
+            <label class="custom-checkbox">
+              <input
+                required="required"
+                type="checkbox"
+                name="color-1"
+                value="indigo"
+              />
+              <p>
+                <span>Согласен на обработку</span>
+                <a href="">персональных&#160;данных</a>
+              </p>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="input-wrapper field">
           <input
             type="submit"
             class="button button_inverse consult_button"
