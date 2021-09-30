@@ -2,29 +2,49 @@
   <div class="container footer__container">
     <div class="subscribe">
       <p class="subscribe__text">Подпишитесь на рассылку акций и новостей</p>
-      <form action="" class="form form__subscribe">
-        <div class="form_field">
-          <input type="email" name="email" class="input" placeholder=" " />
-          <label class="custom__label footer__label" for="email"
-            >Введите свой email</label
-          >
-        </div>
-        <div class="form_field">
-          <input
-            type="submit"
-            class="button button_inverse footer__button"
-            value="подписаться"
-          />
-        </div>
-        <div class="checkbox-wrapper">
-          <label class="custom-checkbox">
-            <input type="checkbox" name="color-1" value="indigo" />
-            <p>
-              <span>Согласен на обработку</span>
-              <a href="">персональных&#160;данных</a>
-            </p>
-          </label>
-        </div>
+      <form
+        action=""
+        class="form form__subscribe"
+        id="subscribe-form"
+        novalidate
+      >
+        <fieldset>
+          <div class="form_field field">
+            <input
+              type="email"
+              name="email"
+              class="input"
+              placeholder=" "
+              data-validate-length-range="2,20"
+              required="required"
+            />
+            <label class="custom__label footer__label" for="email"
+              >Введите свой email</label
+            >
+          </div>
+          <div class="form_field field">
+            <input
+              type="submit"
+              required="required"
+              class="button button_inverse footer__button"
+              value="подписаться"
+            />
+          </div>
+          <div class="checkbox-wrapper field">
+            <label class="custom-checkbox">
+              <input
+                type="checkbox"
+                name="color-1"
+                value="indigo"
+                required="required"
+              />
+              <p>
+                <span>Согласен на обработку</span>
+                <a href="">персональных&#160;данных</a>
+              </p>
+            </label>
+          </div>
+        </fieldset>
       </form>
     </div>
     <div class="footer-contacts">

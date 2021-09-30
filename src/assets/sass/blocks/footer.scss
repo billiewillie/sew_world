@@ -38,11 +38,13 @@
 }
 
 .form__subscribe {
-  display: flex;
-  flex-wrap: wrap;
+  & fieldset {
+    display: flex;
+    flex-wrap: wrap;
 
-  @media (min-width: $desktop) {
-    justify-content: flex-end;
+    @media (min-width: $desktop) {
+      justify-content: flex-end;
+    }
   }
 
   & .form_field {

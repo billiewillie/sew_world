@@ -251,7 +251,8 @@
   transform: translateY(-70%) scale(0.6);
 }
 
-.input-wrapper .alert {
+.input-wrapper .alert,
+.form_field .alert {
   opacity: 1;
   position: absolute;
   top: 101%;
