@@ -450,12 +450,10 @@
   background-color: #fff;
   opacity: 0;
   transform: translateY(10px);
-  display: flex;
+  display: none;
   transition: transform 0.32s ease-in-out, opacity 0.32s ease-in-out;
   border-left: 1px solid rgba(79, 79, 79, 0.2);
   border-right: 1px solid rgba(79, 79, 79, 0.2);
-  height: 0;
-  overflow: hidden;
 
   @media (min-width: $tablet) {
     left: 48px;
@@ -470,8 +468,8 @@
   &.show {
     visibility: visible;
     opacity: 1;
-    height: 100%;
     transform: translateY(0px);
+    display: flex;
   }
 }
 
