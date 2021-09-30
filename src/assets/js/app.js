@@ -22,7 +22,7 @@ const searchForm = document.querySelector(".search-form");
 const consultForm = document.querySelector("#consult-form");
 const subscribeForm = document.querySelector("#subscribe-form");
 const modalCallForm = document.querySelector("#modal-call-form");
-
+const modalQuestionForm = document.querySelector("#modal-question-form");
 const dummyCover = document.querySelector(".dummy-cover");
 const wrapper = document.querySelector(".wrapper");
 const main = document.querySelector(".main");
@@ -617,6 +617,40 @@ if (window.sidebar) {
     if (validatorResult.valid) {
       MicroModal.show("modal-success-form");
       item.reset();
+    }
+    return !!validatorResult.valid;
+  });
+});
+
+[modalQuestionForm, modalCallForm].forEach((item) => {
+  const validatorConsult = new FormValidator(
+    {
+      events: ["blur", "paste", "change"],
+      texts: {
+        empty: "необходимо ввести значение",
+        invalid: "неправильное значение",
+        short: "слишком короткое значение",
+        long: "слишком длинное значение",
+        email: "email введен неправильно",
+        number_min: "номер короткий",
+        number_max: "номер слишком длинный",
+        checked: "нужно ваше согласие",
+      },
+    },
+    item
+  );
+
+  item.addEventListener("submit", (e) => {
+    e.preventDefault();
+    // const submit = true;
+    const validatorResult = validatorConsult.checkAll(item);
+    if (validatorResult.valid) {
+      const parent = item.closest(".modal-inner-wrap");
+      parent.querySelector(".aside-modal__title").textContent =
+        "Ваша заявка успешно отправлена";
+      parent.querySelector(".aside-modal__subtitle").textContent =
+        "Мы перезвоним вам в ближайшее время";
+      item.remove();
     }
     return !!validatorResult.valid;
   });
