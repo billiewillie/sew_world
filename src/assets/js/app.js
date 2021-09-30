@@ -21,6 +21,8 @@ const searchButtonReset = document.querySelector(".search-form__button");
 const searchForm = document.querySelector(".search-form");
 const consultForm = document.querySelector("#consult-form");
 const subscribeForm = document.querySelector("#subscribe-form");
+const modalCallForm = document.querySelector("#modal-call-form");
+
 const dummyCover = document.querySelector(".dummy-cover");
 const wrapper = document.querySelector(".wrapper");
 const main = document.querySelector(".main");
@@ -590,59 +592,32 @@ if (window.sidebar) {
   document.onclick = reEnable;
 }
 
-// formValidation(consultForm);
-const validatorConsult = new FormValidator(
-  {
-    events: ["blur", "paste", "change"],
-    texts: {
-      empty: "необходимо ввести значение",
-      invalid: "неправильное значение",
-      short: "слишком короткое значение",
-      long: "слишком длинное значение",
-      email: "email введен неправильно",
-      number_min: "номер короткий",
-      number_max: "номер слишком длинный",
-      checked: "нужно ваше согласие",
+[subscribeForm, consultForm].forEach((item) => {
+  const validatorConsult = new FormValidator(
+    {
+      events: ["blur", "paste", "change"],
+      texts: {
+        empty: "необходимо ввести значение",
+        invalid: "неправильное значение",
+        short: "слишком короткое значение",
+        long: "слишком длинное значение",
+        email: "email введен неправильно",
+        number_min: "номер короткий",
+        number_max: "номер слишком длинный",
+        checked: "нужно ваше согласие",
+      },
     },
-  },
-  consultForm
-);
+    item
+  );
 
-consultForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const submit = true;
-  const validatorResult = validatorConsult.checkAll(consultForm);
-  if (validatorResult.valid) {
-    MicroModal.show("modal-success-form");
-    consultForm.reset();
-  }
-  return !!validatorResult.valid;
-});
-
-const validatorSubscribe = new FormValidator(
-  {
-    events: ["blur", "paste", "change"],
-    texts: {
-      empty: "необходимо ввести значение",
-      invalid: "неправильное значение",
-      short: "слишком короткое значение",
-      long: "слишком длинное значение",
-      email: "email введен неправильно",
-      number_min: "номер короткий",
-      number_max: "номер слишком длинный",
-      checked: "нужно ваше согласие",
-    },
-  },
-  subscribeForm
-);
-
-subscribeForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const submit = true;
-  const validatorResult = validatorSubscribe.checkAll(subscribeForm);
-  if (validatorResult.valid) {
-    MicroModal.show("modal-success-form");
-    subscribeForm.reset();
-  }
-  return !!validatorResult.valid;
+  item.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const submit = true;
+    const validatorResult = validatorConsult.checkAll(item);
+    if (validatorResult.valid) {
+      MicroModal.show("modal-success-form");
+      item.reset();
+    }
+    return !!validatorResult.valid;
+  });
 });
