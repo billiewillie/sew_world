@@ -717,7 +717,7 @@ modalLoginCodeForm.addEventListener("submit", (e) => {
   if (validatorResult.valid) {
     modalLoginCodeForm.classList.add("hidden");
     asideModalWelcomeMessage.classList.remove("hidden");
-    const parent = item.closest(".modal-inner-wrap");
+    const parent = modalLoginCodeForm.closest(".modal-inner-wrap");
     parent.querySelector(".aside-modal__title").textContent =
       "Добро пожаловать в личный кабинет";
   }
