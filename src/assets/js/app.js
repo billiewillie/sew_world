@@ -23,6 +23,11 @@ const consultForm = document.querySelector("#consult-form");
 const subscribeForm = document.querySelector("#subscribe-form");
 const modalCallForm = document.querySelector("#modal-call-form");
 const modalQuestionForm = document.querySelector("#modal-question-form");
+const modalLoginForm = document.querySelector("#modal-login-form");
+const modalLoginCodeForm = document.querySelector("#modal-login-form-code");
+const asideModalWelcomeMessage = document.querySelector(
+  ".aside-modal-welcome-message"
+);
 const dummyCover = document.querySelector(".dummy-cover");
 const wrapper = document.querySelector(".wrapper");
 const main = document.querySelector(".main");
@@ -654,4 +659,67 @@ if (window.sidebar) {
     }
     return !!validatorResult.valid;
   });
+});
+
+const modalLoginFormValidator = new FormValidator(
+  {
+    events: ["blur", "paste", "change"],
+    texts: {
+      empty: "необходимо ввести значение",
+      invalid: "неправильное значение",
+      short: "слишком короткое значение",
+      long: "слишком длинное значение",
+      email: "email введен неправильно",
+      number_min: "номер короткий",
+      number_max: "номер слишком длинный",
+      checked: "нужно ваше согласие",
+      smsCode: "неправильный код",
+    },
+  },
+  modalLoginForm
+);
+
+modalLoginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const validatorResult = modalLoginFormValidator.checkAll(modalLoginForm);
+  if (validatorResult.valid) {
+    modalLoginForm.classList.add("hidden");
+    modalLoginCodeForm.classList.remove("hidden");
+  }
+  return !!validatorResult.valid;
+});
+
+const modalLoginCodeFormValidator = new FormValidator(
+  {
+    events: ["blur", "paste", "change"],
+    texts: {
+      empty: "необходимо ввести значение",
+      invalid: "неправильное значение",
+      short: "слишком короткое значение",
+      long: "слишком длинное значение",
+      email: "email введен неправильно",
+      number_min: "номер короткий",
+      number_max: "номер слишком длинный",
+      checked: "нужно ваше согласие",
+      smsCode: "неправильный код",
+    },
+    regex: {
+      myCustomRegex: "1111",
+    },
+  },
+  modalLoginCodeForm
+);
+
+modalLoginCodeForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const validatorResult =
+    modalLoginCodeFormValidator.checkAll(modalLoginCodeForm);
+  if (validatorResult.valid) {
+    modalLoginCodeForm.classList.add("hidden");
+    asideModalWelcomeMessage.classList.remove("hidden");
+    const parent = item.closest(".modal-inner-wrap");
+    parent.querySelector(".aside-modal__title").textContent =
+      "Добро пожаловать в личный кабинет";
+  }
+  return !!validatorResult.valid;
 });

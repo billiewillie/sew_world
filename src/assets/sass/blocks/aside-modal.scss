@@ -72,6 +72,23 @@
   &.show {
     display: flex;
   }
+
+  & .hidden {
+    display: none;
+  }
+
+  & .link {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    display: flex;
+    margin-top: 40px;
+    cursor: pointer;
+    transition: opacity 0.32s ease-in-out;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
 }
 
 .modal-header {
@@ -146,4 +163,8 @@
       }
     }
   }
+}
+
+.welcome-text {
+  margin-bottom: 40px;
 }

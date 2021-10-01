@@ -11,19 +11,28 @@
           <h3 class="aside-modal__title">Войти или зарегистрироваться</h3>
         </header>
 
-        <form action="" class="form aside-modal__form">
-          <div class="input-wrapper">
-            <input
-              type="tel"
-              maxlength="16"
-              class="input"
-              name="login-phone"
-              placeholder=" "
-            />
-            <label class="custom__label custom__label_modal" for="login-phone"
-              >ТЕЛЕФОН*</label
-            >
-          </div>
+        <form
+          action=""
+          class="form aside-modal__form"
+          id="modal-login-form"
+          novalidate
+        >
+          <fieldset>
+            <div class="input-wrapper field">
+              <input
+                type="tel"
+                maxlength="16"
+                data-validate-length-range="8,16"
+                class="input"
+                name="phone"
+                placeholder=" "
+                required="required"
+              />
+              <label class="custom__label custom__label_modal" for="phone"
+                >ТЕЛЕФОН*</label
+              >
+            </div>
+          </fieldset>
 
           <div class="button-wrapper aside-modal__buton-wrapper">
             <button class="button button_inverse button_aside" type="submit">
@@ -31,6 +40,51 @@
             </button>
           </div>
         </form>
+
+        <form
+          action=""
+          class="form aside-modal__form hidden hidden"
+          id="modal-login-form-code"
+          novalidate
+        >
+          <fieldset>
+            <div class="input-wrapper field">
+              <input
+                type="text"
+                maxlength="16"
+                data-validate-length-range="2,16"
+                class="input"
+                name="smsCode"
+                pattern="myCustomRegex"
+                data-validate-text-invalid="неправильный код"
+                placeholder=" "
+                required="required"
+              />
+              <label class="custom__label custom__label_modal" for="login-phone"
+                >Введите код из смс</label
+              >
+            </div>
+          </fieldset>
+
+          <div class="button-wrapper aside-modal__buton-wrapper">
+            <button class="button button_inverse button_aside" type="submit">
+              отправить
+            </button>
+          </div>
+
+          <a class="link">Код не пришел, отправить еще раз</a>
+        </form>
+
+        <div class="aside-modal-welcome-message hidden">
+          <p class="welcome-text">
+            Заполните Ваш профиль и получите дисконтную карту со скидкой -15%
+          </p>
+          <div class="button-wrapper">
+            <a href="" class="button button_inverse button_aside"
+              >в личный кабинет</a
+            >
+          </div>
+        </div>
       </div>
     </div>
   </div>
