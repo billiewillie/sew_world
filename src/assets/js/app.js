@@ -56,10 +56,8 @@ const mobileCatalogList = document.querySelector(".mobile-catalog__list");
 const backBtn = document.querySelectorAll(
   ".mobile-catalog__accordion-inner-item-back"
 );
-const accordionContent = document.querySelector(
-  ".mobile-catalog__accordion-content"
-);
-const accordionTrigger = document.querySelector(
+
+const accordionTrigger = document.querySelectorAll(
   ".mobile-catalog__item_accordion .mobile-catalog__item-link"
 );
 const innerListOpener = document.querySelectorAll(
@@ -95,12 +93,33 @@ inputSearch.addEventListener("keyup", (e) => {
   }
 });
 
+let isOpenCatalog = false;
 let currentIndex = 0;
 let initialMenuHeight = mobileCatalogList.getBoundingClientRect().height;
-
 let goodsToMatch = [];
 let likedGoods = [];
 let goodsInBucket = [];
+
+console.log(isOpenCatalog);
+
+document.addEventListener("click", (e) => {
+  if (searchForm.classList.contains("show")) {
+    if (
+      e.target.closest(".search-form") === null &&
+      e.target.closest(".header-icons__item_search") === null
+    ) {
+      searchForm.classList.remove("show");
+      searchResults.classList.remove("show");
+      inputSearch.value = "";
+    }
+  }
+
+  // setTimeout(() => {
+  //   if (headerCatalog.classList.contains("show")) {
+  //     console.log("click");
+  //   }
+  // }, 100);
+});
 
 window.addEventListener("DOMContentLoaded", () => {
   toggleBurgers(
@@ -111,7 +130,8 @@ window.addEventListener("DOMContentLoaded", () => {
     footer,
     dummyCover,
     wrapper,
-    header
+    header,
+    isOpenCatalog
   );
   getGallery(galleryTabs);
 
@@ -321,19 +341,6 @@ window.addEventListener("DOMContentLoaded", () => {
   }, 2000);
 });
 
-document.addEventListener("click", (e) => {
-  if (searchForm.classList.contains("show")) {
-    if (
-      e.target.closest(".search-form") === null &&
-      e.target.closest(".header-icons__item_search") === null
-    ) {
-      searchForm.classList.remove("show");
-      searchResults.classList.remove("show");
-      inputSearch.value = "";
-    }
-  }
-});
-
 window.addEventListener("scroll", () => {
   let lastScroll = 100;
   const currentScroll = window.pageYOffset;
@@ -376,7 +383,7 @@ window.addEventListener("mousedown", (e) => {
 });
 
 headerCatalogCategories.forEach((item) => {
-  item.addEventListener("click", (e) => {
+  item.addEventListener("mouseenter", (e) => {
     if (item.getAttribute("href") === null) {
       setTimeout(() => {
         e.preventDefault();
@@ -392,7 +399,7 @@ headerCatalogCategories.forEach((item) => {
           currentActive.classList.remove(targetClass);
           target.classList.add(targetClass);
         }
-      }, 100);
+      }, 200);
     }
   });
 });
@@ -504,22 +511,27 @@ galleryCard.forEach((item) => {
   });
 });
 
-accordionTrigger.addEventListener("click", (e) => {
-  e.preventDefault();
-  const count = accordionContent.childElementCount;
-  const height = count * 46;
-  accordionContent.classList.toggle("open");
-  if (accordionContent.classList.contains("open")) {
-    accordionContent.style.height = `${height}px`;
-  } else {
-    accordionContent.style.height = 0;
-  }
+accordionTrigger.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    e.preventDefault();
+    const accordionContent = item
+      .closest(".mobile-catalog__item_accordion")
+      .querySelector(".mobile-catalog__accordion-content");
+    const count = accordionContent.childElementCount;
+    const height = count * 45;
+    accordionContent.classList.toggle("open");
+    if (accordionContent.classList.contains("open")) {
+      accordionContent.style.height = `${height}px`;
+    } else {
+      accordionContent.style.height = 0;
+    }
+  });
 });
 
 innerListOpener.forEach((item) => {
   item.addEventListener("click", (e) => {
     e.preventDefault();
-    const openMenuHeight = mobileCatalogList.getBoundingClientRect().height;
+    // const openMenuHeight = mobileCatalogList.getBoundingClientRect().height;
     const listTitle = item.dataset.list;
     const list = document.getElementById(listTitle);
     let listHeight = list.getBoundingClientRect().height;

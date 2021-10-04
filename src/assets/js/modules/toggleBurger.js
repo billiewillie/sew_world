@@ -6,7 +6,8 @@ const toggleBurgers = (
   footer,
   cover,
   wrapper,
-  header
+  header,
+  isOpenCatalog
 ) => {
   burgers.forEach((burger) => {
     burger.addEventListener("click", () => {
@@ -15,6 +16,8 @@ const toggleBurgers = (
       header.classList.remove("scroll-down");
       if (window.innerWidth >= 1280) {
         desktopMenu.classList.toggle("show");
+        isOpenCatalog = !isOpenCatalog;
+        console.log(isOpenCatalog);
       } else if (window.innerWidth < 768) {
         main.classList.toggle("hidden-by-mobile-catalog");
         footer.classList.toggle("hidden-by-mobile-catalog");
