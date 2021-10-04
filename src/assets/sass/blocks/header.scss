@@ -537,8 +537,14 @@
 }
 
 .search-form__results-item {
-  display: inline-block;
+  display: flex;
   margin-bottom: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &:hover {
+    background-color: $bg_alt_color;
+  }
 
   &:last-of-type {
     margin-bottom: 0;
