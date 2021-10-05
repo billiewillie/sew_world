@@ -560,30 +560,28 @@ searchCard.forEach((item) => {
     });
   }
 
-  if (like) {
-    like.addEventListener("click", () => {
-      if (!likedGoods.includes(id)) {
-        likedGoods.push(id);
-        like.classList.add("card-icons_clicked");
-        item.setAttribute("data-liked", "true");
-      } else {
-        likedGoods = likedGoods.filter((el) => el !== id);
-        like.classList.remove("card-icons_clicked");
-        item.setAttribute("data-liked", "false");
-      }
+  like.addEventListener("click", () => {
+    if (!likedGoods.includes(id)) {
+      likedGoods.push(id);
+      like.classList.add("card-icons_clicked");
+      item.setAttribute("data-liked", "true");
+    } else {
+      likedGoods = likedGoods.filter((el) => el !== id);
+      like.classList.remove("card-icons_clicked");
+      item.setAttribute("data-liked", "false");
+    }
 
-      const length = likedGoods.length;
-      const amount = headerLiked.querySelector(".header-icons__amount");
-      headerLiked.dataset.liked = length;
+    const length = likedGoods.length;
+    const amount = headerLiked.querySelector(".header-icons__amount");
+    headerLiked.dataset.liked = length;
 
-      if (length > 0) {
-        headerLiked.classList.add("header-icons__item_highlighted");
-      } else {
-        headerLiked.classList.remove("header-icons__item_highlighted");
-      }
-      amount.textContent = length;
-    });
-  }
+    if (length > 0) {
+      headerLiked.classList.add("header-icons__item_highlighted");
+    } else {
+      headerLiked.classList.remove("header-icons__item_highlighted");
+    }
+    amount.textContent = length;
+  });
 
   match.addEventListener("click", () => {
     if (!goodsToMatch.includes(id)) {
@@ -694,6 +692,8 @@ searchButtonReset.addEventListener("click", () => {
   searchForm.classList.remove("show");
   searchResults.classList.remove("show");
   inputSearch.value = "";
+  dummyCover.classList.remove("show");
+  dummyCover.classList.remove("show-for-catalog");
 });
 
 function killCopy(e) {
