@@ -529,18 +529,35 @@
   border-right: 1px solid rgba(79, 79, 79, 0.2);
   border-bottom: 1px solid rgba(79, 79, 79, 0.2);
 
+  @media (min-width: $desktop) {
+    padding: 32px;
+    justify-content: space-between;
+  }
+
   &.show {
     display: flex;
-    flex-direction: column;
     visibility: visible;
+
+    & > div {
+      flex-direction: column;
+    }
   }
 }
 
 .search-form__results-item {
   display: flex;
   margin-bottom: 10px;
-  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
+  transition: background-color 0.32s ease-in-out;
+  cursor: pointer;
+
+  @media (min-width: $desktop) {
+    margin-bottom: 0;
+    padding: 16px;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
 
   &:hover {
     background-color: $bg_alt_color;
@@ -549,6 +566,34 @@
   &:last-of-type {
     margin-bottom: 0;
   }
+}
+
+.search-form__results-pic {
+  width: 50px;
+  height: 50px;
+
+  & img {
+    height: auto;
+  }
+}
+
+.search-form__results-item-block {
+  flex: auto;
+  width: 83%;
+  padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: $desktop) {
+    flex-wrap: nowrap;
+  }
+}
+
+.search-form__results-name {
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
 .header-icons__amount {
@@ -569,4 +614,67 @@
 
 .header-icon__filled {
   position: absolute;
+}
+
+.search-form__results-icons {
+  display: flex;
+}
+
+.search-form__results-price {
+  font-size: 14px;
+}
+
+.search-form__results_left {
+  display: flex;
+  width: 21%;
+}
+
+.search-form__results_right {
+  width: 69%;
+}
+
+.search-form__results-title {
+  font-size: 14px;
+}
+
+.search-form__results-link {
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  padding-left: 16px;
+  margin-top: 16px;
+  display: flex;
+  cursor: pointer;
+  transition: opacity 0.32s ease-in-out;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.search-form__results-block {
+  margin-bottom: 24px;
+
+  & > * {
+    margin-bottom: 8px;
+    display: flex;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.search-form__results-block-title {
+  font-size: 12px;
+  opacity: 0.5;
+  font-family: $font_semibold;
+}
+
+.search-form__results-block-link {
+  font-size: 12px;
 }
