@@ -13,68 +13,62 @@ import FormValidator from "@yaireo/validator"; // https://github.com/yairEO/vali
 gsap.registerPlugin(ScrollTrigger);
 
 // varibles
-const burgers = document.querySelectorAll(".burger");
-const iconSearch = document.querySelector(".header-icons__item_search");
-const inputSearch = document.querySelector(".search-form__input");
-const searchResults = document.querySelector(".search-form__results");
-const searchButtonReset = document.querySelector(".search-form__button");
-const searchForm = document.querySelector(".search-form");
-const consultForm = document.querySelector("#consult-form");
-const subscribeForm = document.querySelector("#subscribe-form");
-const modalCallForm = document.querySelector("#modal-call-form");
-const modalQuestionForm = document.querySelector("#modal-question-form");
-const modalLoginForm = document.querySelector("#modal-login-form");
-const modalLoginCodeForm = document.querySelector("#modal-login-form-code");
-const asideModalWelcomeMessage = document.querySelector(
-  ".aside-modal-welcome-message"
-);
-const dummyCover = document.querySelector(".dummy-cover");
-const wrapper = document.querySelector(".wrapper");
-const main = document.querySelector(".main");
-const footer = document.querySelector(".footer");
-const galleryTabs = document.querySelectorAll(".gallery-tab");
-const header = document.querySelector(".header");
-const body = document.querySelector("body");
-const youTubeItems = document.querySelectorAll(".youtube-item");
-const headerTopAnimated = document.querySelectorAll(".header__top_animated");
+let selectAll = (el, parent = document) => parent.querySelectorAll(el);
+let select = (el, parent = document) => parent.querySelector(el);
+const burgers = selectAll(".burger");
+const iconSearch = select(".header-icons__item_search");
+const inputSearch = select(".search-form__input");
+const searchResults = select(".search-form__results");
+const searchButtonReset = select(".search-form__button");
+const searchForm = select(".search-form");
+const consultForm = select("#consult-form");
+const subscribeForm = select("#subscribe-form");
+const modalCallForm = select("#modal-call-form");
+const modalQuestionForm = select("#modal-question-form");
+const modalLoginForm = select("#modal-login-form");
+const modalLoginCodeForm = select("#modal-login-form-code");
+const asideModalWelcomeMessage = select(".aside-modal-welcome-message");
+const dummyCover = select(".dummy-cover");
+const wrapper = select(".wrapper");
+const main = select(".main");
+const footer = select(".footer");
+const galleryTabs = selectAll(".gallery-tab");
+const header = select(".header");
+const body = select("body");
+const youTubeItems = selectAll(".youtube-item");
+const headerTopAnimated = selectAll(".header__top_animated");
 
-const galleryCard = document.querySelectorAll(".gallery-card");
-const searchCard = document.querySelectorAll(".search-form__results-item");
+const galleryCard = selectAll(".gallery-card");
+const searchCard = selectAll(".search-form__results-item");
 
-const headerCatalog = document.querySelector(".header-catalog");
-const headerBucket = document.querySelector("[data-bucket]");
-const headerLiked = document.querySelector("[data-liked]");
-const headerMatched = document.querySelector("[data-match]");
-const mobileCatalog = document.querySelector(".mobile-catalog");
-const modalInnerWrap = document.querySelectorAll(".modal-inner-wrap");
-const headerCatalogSubcategoriesItem = document.querySelector(
+const headerCatalog = select(".header-catalog");
+const headerBucket = select("[data-bucket]");
+const headerLiked = select("[data-liked]");
+const headerMatched = select("[data-match]");
+const mobileCatalog = select(".mobile-catalog");
+const modalInnerWrap = selectAll(".modal-inner-wrap");
+const headerCatalogSubcategoriesItem = select(
   ".header-catalog__subcategories-item_active"
 );
-const closeModal = document.querySelector(".close-modal");
-const asideModal = document.querySelector(".aside-modal");
-const headerCatalogCategories = document.querySelectorAll(
-  ".header-catalog__category"
-);
-const mobileCatalogList = document.querySelector(".mobile-catalog__list");
-const backBtn = document.querySelectorAll(
-  ".mobile-catalog__accordion-inner-item-back"
-);
+const closeModal = select(".close-modal");
+const asideModal = select(".aside-modal");
+const headerCatalogCategories = selectAll(".header-catalog__category");
+const mobileCatalogList = select(".mobile-catalog__list");
+const backBtn = selectAll(".mobile-catalog__accordion-inner-item-back");
 
-const accordionTrigger = document.querySelectorAll(
+const accordionTrigger = selectAll(
   ".mobile-catalog__item_accordion .mobile-catalog__item-link"
 );
-const innerListOpener = document.querySelectorAll(
-  ".mobile-catalog__accordion-item > a"
-);
+const innerListOpener = selectAll(".mobile-catalog__accordion-item > a");
 const banner = headerCatalogSubcategoriesItem.querySelector(
   ".header-subcategories__banner"
 );
-const headerConsult = document.querySelector(".header-consult");
-const headerPhoneNumber = document.querySelector(".header-phone__number");
-const headerCallback = document.querySelector(".header-callback");
-const modalRequest = document.querySelectorAll(".modal-request");
-const inputCities = document.querySelector("#cities-filter");
-const itemsCitiesList = document.querySelector(".modal-city__list");
+const headerConsult = select(".header-consult");
+const headerPhoneNumber = select(".header-phone__number");
+const headerCallback = select(".header-callback");
+const modalRequest = selectAll(".modal-request");
+const inputCities = select("#cities-filter");
+const itemsCitiesList = select(".modal-city__list");
 const itemsCities = document
   .querySelector(".modal-city__list")
   .getElementsByTagName("li");
@@ -410,7 +404,7 @@ headerCatalogCategories.forEach((item) => {
       const category = item.dataset.target;
       const target = document.getElementById(category);
       const targetClass = "header-catalog__subcategories-item_active";
-      const currentActive = document.querySelector(`.${targetClass}`);
+      const currentActive = select(`.${targetClass}`);
       if (!target.classList.contains(targetClass)) {
         currentActive.classList.remove(targetClass);
         target.classList.add(targetClass);
@@ -444,7 +438,7 @@ youTubeItems.forEach((item) => {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
                 ></iframe>`;
-    const modalContent = document.querySelector("#modal-1-content");
+    const modalContent = select("#modal-1-content");
     modalContent.insertAdjacentHTML("beforeend", iframe);
   });
 });
