@@ -13,62 +13,62 @@ import FormValidator from "@yaireo/validator"; // https://github.com/yairEO/vali
 gsap.registerPlugin(ScrollTrigger);
 
 // varibles
-let selectAll = (el, parent = document) => parent.querySelectorAll(el);
-let select = (el, parent = document) => parent.querySelector(el);
-const burgers = selectAll(".burger");
-const iconSearch = select(".header-icons__item_search");
-const inputSearch = select(".search-form__input");
-const searchResults = select(".search-form__results");
-const searchButtonReset = select(".search-form__button");
-const searchForm = select(".search-form");
-const consultForm = select("#consult-form");
-const subscribeForm = select("#subscribe-form");
-const modalCallForm = select("#modal-call-form");
-const modalQuestionForm = select("#modal-question-form");
-const modalLoginForm = select("#modal-login-form");
-const modalLoginCodeForm = select("#modal-login-form-code");
-const asideModalWelcomeMessage = select(".aside-modal-welcome-message");
-const dummyCover = select(".dummy-cover");
-const wrapper = select(".wrapper");
-const main = select(".main");
-const footer = select(".footer");
-const galleryTabs = selectAll(".gallery-tab");
-const header = select(".header");
-const body = select("body");
-const youTubeItems = selectAll(".youtube-item");
-const headerTopAnimated = selectAll(".header__top_animated");
+const queryAll = (el, parent = document) => parent.querySelectorAll(el);
+const query = (el, parent = document) => parent.querySelector(el);
+const burgers = queryAll(".burger");
+const iconSearch = query(".header-icons__item_search");
+const inputSearch = query(".search-form__input");
+const searchResults = query(".search-form__results");
+const searchButtonReset = query(".search-form__button");
+const searchForm = query(".search-form");
+const consultForm = query("#consult-form");
+const subscribeForm = query("#subscribe-form");
+const modalCallForm = query("#modal-call-form");
+const modalQuestionForm = query("#modal-question-form");
+const modalLoginForm = query("#modal-login-form");
+const modalLoginCodeForm = query("#modal-login-form-code");
+const asideModalWelcomeMessage = query(".aside-modal-welcome-message");
+const dummyCover = query(".dummy-cover");
+const wrapper = query(".wrapper");
+const main = query(".main");
+const footer = query(".footer");
+const galleryTabs = queryAll(".gallery-tab");
+const header = query(".header");
+const body = query("body");
+const youTubeItems = queryAll(".youtube-item");
+const headerTopAnimated = queryAll(".header__top_animated");
 
-const galleryCard = selectAll(".gallery-card");
-const searchCard = selectAll(".search-form__results-item");
+const galleryCard = queryAll(".gallery-card");
+const searchCard = queryAll(".search-form__results-item");
 
-const headerCatalog = select(".header-catalog");
-const headerBucket = select("[data-bucket]");
-const headerLiked = select("[data-liked]");
-const headerMatched = select("[data-match]");
-const mobileCatalog = select(".mobile-catalog");
-const modalInnerWrap = selectAll(".modal-inner-wrap");
-const headerCatalogSubcategoriesItem = select(
+const headerCatalog = query(".header-catalog");
+const headerBucket = query("[data-bucket]");
+const headerLiked = query("[data-liked]");
+const headerMatched = query("[data-match]");
+const mobileCatalog = query(".mobile-catalog");
+const modalInnerWrap = queryAll(".modal-inner-wrap");
+const headerCatalogSubcategoriesItem = query(
   ".header-catalog__subcategories-item_active"
 );
-const closeModal = select(".close-modal");
-const asideModal = select(".aside-modal");
-const headerCatalogCategories = selectAll(".header-catalog__category");
-const mobileCatalogList = select(".mobile-catalog__list");
-const backBtn = selectAll(".mobile-catalog__accordion-inner-item-back");
+const closeModal = query(".close-modal");
+const asideModal = query(".aside-modal");
+const headerCatalogCategories = queryAll(".header-catalog__category");
+const mobileCatalogList = query(".mobile-catalog__list");
+const backBtn = queryAll(".mobile-catalog__accordion-inner-item-back");
 
-const accordionTrigger = selectAll(
+const accordionTrigger = queryAll(
   ".mobile-catalog__item_accordion .mobile-catalog__item-link"
 );
-const innerListOpener = selectAll(".mobile-catalog__accordion-item > a");
+const innerListOpener = queryAll(".mobile-catalog__accordion-item > a");
 const banner = headerCatalogSubcategoriesItem.querySelector(
   ".header-subcategories__banner"
 );
-const headerConsult = select(".header-consult");
-const headerPhoneNumber = select(".header-phone__number");
-const headerCallback = select(".header-callback");
-const modalRequest = selectAll(".modal-request");
-const inputCities = select("#cities-filter");
-const itemsCitiesList = select(".modal-city__list");
+const headerConsult = query(".header-consult");
+const headerPhoneNumber = query(".header-phone__number");
+const headerCallback = query(".header-callback");
+const modalRequest = queryAll(".modal-request");
+const inputCities = query("#cities-filter");
+const itemsCitiesList = query(".modal-city__list");
 const itemsCities = document
   .querySelector(".modal-city__list")
   .getElementsByTagName("li");
@@ -404,7 +404,7 @@ headerCatalogCategories.forEach((item) => {
       const category = item.dataset.target;
       const target = document.getElementById(category);
       const targetClass = "header-catalog__subcategories-item_active";
-      const currentActive = select(`.${targetClass}`);
+      const currentActive = query(`.${targetClass}`);
       if (!target.classList.contains(targetClass)) {
         currentActive.classList.remove(targetClass);
         target.classList.add(targetClass);
@@ -438,7 +438,7 @@ youTubeItems.forEach((item) => {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
                 ></iframe>`;
-    const modalContent = select("#modal-1-content");
+    const modalContent = query("#modal-1-content");
     modalContent.insertAdjacentHTML("beforeend", iframe);
   });
 });
