@@ -15,7 +15,7 @@
 
   @media (min-width: $tablet) {
     padding: 46px 0 48px;
-    height: calc(100vh - 110px);
+    min-height: calc(100vh - 110px);
     top: 0;
   }
 

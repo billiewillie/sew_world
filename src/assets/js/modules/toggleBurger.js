@@ -21,6 +21,7 @@ const toggleBurgers = (
   } else if (window.innerWidth < 768) {
     main.classList.toggle("hidden-by-mobile-catalog");
     footer.classList.toggle("hidden-by-mobile-catalog");
+    wrapper.classList.toggle("opened-mobile-menu");
     mobileMenu.classList.toggle("show");
   }
 };

@@ -47,8 +47,13 @@
     overflow: visible;
     min-height: 550px;
 
+    @media (min-width: $tablet) {
+      min-height: 450px;
+    }
+
     @media (min-width: $desktop) {
       overflow: hidden;
+      min-height: 550px;
     }
   }
 
@@ -96,6 +101,7 @@
 
     @media (min-width: $tablet) {
       width: 48%;
+      margin-bottom: 0;
     }
 
     @media (min-width: $desktop) {

@@ -37,10 +37,8 @@ const header = query(".header");
 const body = query("body");
 const youTubeItems = queryAll(".youtube-item");
 const headerTopAnimated = queryAll(".header__top_animated");
-
 const galleryCard = queryAll(".gallery-card");
 const searchCard = queryAll(".search-form__results-item");
-
 const headerCatalog = query(".header-catalog");
 const headerBucket = query("[data-bucket]");
 const headerLiked = query("[data-liked]");
@@ -69,9 +67,7 @@ const headerCallback = query(".header-callback");
 const modalRequest = queryAll(".modal-request");
 const inputCities = query("#cities-filter");
 const itemsCitiesList = query(".modal-city__list");
-const itemsCities = document
-  .querySelector(".modal-city__list")
-  .getElementsByTagName("li");
+const itemsCities = query(".modal-city__list").getElementsByTagName("li");
 
 inputCities.addEventListener("keyup", (e) =>
   citiesFilter(e, itemsCities, itemsCitiesList)
@@ -383,10 +379,13 @@ window.addEventListener("scroll", () => {
   }
   lastScroll = currentScroll;
 
+  if (searchForm.classList.contains("show")) {
+    dummyCover.classList.remove("show-for-catalog");
+    burgers.forEach((item) => item.classList.remove("toggled"));
+  }
   searchForm.classList.remove("show");
   searchResults.classList.remove("show");
   inputSearch.value = "";
-  dummyCover.classList.remove("show-for-catalog");
 });
 
 window.addEventListener("mousedown", (e) => {
@@ -680,6 +679,8 @@ iconSearch.addEventListener("click", () => {
   searchForm.classList.add("show");
   dummyCover.classList.add("show-for-catalog");
   inputSearch.focus();
+  headerCatalog.classList.remove("show");
+  mobileCatalog.classList.remove("show");
 });
 
 searchButtonReset.addEventListener("click", () => {

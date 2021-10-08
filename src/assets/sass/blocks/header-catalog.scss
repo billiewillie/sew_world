@@ -81,9 +81,6 @@
 
   &__category_active {
     opacity: 1;
-    & .header-catalog__category-name {
-      font-family: $font_bold;
-    }
   }
 
   &__category-name {
