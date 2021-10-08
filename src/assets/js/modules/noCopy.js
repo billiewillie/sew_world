@@ -13,6 +13,10 @@ const noCopy = () => {
     document.onmousedown = killCopy;
     document.onclick = reEnable;
   }
+
+  window.addEventListener("mousedown", (e) => {
+    if (e.which === 2) e.preventDefault();
+  });
 };
 
 export default noCopy;

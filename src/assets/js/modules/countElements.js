@@ -1,3 +1,5 @@
+import { query } from "./queryFunctions";
+
 const countElements = (
   array,
   goodsInBucket,
@@ -9,9 +11,9 @@ const countElements = (
 ) => {
   array.forEach((item) => {
     const id = Number(item.dataset.id);
-    const button = item.querySelector("button");
-    const like = item.querySelector(".card-icons__like");
-    const match = item.querySelector(".card-icons__match");
+    const button = query("button", item);
+    const like = query(".card-icons__like", item);
+    const match = query(".card-icons__match", item);
     const buttonText1 = "в корзину";
     const buttonText2 = "товар в корзине";
 
@@ -28,7 +30,7 @@ const countElements = (
         }
 
         const length = goodsInBucket.length;
-        const amount = headerBucket.querySelector(".header-icons__amount");
+        const amount = query(".header-icons__amount", headerBucket);
         headerBucket.dataset.bucket = length;
 
         if (length > 0) {
@@ -53,7 +55,7 @@ const countElements = (
         }
 
         const length = likedGoods.length;
-        const amount = headerLiked.querySelector(".header-icons__amount");
+        const amount = query(".header-icons__amount", headerLiked);
         headerLiked.dataset.liked = length;
 
         if (length > 0) {
@@ -79,7 +81,7 @@ const countElements = (
       console.log(item);
 
       const length = goodsToMatch.length;
-      const amount = headerMatched.querySelector(".header-icons__amount");
+      const amount = query(".header-icons__amount", headerMatched);
       headerMatched.dataset.match = length;
 
       if (length > 0) {

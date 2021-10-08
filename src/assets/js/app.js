@@ -1,6 +1,7 @@
 "use strict";
 
 // imports
+import { query, queryAll } from "./modules/queryFunctions";
 import toggleBurgers from "./modules/toggleBurger";
 import citiesFilter from "./modules/citiesFilter";
 import getGallery from "./modules/getGallery";
@@ -10,6 +11,7 @@ import iconSearchFunction from "./modules/iconSearchFunction";
 import closeModalFunction from "./modules/closeModalFunction";
 import dummyCoverClick from "./modules/dummyCoverClick";
 import countElements from "./modules/countElements";
+import setBannerWidth from "./modules/setBannerWidth";
 
 import Flickity from "flickity";
 import gsap from "gsap";
@@ -20,8 +22,6 @@ import FormValidator from "@yaireo/validator"; // https://github.com/yairEO/vali
 gsap.registerPlugin(ScrollTrigger);
 
 // varibles
-const queryAll = (el, parent = document) => parent.querySelectorAll(el);
-const query = (el, parent = document) => parent.querySelector(el);
 const burgers = queryAll(".burger");
 const iconSearch = query(".header-icons__item_search");
 const inputSearch = query(".search-form__input");
@@ -137,19 +137,7 @@ burgers.forEach((burger) => {
 window.addEventListener("DOMContentLoaded", () => {
   getGallery(galleryTabs);
 
-  (() => {
-    if (banner) {
-      const subcategories = Array.from(
-        headerCatalogSubcategoriesItem.querySelectorAll(
-          ".header-subcategories__column"
-        )
-      );
-      const elWidth = subcategories.reduce((acc, category) => {
-        return acc + category.getBoundingClientRect().width;
-      }, 0);
-      banner.style.width = `${elWidth}px`;
-    }
-  })();
+  setBannerWidth(banner, headerCatalogSubcategoriesItem);
 
   headerTopAnimated.forEach((item) => {
     setTimeout(() => {
@@ -395,10 +383,6 @@ window.addEventListener("scroll", () => {
   searchForm.classList.remove("show");
   searchResults.classList.remove("show");
   inputSearch.value = "";
-});
-
-window.addEventListener("mousedown", (e) => {
-  if (e.which === 2) e.preventDefault();
 });
 
 headerCatalogCategories.forEach((item) => {
