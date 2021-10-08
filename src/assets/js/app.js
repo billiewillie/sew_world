@@ -1,7 +1,7 @@
 "use strict";
 
 // imports
-import { query, queryAll } from "./modules/queryFunctions";
+import { query, queryAll, queryId } from "./modules/queryFunctions";
 import toggleBurgers from "./modules/toggleBurger";
 import citiesFilter from "./modules/citiesFilter";
 import getGallery from "./modules/getGallery";
@@ -394,7 +394,7 @@ headerCatalogCategories.forEach((item) => {
       });
       item.classList.add("header-catalog__category_active");
       const category = item.dataset.target;
-      const target = document.getElementById(category);
+      const target = queryId(category);
       const targetClass = "header-catalog__subcategories-item_active";
       const currentActive = query(`.${targetClass}`);
       if (!target.classList.contains(targetClass)) {
@@ -407,7 +407,7 @@ headerCatalogCategories.forEach((item) => {
 
 modalRequest.forEach((item) => {
   const modalRequestItem = item.dataset.modal;
-  const modal = document.getElementById(modalRequestItem);
+  const modal = queryId(modalRequestItem);
 
   item.addEventListener("click", (event) => {
     event.preventDefault();
@@ -476,7 +476,7 @@ innerListOpener.forEach((item) => {
   item.addEventListener("click", (e) => {
     e.preventDefault();
     const listTitle = item.dataset.list;
-    const list = document.getElementById(listTitle);
+    const list = queryId(listTitle);
     let listHeight = list.getBoundingClientRect().height;
     if (listHeight < initialMenuHeight)
       list.style.height = `${initialMenuHeight + 200}px`;
