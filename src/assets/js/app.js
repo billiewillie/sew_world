@@ -4,6 +4,13 @@
 import toggleBurgers from "./modules/toggleBurger";
 import citiesFilter from "./modules/citiesFilter";
 import getGallery from "./modules/getGallery";
+import noCopy from "./modules/noCopy";
+import searchReset from "./modules/searchReset";
+import iconSearchFunction from "./modules/iconSearchFunction";
+import closeModalFunction from "./modules/closeModalFunction";
+import dummyCoverClick from "./modules/dummyCoverClick";
+import countElements from "./modules/countElements";
+
 import Flickity from "flickity";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -69,6 +76,15 @@ const inputCities = query("#cities-filter");
 const itemsCitiesList = query(".modal-city__list");
 const itemsCities = query(".modal-city__list").getElementsByTagName("li");
 
+noCopy();
+
+let isOpenCatalog = false;
+let currentIndex = 0;
+let initialMenuHeight = mobileCatalogList.getBoundingClientRect().height;
+const goodsToMatch = [];
+const likedGoods = [];
+const goodsInBucket = [];
+
 inputCities.addEventListener("keyup", (e) =>
   citiesFilter(e, itemsCities, itemsCitiesList)
 );
@@ -85,13 +101,6 @@ inputSearch.addEventListener("keyup", (e) => {
     }, 500);
   }
 });
-
-let isOpenCatalog = false;
-let currentIndex = 0;
-let initialMenuHeight = mobileCatalogList.getBoundingClientRect().height;
-let goodsToMatch = [];
-let likedGoods = [];
-let goodsInBucket = [];
 
 headerCatalog.addEventListener("click", (e) => {
   if (headerCatalog.classList.contains("show")) {
@@ -413,8 +422,8 @@ headerCatalogCategories.forEach((item) => {
 });
 
 modalRequest.forEach((item) => {
-  const modalRequest = item.dataset.modal;
-  const modal = document.getElementById(modalRequest);
+  const modalRequestItem = item.dataset.modal;
+  const modal = document.getElementById(modalRequestItem);
 
   item.addEventListener("click", (event) => {
     event.preventDefault();
@@ -442,165 +451,25 @@ youTubeItems.forEach((item) => {
   });
 });
 
-galleryCard.forEach((item) => {
-  const id = Number(item.dataset.id);
-  const button = item.querySelector("button");
-  const like = item.querySelector(".card-icons__like");
-  const match = item.querySelector(".card-icons__match");
-  const buttonText1 = "в корзину";
-  const buttonText2 = "товар в корзине";
-  button.addEventListener("click", () => {
-    if (!goodsInBucket.includes(id)) {
-      goodsInBucket.push(id);
-      item.classList.add("card_in-bucket");
-      if (button) button.textContent = buttonText2;
-    } else {
-      goodsInBucket = goodsInBucket.filter((el) => el !== id);
-      item.classList.remove("card_in-bucket");
-      button.textContent = buttonText1;
-    }
+countElements(
+  galleryCard,
+  goodsInBucket,
+  likedGoods,
+  goodsToMatch,
+  headerBucket,
+  headerLiked,
+  headerMatched
+);
 
-    const length = goodsInBucket.length;
-    const amount = headerBucket.querySelector(".header-icons__amount");
-    headerBucket.dataset.bucket = length;
-
-    if (length > 0) {
-      headerBucket.classList.add("header-icons__item_highlighted");
-    } else {
-      headerBucket.classList.remove("header-icons__item_highlighted");
-    }
-    amount.textContent = length;
-  });
-
-  if (like) {
-    like.addEventListener("click", () => {
-      if (!likedGoods.includes(id)) {
-        likedGoods.push(id);
-        like.classList.add("card-icons_clicked");
-        item.setAttribute("data-liked", "true");
-      } else {
-        likedGoods = likedGoods.filter((el) => el !== id);
-        like.classList.remove("card-icons_clicked");
-        item.setAttribute("data-liked", "false");
-      }
-
-      const length = likedGoods.length;
-      const amount = headerLiked.querySelector(".header-icons__amount");
-      headerLiked.dataset.liked = length;
-
-      if (length > 0) {
-        headerLiked.classList.add("header-icons__item_highlighted");
-      } else {
-        headerLiked.classList.remove("header-icons__item_highlighted");
-      }
-      amount.textContent = length;
-    });
-  }
-
-  match.addEventListener("click", () => {
-    if (!goodsToMatch.includes(id)) {
-      goodsToMatch.push(id);
-      match.classList.add("card-icons_clicked");
-      item.setAttribute("data-match", "true");
-    } else {
-      goodsToMatch = goodsToMatch.filter((el) => el !== id);
-      match.classList.remove("card-icons_clicked");
-      item.setAttribute("data-match", "false");
-    }
-
-    const length = goodsToMatch.length;
-    const amount = headerMatched.querySelector(".header-icons__amount");
-    headerMatched.dataset.match = length;
-
-    if (length > 0) {
-      headerMatched.classList.add("header-icons__item_highlighted");
-    } else {
-      headerMatched.classList.remove("header-icons__item_highlighted");
-    }
-    amount.textContent = length;
-  });
-});
-
-searchCard.forEach((item) => {
-  const id = Number(item.dataset.id);
-  const button = item.querySelector("button");
-  const like = item.querySelector(".card-icons__like");
-  const match = item.querySelector(".card-icons__match");
-  const buttonText1 = "в корзину";
-  const buttonText2 = "товар в корзине";
-  if (button) {
-    button.addEventListener("click", () => {
-      if (!goodsInBucket.includes(id)) {
-        goodsInBucket.push(id);
-        item.classList.add("card_in-bucket");
-        button.textContent = buttonText2;
-      } else {
-        goodsInBucket = goodsInBucket.filter((el) => el !== id);
-        item.classList.remove("card_in-bucket");
-        button.textContent = buttonText1;
-      }
-
-      const length = goodsInBucket.length;
-      const amount = headerBucket.querySelector(".header-icons__amount");
-      headerBucket.dataset.bucket = length;
-
-      if (length > 0) {
-        headerBucket.classList.add("header-icons__item_highlighted");
-      } else {
-        headerBucket.classList.remove("header-icons__item_highlighted");
-      }
-      amount.textContent = length;
-    });
-  }
-
-  like.addEventListener("click", () => {
-    if (!likedGoods.includes(id)) {
-      likedGoods.push(id);
-      like.classList.add("card-icons_clicked");
-      item.setAttribute("data-liked", "true");
-    } else {
-      likedGoods = likedGoods.filter((el) => el !== id);
-      like.classList.remove("card-icons_clicked");
-      item.setAttribute("data-liked", "false");
-    }
-
-    const length = likedGoods.length;
-    const amount = headerLiked.querySelector(".header-icons__amount");
-    headerLiked.dataset.liked = length;
-
-    if (length > 0) {
-      headerLiked.classList.add("header-icons__item_highlighted");
-    } else {
-      headerLiked.classList.remove("header-icons__item_highlighted");
-    }
-    amount.textContent = length;
-  });
-
-  match.addEventListener("click", () => {
-    if (!goodsToMatch.includes(id)) {
-      goodsToMatch.push(id);
-      match.classList.add("card-icons_clicked");
-      item.setAttribute("data-match", "true");
-    } else {
-      goodsToMatch = goodsToMatch.filter((el) => el !== id);
-      match.classList.remove("card-icons_clicked");
-      item.setAttribute("data-match", "false");
-    }
-
-    console.log(item);
-
-    const length = goodsToMatch.length;
-    const amount = headerMatched.querySelector(".header-icons__amount");
-    headerMatched.dataset.match = length;
-
-    if (length > 0) {
-      headerMatched.classList.add("header-icons__item_highlighted");
-    } else {
-      headerMatched.classList.remove("header-icons__item_highlighted");
-    }
-    amount.textContent = length;
-  });
-});
+countElements(
+  searchCard,
+  goodsInBucket,
+  likedGoods,
+  goodsToMatch,
+  headerBucket,
+  headerLiked,
+  headerMatched
+);
 
 accordionTrigger.forEach((item) => {
   item.addEventListener("click", (e) => {
@@ -622,7 +491,6 @@ accordionTrigger.forEach((item) => {
 innerListOpener.forEach((item) => {
   item.addEventListener("click", (e) => {
     e.preventDefault();
-    // const openMenuHeight = mobileCatalogList.getBoundingClientRect().height;
     const listTitle = item.dataset.list;
     const list = document.getElementById(listTitle);
     let listHeight = list.getBoundingClientRect().height;
@@ -646,67 +514,44 @@ backBtn.forEach((item) => {
   });
 });
 
-closeModal.addEventListener("click", () => {
-  asideModal.classList.remove("show");
-  main.classList.remove("hidden-by-mobile-catalog");
-  footer.classList.remove("hidden-by-mobile-catalog");
-  dummyCover.classList.remove("show");
-  dummyCover.classList.remove("show-for-catalog");
-  wrapper.classList.remove("opened-mobile-menu");
-  isOpenCatalog = false;
-  setTimeout(() => {
-    modalInnerWrap.forEach((el) => {
-      el.classList.remove("show");
-    });
-  }, 300);
-});
+closeModal.addEventListener("click", () =>
+  closeModalFunction(
+    asideModal,
+    main,
+    footer,
+    dummyCover,
+    wrapper,
+    isOpenCatalog,
+    modalInnerWrap
+  )
+);
 
-dummyCover.addEventListener("click", () => {
-  asideModal.classList.remove("show");
-  headerCatalog.classList.remove("show");
-  dummyCover.classList.remove("show");
-  dummyCover.classList.remove("show-for-catalog");
-  burgers.forEach((burger) => burger.classList.remove("toggled"));
-  isOpenCatalog = false;
-  setTimeout(() => {
-    modalInnerWrap.forEach((el) => {
-      el.classList.remove("show");
-    });
-  }, 300);
-});
+dummyCover.addEventListener("click", () =>
+  dummyCoverClick(
+    asideModal,
+    headerCatalog,
+    dummyCover,
+    burgers,
+    isOpenCatalog,
+    modalInnerWrap
+  )
+);
 
-iconSearch.addEventListener("click", () => {
-  searchForm.classList.add("show");
-  dummyCover.classList.add("show-for-catalog");
-  inputSearch.focus();
-  headerCatalog.classList.remove("show");
-  mobileCatalog.classList.remove("show");
-});
+iconSearch.addEventListener("click", () =>
+  iconSearchFunction(
+    searchForm,
+    dummyCover,
+    inputSearch,
+    headerCatalog,
+    mobileCatalog
+  )
+);
 
-searchButtonReset.addEventListener("click", () => {
-  searchForm.classList.remove("show");
-  searchResults.classList.remove("show");
-  inputSearch.value = "";
-  dummyCover.classList.remove("show");
-  dummyCover.classList.remove("show-for-catalog");
-});
+searchButtonReset.addEventListener("click", () =>
+  searchReset(searchForm, searchResults, inputSearch, dummyCover)
+);
 
-function killCopy(e) {
-  return false;
-}
-
-function reEnable() {
-  return true;
-}
-
-document.onselectstart = new Function("return false");
-
-if (window.sidebar) {
-  document.onmousedown = killCopy;
-  document.onclick = reEnable;
-}
-
-[subscribeForm, consultForm].forEach((item) => {
+[(subscribeForm, consultForm)].forEach((item) => {
   const validatorConsult = new FormValidator(
     {
       events: ["blur", "paste", "change"],
