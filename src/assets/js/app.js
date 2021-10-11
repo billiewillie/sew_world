@@ -461,32 +461,35 @@ accordionTrigger.forEach((item) => {
     const accordionContent = item
       .closest(".mobile-catalog__item_accordion")
       .querySelector(".mobile-catalog__accordion-content");
-    const count = accordionContent.childElementCount;
-    const height = count * 45;
+    // const count = accordionContent.childElementCount;
+    // const height = count * 45;
     accordionContent.classList.toggle("open");
-    if (accordionContent.classList.contains("open")) {
-      accordionContent.style.height = `${height}px`;
-    } else {
-      accordionContent.style.height = 0;
-    }
+    item.classList.toggle("open");
+    // if (accordionContent.classList.contains("open")) {
+    //   accordionContent.style.height = `${height}px`;
+    // } else {
+    //   accordionContent.style.height = 0;
+    // }
   });
 });
 
 innerListOpener.forEach((item) => {
   item.addEventListener("click", (e) => {
-    e.preventDefault();
-    const listTitle = item.dataset.list;
-    const list = queryId(listTitle);
-    let listHeight = list.getBoundingClientRect().height;
-    if (listHeight < initialMenuHeight)
-      list.style.height = `${initialMenuHeight + 200}px`;
-    if (listHeight > initialMenuHeight)
-      mobileCatalogList.style.maxHeight = `${listHeight}px`;
-    else {
-      mobileCatalogList.style.maxHeight = `${initialMenuHeight + 200}px`;
-    }
+    if (e.target.closest(".mobile-catalog__accordion-item_ordinary")) {
+      e.preventDefault();
+      const listTitle = item.dataset.list;
+      const list = queryId(listTitle);
+      let listHeight = list.getBoundingClientRect().height;
+      if (listHeight < initialMenuHeight)
+        list.style.height = `${initialMenuHeight + 200}px`;
+      if (listHeight > initialMenuHeight)
+        mobileCatalogList.style.maxHeight = `${listHeight}px`;
+      else {
+        mobileCatalogList.style.maxHeight = `${initialMenuHeight + 200}px`;
+      }
 
-    list.classList.add("show");
+      list.classList.add("show");
+    }
   });
 });
 

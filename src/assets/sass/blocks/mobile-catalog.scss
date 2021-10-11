@@ -106,7 +106,7 @@
   }
 
   &__accordion-inner-item-title-field {
-    padding: 32px 24px 4px;
+    padding: 16px 24px;
     background-color: $bg_alt_color;
     display: flex;
     justify-content: space-between;
@@ -123,8 +123,13 @@
 
   &__item-link {
     padding: 0 24px;
+    display: flex;
     text-transform: uppercase;
     font-family: $font_bold;
+
+    &.open {
+      padding: 0 24px 16px;
+    }
 
     @media (min-width: $tablet) {
       padding: 0 48px;
