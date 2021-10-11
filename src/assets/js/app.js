@@ -377,12 +377,12 @@ window.addEventListener("scroll", () => {
   lastScroll = currentScroll;
 
   if (searchForm.classList.contains("show")) {
-    dummyCover.classList.remove("show-for-catalog");
+    // dummyCover.classList.remove("show-for-catalog");
     burgers.forEach((item) => item.classList.remove("toggled"));
   }
-  searchForm.classList.remove("show");
-  searchResults.classList.remove("show");
-  inputSearch.value = "";
+  // searchForm.classList.remove("show");
+  // searchResults.classList.remove("show");
+  // inputSearch.value = "";
 });
 
 headerCatalogCategories.forEach((item) => {
