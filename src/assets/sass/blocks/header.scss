@@ -457,12 +457,12 @@
 
   @media (min-width: $tablet) {
     left: 48px;
-    width: calc(100% - 380px);
+    width: calc(100% - 322px);
   }
 
   @media (min-width: $desktop) {
     left: 56px;
-    width: calc(100% - 396px);
+    width: calc(100% - 340px);
   }
 
   &.show {
@@ -493,7 +493,7 @@
 }
 
 .search-form__button {
-  width: 65px;
+  min-width: 46px;
   height: 100%;
   padding: 0;
   display: flex;
@@ -502,16 +502,17 @@
   cursor: pointer;
 
   @media (min-width: $tablet) {
-    width: 57px;
+    min-width: 57px;
   }
 
-  @media (min-width: $desktop) {
-    width: 56px;
+  &_submit {
+    background-color: #fff;
+    border-left: 1px solid rgba(30, 30, 30, 0.2);
   }
 
   & svg {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
   }
 }
 
