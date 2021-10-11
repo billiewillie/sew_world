@@ -8,25 +8,32 @@
   background-color: #fff;
 
   &.scroll-down {
-    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.06);
     @media (min-width: $desktop) {
       transform: translate3d(0, -50%, 0);
+      box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.06);
     }
 
     & .header__bottom {
-      transition: border-top 0.32s ease-in-out, border-bottom 0.32s ease-in-out;
-      border-top: 1px solid rgba(128, 67, 67, 0);
-      border-bottom: 1px solid rgba(30, 30, 30, 0);
+      @media (min-width: $desktop) {
+        transition: border-top 0.32s ease-in-out,
+          border-bottom 0.32s ease-in-out;
+        border-top: 1px solid rgba(128, 67, 67, 0);
+        border-bottom: 1px solid rgba(30, 30, 30, 0);
+      }
     }
 
     & .header-icons__item {
-      transition: border-left 0.32s ease-in-out;
-      border-left: 1px solid rgba(30, 30, 30, 0);
+      @media (min-width: $desktop) {
+        transition: border-left 0.32s ease-in-out;
+        border-left: 0px solid rgba(30, 30, 30, 0);
+      }
     }
 
     & .header-icons__item:last-of-type {
-      transition: border-right 0.32s ease-in-out;
-      border-right: 1px solid rgba(30, 30, 30, 0);
+      @media (min-width: $desktop) {
+        transition: border-right 0.32s ease-in-out;
+        border-right: 0px solid rgba(30, 30, 30, 0);
+      }
     }
 
     & .header-logo {

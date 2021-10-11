@@ -4,6 +4,7 @@
 import { query, queryAll } from "./modules/queryFunctions";
 import common from "./modules/common";
 import getGallery from "./modules/getGallery";
+import setYoutubeModal from "./modules/setYoutubeModal";
 
 import Flickity from "flickity";
 import gsap from "gsap";
@@ -222,18 +223,22 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 youTubeItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    const url = item.dataset.video;
-    const iframe = `<iframe
-                  src="https://www.youtube.com/embed/${url}"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>`;
-    const modalContent = query("#modal-1-content");
-    modalContent.insertAdjacentHTML("beforeend", iframe);
-  });
+  if (!item) return;
+  // item.addEventListener("click", () => {
+  //   const url = item.dataset.video;
+  //   const iframe = `<iframe
+  //                 src="https://www.youtube.com/embed/${url}"
+  //                 title="YouTube video player"
+  //                 frameborder="0"
+  //                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  //                 allowfullscreen
+  //               ></iframe>`;
+  //   const modalContent = query("#modal-1-content");
+  //   modalContent.insertAdjacentHTML("beforeend", iframe);
+  // });
+  item.addEventListener("click", () =>
+    setYoutubeModal(item, "#modal-1-content")
+  );
 });
 
 [(subscribeForm, consultForm)].forEach((item) => {
