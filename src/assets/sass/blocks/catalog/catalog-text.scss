@@ -26,10 +26,12 @@
 
   &__text {
     line-height: 2;
+    font-size: 18px;
   }
 
   &__list {
     padding-left: 15px;
+    font-size: 18px;
   }
 
   &__list-item {
@@ -48,6 +50,10 @@
     & .pic {
       height: 60vw;
       position: relative;
+
+      @media (min-width: $desktop) {
+        height: 720px;
+      }
     }
 
     @media (min-width: $desktop) {
