@@ -16,6 +16,7 @@ import FormValidator from "@yaireo/validator";
 gsap.registerPlugin(ScrollTrigger);
 
 // varibles
+const promos = query(".promos");
 const consultForm = query("#consult-form");
 const subscribeForm = query("#subscribe-form");
 const modalCallForm = query("#modal-call-form");
@@ -35,211 +36,195 @@ let currentIndex = 0;
 common();
 
 window.addEventListener("DOMContentLoaded", () => {
-  getGallery(galleryTabs);
+  if (document.URL.includes("main-page.html")) {
+    getGallery(galleryTabs);
 
-  headerTopAnimated.forEach((item) => {
-    setTimeout(() => {
-      item.classList.add("stop-animation");
-    }, 2000);
-  });
+    headerTopAnimated.forEach((item) => {
+      setTimeout(() => {
+        item.classList.add("stop-animation");
+      }, 2000);
+    });
 
-  ScrollTrigger.matchMedia({
-    "(min-width: 1280px)": function () {
-      let tlGallery = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".gallery",
-          start: "top 30%",
-          scrub: true,
-          toggleActions: "play none none none",
-        },
-      });
+    ScrollTrigger.matchMedia({
+      "(min-width: 1280px)": function () {
+        let tlGallery = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".gallery",
+            start: "top 30%",
+            scrub: true,
+            toggleActions: "play none none none",
+          },
+        });
 
-      let tlCourses = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".courses",
-          scrub: true,
-          toggleActions: "play none none none",
-        },
-      });
+        let tlCourses = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".courses",
+            scrub: true,
+            toggleActions: "play none none none",
+          },
+        });
 
-      let tlPicture = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".pic_bounded",
-          scrub: true,
-          toggleActions: "play none none none",
-        },
-      });
+        let tlPicture = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".pic_bounded",
+            scrub: true,
+            toggleActions: "play none none none",
+          },
+        });
 
-      let tlArticles = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".content",
-          start: "top 0%",
-          scrub: true,
-          toggleActions: "play none none none",
-        },
-      });
+        let tlArticles = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".content",
+            start: "top 0%",
+            scrub: true,
+            toggleActions: "play none none none",
+          },
+        });
 
-      let tlAboutPic = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".about__pic",
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      });
+        let tlAboutPic = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".about__pic",
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        });
 
-      let tlAboutText = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".about__title",
-          start: "bottom 100%",
-          toggleActions: "play none none none",
-        },
-      });
+        let tlAboutText = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".about__title",
+            start: "bottom 100%",
+            toggleActions: "play none none none",
+          },
+        });
 
-      let tlCoverAbout = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".about .cover",
-          start: "top 96%",
-          toggleActions: "play none none none",
-        },
-      });
+        let tlCoverAbout = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".about .cover",
+            start: "top 96%",
+            toggleActions: "play none none none",
+          },
+        });
 
-      tlGallery.fromTo(
-        ".gallery-item__middle",
-        {
+        tlGallery.fromTo(
+          ".gallery-item__middle",
+          {
+            y: 80,
+          },
+          {
+            y: -80,
+          }
+        );
+
+        tlCourses.fromTo(
+          ".course_animated",
+          {
+            y: 40,
+          },
+          {
+            y: -40,
+          }
+        );
+
+        tlPicture.fromTo(
+          ".pic_bounded",
+          {
+            y: -70,
+          },
+          {
+            y: 80,
+          }
+        );
+
+        tlArticles.to(".articles-list", {
+          y: -60,
+        });
+
+        tlAboutText.from(".about__title", {
+          y: 100,
+        });
+
+        tlAboutPic.from(".about__pic", {
+          alpha: 0.3,
+        });
+
+        tlCoverAbout.to(".about .cover", {
+          height: 0,
+          duration: 1.5,
+        });
+
+        gsap.from(".categories-item", {
           y: 80,
-        },
-        {
-          y: -80,
-        }
-      );
+          alpha: 0,
+          delay: 0.8,
+          stagger: 0.1,
+        });
 
-      tlCourses.fromTo(
-        ".course_animated",
-        {
-          y: 40,
-        },
-        {
-          y: -40,
-        }
-      );
+        gsap.from(".promo-content > *", {
+          y: 50,
+          alpha: 0,
+          duration: 1,
+          stagger: 0.1,
+        });
 
-      tlPicture.fromTo(
-        ".pic_bounded",
-        {
-          y: -70,
-        },
-        {
-          y: 80,
-        }
-      );
+        gsap.from(".promo-pic_left-side", {
+          x: -50,
+          alpha: 0,
+          duration: 1,
+        });
 
-      tlArticles.to(".articles-list", {
-        y: -60,
-      });
+        gsap.from(".promo-pic_right-side", {
+          x: 50,
+          alpha: 0,
+          duration: 1,
+        });
+      },
+    });
 
-      tlAboutText.from(".about__title", {
-        y: 100,
-      });
+    const flkty = new Flickity(promos, {
+      prevNextButtons: false,
+      fade: true,
+      imagesLoaded: true,
+      wrapAround: true,
+    });
+    flkty.on("change", function (index) {
+      if (index > currentIndex) {
+        gsap.from(".is-selected .promo-content", {
+          y: 50,
+          alpha: 0,
+          duration: 0.5,
+        });
+      } else {
+        gsap.from(".is-selected .promo-content", {
+          y: -50,
+          alpha: 0,
+          duration: 0.5,
+        });
+      }
 
-      tlAboutPic.from(".about__pic", {
-        alpha: 0.3,
-      });
-
-      tlCoverAbout.to(".about .cover", {
-        height: 0,
-        duration: 1.5,
-      });
-
-      gsap.from(".categories-item", {
-        y: 80,
-        alpha: 0,
-        delay: 0.8,
-        stagger: 0.1,
-      });
-
-      gsap.from(".promo-content > *", {
-        y: 50,
-        alpha: 0,
-        duration: 1,
-        stagger: 0.1,
-      });
-
-      gsap.from(".promo-pic_left-side", {
+      gsap.from(".is-selected .promo-pic_left-side", {
         x: -50,
         alpha: 0,
         duration: 1,
       });
 
-      gsap.from(".promo-pic_right-side", {
+      gsap.from(".is-selected .promo-pic_right-side", {
         x: 50,
         alpha: 0,
         duration: 1,
       });
-    },
-  });
 
-  const flkty = new Flickity(".promos", {
-    prevNextButtons: false,
-    fade: true,
-    imagesLoaded: true,
-    wrapAround: true,
-  });
-
-  flkty.on("change", function (index) {
-    if (index > currentIndex) {
-      gsap.from(".is-selected .promo-content", {
-        y: 50,
-        alpha: 0,
-        duration: 0.5,
-      });
-    } else {
-      gsap.from(".is-selected .promo-content", {
-        y: -50,
-        alpha: 0,
-        duration: 0.5,
-      });
-    }
-
-    gsap.from(".is-selected .promo-pic_left-side", {
-      x: -50,
-      alpha: 0,
-      duration: 1,
+      currentIndex = index;
     });
 
-    gsap.from(".is-selected .promo-pic_right-side", {
-      x: 50,
-      alpha: 0,
-      duration: 1,
-    });
-
-    currentIndex = index;
-  });
-
-  setTimeout(() => {
-    headerPhoneNumber.style.animationFillMode = "inherit";
-    headerConsult.style.animationFillMode = "inherit";
-    headerCallback.style.animationFillMode = "inherit";
-  }, 2000);
+    setTimeout(() => {
+      headerPhoneNumber.style.animationFillMode = "inherit";
+      headerConsult.style.animationFillMode = "inherit";
+      headerCallback.style.animationFillMode = "inherit";
+    }, 2000);
+  }
 });
 
-youTubeItems.forEach((item) => {
-  if (!item) return;
-  // item.addEventListener("click", () => {
-  //   const url = item.dataset.video;
-  //   const iframe = `<iframe
-  //                 src="https://www.youtube.com/embed/${url}"
-  //                 title="YouTube video player"
-  //                 frameborder="0"
-  //                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  //                 allowfullscreen
-  //               ></iframe>`;
-  //   const modalContent = query("#modal-1-content");
-  //   modalContent.insertAdjacentHTML("beforeend", iframe);
-  // });
-  item.addEventListener("click", () =>
-    setYoutubeModal(item, "#modal-1-content")
-  );
-});
+youTubeItems.forEach((item) => setYoutubeModal(item, "#modal-1-content"));
 
 [(subscribeForm, consultForm)].forEach((item) => {
   if (!item) return;

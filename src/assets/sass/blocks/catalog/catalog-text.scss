@@ -1,0 +1,75 @@
+.catalog-text {
+  margin-bottom: 80px;
+  @media (min-width: $desktop) {
+    margin-bottom: 160px;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    font-size: 32px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $desktop) {
+      flex-direction: row;
+    }
+
+    & > div {
+      @media (min-width: $desktop) {
+        width: 50%;
+      }
+    }
+  }
+
+  &__text {
+    line-height: 2;
+  }
+
+  &__list {
+    padding-left: 15px;
+  }
+
+  &__list-item {
+    list-style-type: disc;
+  }
+
+  &__content {
+    margin-bottom: 40px;
+
+    @media (min-width: $desktop) {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__pic {
+    & .pic {
+      height: 60vw;
+      position: relative;
+    }
+
+    @media (min-width: $desktop) {
+      padding-left: 113px;
+    }
+  }
+
+  &__pic_small {
+    height: 40vw;
+    width: 36vw;
+    margin-left: 20px;
+    margin-top: -20vw;
+    position: relative;
+
+    @media (min-width: $tablet) {
+      margin-left: 40px;
+    }
+
+    @media (min-width: $desktop) {
+      width: 280px;
+      height: 280px;
+      margin-top: -140px;
+    }
+  }
+}
