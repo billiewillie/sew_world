@@ -67,7 +67,6 @@
 
   &_label {
     position: relative;
-    z-index: 1;
     font-size: 14px;
     font-family: $font_semibold;
     text-transform: uppercase;
@@ -83,6 +82,7 @@
 
   &-item_pic {
     position: absolute;
+    z-index: -1;
     top: 0;
     left: 0;
     width: 100%;

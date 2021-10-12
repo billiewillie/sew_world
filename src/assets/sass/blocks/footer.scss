@@ -19,21 +19,40 @@
     font-size: 14px;
   }
 
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $tablet) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &-contacts {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(30, 30, 30, 0.2);
+    padding-bottom: 25px;
+
+    @media (min-width: $tablet) {
+      border-bottom: none;
+    }
+
+    @media (min-width: $desktop) {
+      margin-bottom: 0;
+      width: 37%;
+      padding-bottom: 0;
+    }
+  }
+
   & &__label {
     text-transform: capitalize;
     opacity: 0.5;
     left: 17px;
     top: 15px;
-  }
-}
-
-.footer__container {
-  display: flex;
-  flex-direction: column;
-
-  @media (min-width: $tablet) {
-    flex-direction: row;
-    flex-wrap: wrap;
   }
 }
 
@@ -101,25 +120,6 @@
 
   @media (min-width: $desktop) {
     font-size: 24px;
-  }
-}
-
-.footer-contacts {
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  border-bottom: 1px solid rgba(30, 30, 30, 0.2);
-  padding-bottom: 25px;
-
-  @media (min-width: $tablet) {
-    border-bottom: none;
-  }
-
-  @media (min-width: $desktop) {
-    margin-bottom: 0;
-    width: 37%;
-    padding-bottom: 0;
   }
 }
 
@@ -200,6 +200,8 @@
   max-height: 0;
   opacity: 0;
   transform: translate(0, 50%);
+  will-change: transform;
+  outline: none;
 
   @media (min-width: $tablet) {
     opacity: 1;
@@ -216,6 +218,7 @@
 
 .footer-item {
   margin-bottom: 20px;
+  border: none;
 
   @media (min-width: $tablet) {
     margin-bottom: 6px;
@@ -227,17 +230,18 @@
 }
 
 .footer-list {
-  position: relative;
+  opacity: 1;
+  z-index: 2;
   margin-top: 24px;
   overflow: hidden;
-  opacity: 1;
-  transform: translate(0, 0);
-  z-index: 2;
   max-height: 800px;
-  transition: all 0.25s ease-in-out;
-  // animation: flipdown 0.5s ease both;
+  position: relative;
+  transform: translate(0, 0);
+  transition: transform 0.32s ease-in-out, opacity 0.32s ease-in-out;
   transform-origin: top center;
   transform: rotateX(0deg);
+  will-change: transform;
+  outline: none;
 }
 
 .footer-link {
@@ -256,35 +260,6 @@
   background-repeat: no-repeat;
   background-position: 100% 50%;
   background-size: 14px 7px;
-}
-
-@keyframes flipdown {
-  0% {
-    opacity: 0;
-    transform-origin: top center;
-    transform: rotateX(-90deg);
-  }
-
-  5% {
-    opacity: 1;
-  }
-
-  80% {
-    transform: rotateX(8deg);
-  }
-
-  83% {
-    transform: rotateX(6deg);
-  }
-
-  92% {
-    transform: rotateX(-3deg);
-  }
-
-  100% {
-    transform-origin: top center;
-    transform: rotateX(0deg);
-  }
 }
 
 .footer-contacts__link {
