@@ -17,11 +17,14 @@
 @import "blocks/content";
 @import "blocks/burger";
 @import "blocks/aside-modal";
+@import "blocks/topics";
+
+// navigation page
+@import "blocks/navigation-page.scss";
 
 // index page
 @import "blocks/index/first-screen";
 @import "blocks/index/categories";
-@import "blocks/index/topics";
 @import "blocks/index/learning";
 @import "blocks/index/brands";
 @import "blocks/index/consult";

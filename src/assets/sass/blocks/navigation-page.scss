@@ -1,0 +1,23 @@
+.dev-nav__heading {
+  font-size: 2.75em;
+  color: #003d73;
+  margin-bottom: 16px;
+}
+
+.dev-nav__list {
+  color: #003d73;
+  margin-top: 16px;
+  display: inline-block;
+}
+
+.dev-nav__block-title {
+  color: #003d73;
+}
+
+.dev-nav__link {
+  display: block;
+  padding: 3px 0;
+  color: #003d73;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}

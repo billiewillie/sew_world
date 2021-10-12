@@ -169,6 +169,10 @@
     padding: 0;
   }
 
+  @media (min-width: $desktop) {
+    min-height: 102px;
+  }
+
   & input[type="checkbox"] {
     position: absolute;
     cursor: pointer;
