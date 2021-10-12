@@ -499,6 +499,8 @@
 
 .search-form__input {
   height: 100%;
+  width: 100%;
+  font-size: 16px;
   flex: auto;
   border: none;
   border-right: 1px solid rgba(79, 79, 79, 0.2);
@@ -524,14 +526,19 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 46px;
+  border-left: 1px solid rgba(30, 30, 30, 0.2);
 
   @media (min-width: $tablet) {
     min-width: 57px;
+    right: 57px;
   }
 
   &_submit {
     background-color: #fff;
-    border-left: 1px solid rgba(30, 30, 30, 0.2);
+    right: 0;
   }
 
   & svg {

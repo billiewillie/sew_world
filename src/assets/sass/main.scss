@@ -73,7 +73,7 @@ textarea {
 }
 
 .button {
-  border: 1px solid #333333;
+  border: 1px solid $text_color;
   text-transform: uppercase;
   padding: 15px 23px;
   background-color: #fff;
@@ -84,10 +84,11 @@ textarea {
   position: relative;
   overflow: hidden;
   transition: 0.32s ease-in-out;
+  color: $text_color;
 
   &.button_inverse {
     background-color: $text_color;
-    color: #fff;
+    color: $bg_color;
 
     &:hover {
       background-color: transparent;

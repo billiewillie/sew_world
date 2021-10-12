@@ -173,7 +173,7 @@
     min-height: 102px;
   }
 
-  & input[type="checkbox"] {
+  & .button-opener {
     position: absolute;
     cursor: pointer;
     width: 100%;
@@ -195,7 +195,7 @@
   }
 }
 
-.footer-category input[type="checkbox"]:checked ~ .footer-list {
+.footer-category .button-opener.hide ~ .footer-list {
   margin-top: 0;
   max-height: 0;
   opacity: 0;
@@ -235,7 +235,9 @@
   z-index: 2;
   max-height: 800px;
   transition: all 0.25s ease-in-out;
-  animation: flipdown 0.5s ease both;
+  // animation: flipdown 0.5s ease both;
+  transform-origin: top center;
+  transform: rotateX(0deg);
 }
 
 .footer-link {

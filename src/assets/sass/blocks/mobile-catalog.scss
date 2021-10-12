@@ -1,22 +1,22 @@
 .mobile-catalog {
+  top: 0px;
+  left: 100%;
   padding: 0;
-  background-color: $bg_alt_color;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  min-height: calc(100vh - 56px);
   z-index: 1;
+  width: 100%;
+  z-index: 100;
   display: none;
   position: relative;
-  left: 100%;
-  top: 0px;
-  z-index: 100;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - 56px);
   transition: transform 0.3s ease;
+  background-color: $bg_alt_color;
 
   @media (min-width: $tablet) {
+    top: 0;
     padding: 46px 0 48px;
     min-height: calc(100vh - 110px);
-    top: 0;
   }
 
   &.show {
@@ -69,9 +69,9 @@
 
   &__footer {
     display: flex;
-    padding: 24px 24px 80px;
-    justify-content: space-between;
     font-size: 14px;
+    padding: 0 24px 120px;
+    justify-content: space-between;
 
     @media (min-width: $tablet) {
       padding: 48px 48px 80px;

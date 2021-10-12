@@ -4,7 +4,7 @@
     margin-bottom: 160px;
   }
 
-  &__title {
+  & h2 {
     margin-bottom: 24px;
     font-size: 32px;
   }
@@ -24,17 +24,17 @@
     }
   }
 
-  &__text {
+  & p {
     line-height: 2;
     font-size: 18px;
   }
 
-  &__list {
-    padding-left: 15px;
+  & ul {
+    padding-left: 20px;
     font-size: 18px;
   }
 
-  &__list-item {
+  & li {
     list-style-type: disc;
   }
 

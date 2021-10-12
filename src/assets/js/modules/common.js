@@ -10,6 +10,7 @@ import closeModalFunction from "./closeModalFunction";
 import dummyCoverClick from "./dummyCoverClick";
 import countElements from "./countElements";
 import setBannerWidth from "./setBannerWidth";
+import footerAccordion from "./footerAccordion";
 
 import MicroModal from "micromodal";
 // https://github.com/yairEO/validator
@@ -66,13 +67,15 @@ const itemsCitiesList = query(".modal-city__list");
 const itemsCities = query(".modal-city__list").getElementsByTagName("li");
 
 const common = () => {
-  noCopy();
-
   let isOpenCatalog = false;
   let initialMenuHeight = mobileCatalogList.getBoundingClientRect().height;
   const goodsToMatch = [];
   const likedGoods = [];
   const goodsInBucket = [];
+
+  noCopy();
+
+  footerAccordion();
 
   inputCities.addEventListener("keyup", (e) =>
     citiesFilter(e, itemsCities, itemsCitiesList)
@@ -182,12 +185,8 @@ const common = () => {
     lastScroll = currentScroll;
 
     if (searchForm.classList.contains("show")) {
-      // dummyCover.classList.remove("show-for-catalog");
       burgers.forEach((item) => item.classList.remove("toggled"));
     }
-    // searchForm.classList.remove("show");
-    // searchResults.classList.remove("show");
-    // inputSearch.value = "";
   });
 
   headerCatalogCategories.forEach((item) => {
