@@ -10,7 +10,7 @@
   }
 
   &:hover {
-    border: 8px solid #fff;
+    border: 8px solid $bg_color;
     background-color: $card_hover_color;
 
     & .card-price__current {

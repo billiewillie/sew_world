@@ -71,7 +71,7 @@ iframe {
 
 .modal__header .modal__close:before {
   content: "\2715";
-  color: #fff;
+  color: $bg_color;
   font-size: 20px;
 }
 
@@ -111,7 +111,7 @@ iframe {
 
 .modal__btn-primary {
   background-color: #00449e;
-  color: #fff;
+  color: $bg_color;
 }
 
 /**************************\

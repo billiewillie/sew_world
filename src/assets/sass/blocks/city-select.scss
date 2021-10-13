@@ -1,7 +1,7 @@
 .form-city {
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background-color: $bg_color;
   padding: 8px;
 
   @media (min-width: $tablet) {

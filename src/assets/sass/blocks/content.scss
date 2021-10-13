@@ -106,7 +106,7 @@
 }
 
 .youtube-logo {
-  background-color: #fff;
+  background-color: $bg_color;
   padding: 8px;
   margin-bottom: 2px;
 
@@ -122,7 +122,7 @@
 .youtube-item__title {
   margin-right: 2px;
   padding: 16px;
-  background-color: #fff;
+  background-color: $bg_color;
   min-width: 180px;
 
   @media (min-width: $tablet) {
@@ -133,7 +133,7 @@
 }
 
 .youtube-item__play {
-  background-color: #fff;
+  background-color: $bg_color;
   display: flex;
   justify-content: center;
   align-items: center;

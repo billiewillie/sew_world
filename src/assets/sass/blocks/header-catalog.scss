@@ -40,7 +40,7 @@
     display: flex;
     flex-direction: column;
     border-right: 1px solid rgba(30, 30, 30, 0.1);
-    background-color: #fff;
+    background-color: $bg_color;
     overflow-y: auto;
 
     & > div {
@@ -54,7 +54,7 @@
 
   &__subcategories {
     padding: 20px 0 56px 54px;
-    background-color: #fff;
+    background-color: $bg_color;
     overflow: hidden;
   }
 

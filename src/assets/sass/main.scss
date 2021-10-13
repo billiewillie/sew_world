@@ -3,7 +3,7 @@ body {
   color: $text_color;
   font-size: 14px;
   line-height: 1.6;
-  background-color: #fff;
+  background-color: $bg_color;
   position: relative;
   min-height: 100vh;
 
@@ -76,7 +76,7 @@ textarea {
   border: 1px solid $text_color;
   text-transform: uppercase;
   padding: 15px 23px;
-  background-color: #fff;
+  background-color: $bg_color;
   display: inline-block;
   text-align: center;
   cursor: pointer;
@@ -98,7 +98,7 @@ textarea {
 
   &:hover {
     background-color: $text_color;
-    color: #fff;
+    color: $bg_color;
   }
 }
 
@@ -164,7 +164,7 @@ article {
 }
 
 .content-box {
-  background-color: #fff;
+  background-color: $bg_color;
   color: $text_color;
 }
 
@@ -230,7 +230,7 @@ article {
     border-radius: 50%;
     width: 28px;
     height: 28px;
-    background-color: #fff;
+    background-color: $bg_color;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -261,7 +261,10 @@ article {
 .title-box {
   display: flex;
   align-items: center;
-  gap: 16px;
+
+  & .title {
+    margin-right: 16px;
+  }
 }
 
 .dummy-cover {

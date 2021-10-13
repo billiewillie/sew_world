@@ -1,0 +1,33 @@
+.catalog {
+  margin-bottom: 80px;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 120px;
+  }
+
+  &-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    @media (min-width: $tablet) {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(30, 30, 30, 0.1);
+    }
+
+    @media (min-width: $desktop) {
+    }
+
+    &__grid {
+      display: flex;
+      flex: auto;
+      justify-content: flex-end;
+    }
+  }
+
+  &-button {
+    width: 100%;
+  }
+}
