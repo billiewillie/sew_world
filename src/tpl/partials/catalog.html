@@ -1,13 +1,29 @@
 <article class="catalog">
   <div class="container">
-    <div class="catalog-header">
-      <div class="catalog-header__filter">фильтры</div>
-      <div class="catalog-header__sort">По популярности</div>
-      <div class="catalog-header__grid visible__sm">grid</div>
-    </div>
     <div class="catalog-content">
-      <div class="catalog-filter"></div>
-      <div class="catalog-list"></div>
+      <div class="catalog-filter">
+        <div class="catalog-header">
+          <div class="catalog-header__filter">фильтры</div>
+        </div>
+      </div>
+      <div class="catalog-list">
+        <div class="catalog-header">
+          <div class="catalog-header__filter">фильтры</div>
+          <div class="catalog-header__sort">По популярности</div>
+          <div class="catalog-header__grid visible__sm">
+            <div class="catalog-header__icon active">
+              <svg>
+                <use xlink:href="#posts-quarters"></use>
+              </svg>
+            </div>
+            <div class="catalog-header__icon">
+              <svg>
+                <use xlink:href="#posts-rows"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="button-wrapper">
       <button class="button catalog-button">показать еще</button>
