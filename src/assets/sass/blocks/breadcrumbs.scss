@@ -1,0 +1,57 @@
+.breadcrumbs {
+  margin-bottom: 24px;
+
+  @media (min-width: $tablet) {
+  }
+
+  @media (min-width: $desktop) {
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    margin-right: 16px;
+    display: inline-block;
+    position: relative;
+    transition: opacity 0.32s ease-in-out;
+    cursor: pointer;
+
+    &::after {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 6px;
+      height: 1px;
+      background-color: $menu_category_color;
+      right: -13px;
+      top: 0;
+      bottom: 0;
+      margin: 12px auto 0;
+      cursor: default;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__item-text {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: $menu_category_color;
+  }
+
+  &__item_disable {
+    &:hover {
+      opacity: 1;
+      cursor: default;
+    }
+  }
+}

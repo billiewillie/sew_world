@@ -100,7 +100,6 @@ const common = () => {
         !e.target.closest(".header-catalog__categories") &&
         !e.target.closest(".header-catalog__subcategories")
       ) {
-        console.log(1);
         headerCatalog.classList.remove("show");
         dummyCover.classList.remove("show-for-catalog");
         burgers.forEach((burger) => {
