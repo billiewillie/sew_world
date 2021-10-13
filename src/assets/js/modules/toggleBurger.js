@@ -10,8 +10,7 @@ const toggleBurgers = (
 ) => {
   burger.classList.toggle("toggled");
   header.classList.remove("scroll-down");
-  if (burger.classList.contains("toggled"))
-    cover.classList.remove("show-for-catalog");
+  cover.classList.toggle("show-for-catalog");
   if (window.innerWidth >= 1280) {
     desktopMenu.classList.toggle("show");
   } else if (window.innerWidth < 1280 && window.innerWidth >= 768) {
